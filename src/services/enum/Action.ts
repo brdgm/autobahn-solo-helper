@@ -1,14 +1,10 @@
 /**
- * Action
+ * Bot Action
  */
 enum Action {
-  EXPAND_COMPANY = 'expand-company',
-  DISCARD_RESEARCH_PLAN = 'discard-research-plan',
-  GAIN_CARD = 'gain-card',
-  GAIN_COIN = 'gain-coin',
-  GAIN_HELIUM = 'gain-helium',
-  ADVANCE_RESEARCH = 'advance-research',
-  ADVANCE_COMPANY = 'advance-company',
-  PLACE_BONUS_MARKER = 'place-bonus-marker'
+  BUILD_ROAD = 'build-road',
+  UPGRADE_LINK = 'upgrade-link',
+  LOAD_TRUCK = 'load-truck',
+  BUILD_SERVICE_STATION = 'build-service-station',
 }
 export default Action

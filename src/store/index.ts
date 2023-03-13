@@ -1,3 +1,5 @@
+import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import Expansion from '@/services/enum/Expansion'
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
 
@@ -10,7 +12,8 @@ export interface State {
   rounds: Round[]
 }
 export interface Setup {
-  playerCount?: number
+  difficultyLevel: DifficultyLevel
+  expansions: Expansion[]
 }
 export interface Round {
   round: number
@@ -30,6 +33,8 @@ export const store = createStore<State>({
     language: "en",
     baseFontSize: 1.0,
     setup: {
+      difficultyLevel: DifficultyLevel.LEVEL1_EASY,
+      expansions: []
     },
     rounds: []
   },
@@ -43,6 +48,9 @@ export const store = createStore<State>({
     },
     language(state : State, language: string) {
       state.language = language
+    },
+    resetGame(state : State) {
+      state.rounds = []
     },
     zoomFontSize(state : State, baseFontSize: number) {
       state.baseFontSize = baseFontSize

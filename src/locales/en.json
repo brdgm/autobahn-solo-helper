@@ -3,7 +3,7 @@
   "home": {
     "title": "Autobahn Solo Helper",
     "play1": "Play against Autobot, the Solo Mode opponent of <a href='https://boardgamegeek.com/boardgame/348554/autobahn' target='_blank' rel='noopener'><b>Autobahn</b></a>.",
-    "play2": "This helper application replaces the Solo board and the task and action card decks of Autobot.",
+    "play2": "This helper application replaces the task and action card decks of Autobot and manages the difficulty levels.",
     "feedback": "Discussion and Feedback:"
   },
   "setup": {
@@ -13,8 +13,6 @@
       "easy": "Easy",
       "hard": "Hard",
       "level": "Level {level}",
-      "easySoloBoard": "Easy Solo Board",
-      "hardSoloBoard": "Hard Solo Board",
       "increaseDifficulty1": "Autobot’s Trucks move 1 additional space every turn",
       "increaseDifficulty2": "Autobot gets 1 Development Track step each time one of your Trucks drive past one of its Service Stations",
       "increaseDifficulty3": "Autobot moves on the Development Track if it skips its turn",
@@ -29,7 +27,23 @@
     }
   },
   "setupAutobot": {
-    "title": "Prepare Autobot"
+    "title": "Prepare Autobot",
+    "twoPlayers": "Set up the game for 2 players.",
+    "pickPlayerColor": "Pick a player colour for Autobot. Autobot uses the 25 Employees, 8 Service Stations, 1 Development token of that player colour. Instead of taking a Truck for that colour, Autobot takes 1 Truck and 1 Development token in each of the other, unused colours.",
+    "setupAutobotComponents": "Set up Autobot’s components and play area as follows:",
+    "placeSoloBoard": "Place the <b>{soloBoard}</b> in Autobot’s play area.",
+    "chooseDeliveryBoard": "Randomly choose a Delivery board for Autobot and place it next to the Solo board.",
+    "placeEmployees": "Place Autobot’s 25 Employees beside the Solo board.",
+    "placeServiceStations": "Place Autobot’s 8 Service Stations on the appropriate spaces of the Solo board.",
+    "placeDevelopmentToken": "Place Autobot’s Development token on the first space of the Development Track.",
+    "placeBlackConstructionOffice": "Autobot is the start player, so place 1 of Autobot’s Employees onto the first (leftmost) seat of the black Construction Office. Place one of yours on the next seat.",
+    "setupPlayerPlayArea": "Set up your play area as normal, and reveal 2 Route cards from the deck. Pick one for yourself and discard the other one. Return the unused route cards back to the box. Autobot does not have a Route card.",
+    "winePickCard": "Wine Module: You randomly pick one of the wine cards, and place the remaining three next to the solo board.",
+    "unlimitedBudget": "Autobot has an unlimited budget. You do not need to track Autobot’s income or expenditure."
+  },
+  "soloBoard": {
+    "easy": "Easy Solo Board",
+    "hard": "Hard Solo Board"
   },
   "notfound": {
     "title": "Not Found"

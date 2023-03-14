@@ -5,7 +5,7 @@
     <div class="col-1 text-end">
       <label for="difficultyLevel" class="form-label">{{t('setup.difficultyLevel.easy')}}</label>
     </div>
-    <div class="col-8 col-md-4">
+    <div class="col-8 col-md-6">
       <input type="range" class="form-range" min="1" max="12" id="difficultyLevel"
           :value="difficultyLevel" @input="updateDifficultyLevel($event)">
     </div>
@@ -14,11 +14,11 @@
     </div>
   </div>  
   <div class="row">
-    <div class="offset-md-1 col-10 col-md-5 text-muted small">
+    <div class="offset-md-1 col-10 col-md-7 text-muted small">
       <span v-html="t('setup.difficultyLevel.level', {level:difficultyLevel})"></span>
       <ul>
-        <li v-if="difficultyLevel < 7" v-html="t('setup.difficultyLevel.easySoloBoard')"></li>
-        <li v-else v-html="t('setup.difficultyLevel.hardSoloBoard')"></li>
+        <li v-if="difficultyLevel < 7" v-html="t('soloBoard.easy')"></li>
+        <li v-else v-html="t('soloBoard.hard')"></li>
         <li v-if="between(difficultyLevel, 2, 6) || between(difficultyLevel, 8, 12)" v-html="t('setup.difficultyLevel.increaseDifficulty1')"></li>
         <li v-if="between(difficultyLevel, 3, 6) || between(difficultyLevel, 9, 12)" v-html="t('setup.difficultyLevel.increaseDifficulty2')"></li>
         <li v-if="between(difficultyLevel, 4, 6) || between(difficultyLevel, 10, 12)" v-html="t('setup.difficultyLevel.increaseDifficulty3')"></li>

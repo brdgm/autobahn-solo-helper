@@ -2,6 +2,7 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Expansion from '@/services/enum/Expansion'
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
+import toggleArrayItem from "brdgm-commons/src/util/array/toggleArrayItem"
 
 const LOCALSTORAGE_KEY = process.env.VUE_APP_LOCALSTORAGE_KEY_PREFIX + "store"
 
@@ -48,6 +49,12 @@ export const store = createStore<State>({
     },
     language(state : State, language: string) {
       state.language = language
+    },
+    setupDifficultyLevel(state : State, level: number) {
+      state.setup.difficultyLevel = level
+    },
+    setupToggleExpansion(state : State, expansion: Expansion) {
+      toggleArrayItem(state.setup.expansions, expansion)
     },
     resetGame(state : State) {
       state.rounds = []

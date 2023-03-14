@@ -2,9 +2,34 @@
   "gameTitle": "Autobahn",
   "home": {
     "title": "Autobahn Solo Helper",
-    "play1": "...",
-    "play2": "...",
+    "play1": "Play against Autobot, the Solo Mode opponent of <a href='https://boardgamegeek.com/boardgame/348554/autobahn' target='_blank' rel='noopener'><b>Autobahn</b></a>.",
+    "play2": "This helper application replaces the Solo board and the task and action card decks of Autobot.",
     "feedback": "Discussion and Feedback:"
+  },
+  "setup": {
+    "title": "Setup Game",
+    "difficultyLevel": {
+      "title": "Difficulty Level",
+      "easy": "Easy",
+      "hard": "Hard",
+      "level": "Level {level}",
+      "easySoloBoard": "Easy Solo Board",
+      "hardSoloBoard": "Hard Solo Board",
+      "increaseDifficulty1": "Autobot’s Trucks move 1 additional space every turn",
+      "increaseDifficulty2": "Autobot gets 1 Development Track step each time one of your Trucks drive past one of its Service Stations",
+      "increaseDifficulty3": "Autobot moves on the Development Track if it skips its turn",
+      "increaseDifficulty4": "Autobot gains more promotions at the end of each era (1/1/2)",
+      "increaseDifficulty5": "Autobot gains more promotions at the end of each era (1/2/2)"
+    },
+    "expansions": {
+      "title": "Mini-Expansions",
+      "wine": "Module 1: Wine",
+      "traffic": "Module 2: Traffic",
+      "services": "Module 3: Services"
+    }
+  },
+  "setupAutobot": {
+    "title": "Prepare Autobot"
   },
   "notfound": {
     "title": "Not Found"

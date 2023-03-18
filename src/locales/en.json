@@ -38,7 +38,7 @@
     "placeDevelopmentToken": "Place Autobot’s Development token on the first space of the Development Track.",
     "placeBlackConstructionOffice": "Autobot is the start player, so place 1 of Autobot’s Employees onto the first (leftmost) seat of the black Construction Office. Place one of yours on the next seat.",
     "setupPlayerPlayArea": "Set up your play area as normal, and reveal 2 Route cards from the deck. Pick one for yourself and discard the other one. Return the unused route cards back to the box. Autobot does not have a Route card.",
-    "winePickCard": "Wine Module: You randomly pick one of the wine cards, and place the remaining three next to the solo board.",
+    "winePickCard": "Wine Module: You randomly pick one of the wine cards for yourself, and place the remaining three next to the solo board.",
     "unlimitedBudget": "Autobot has an unlimited budget. You do not need to track Autobot’s income or expenditure."
   },
   "soloBoard": {

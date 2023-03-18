@@ -3,6 +3,7 @@ import Expansion from '@/services/enum/Expansion'
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
 import toggleArrayItem from "brdgm-commons/src/util/array/toggleArrayItem"
+import ColorCard from '@/services/ColorCard'
 
 const LOCALSTORAGE_KEY = process.env.VUE_APP_LOCALSTORAGE_KEY_PREFIX + "store"
 
@@ -18,6 +19,18 @@ export interface Setup {
 }
 export interface Round {
   round: number
+  taskCardDeck: TaskCardDeckPersistence
+  colorCardDeck: ColorCardDeckPersistence
+}
+export interface TaskCardDeckPersistence {
+  pile: string[]
+  taskQueue: string[]
+  used: string[]
+  advanced: string[]
+}
+export interface ColorCardDeckPersistence {
+  pile: ColorCard[]
+  used: ColorCard[]
 }
 
 declare module '@vue/runtime-core' {

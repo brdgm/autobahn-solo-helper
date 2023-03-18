@@ -18,9 +18,9 @@
   
   <img class="bot-setup" src="../assets/bot-setup.png"/>
 
-  <router-link to="/start" class="btn btn-primary btn-lg mt-4">
+  <button @click="startGame" class="btn btn-primary btn-lg mt-4">
     {{t('action.startGame')}}
-  </router-link>
+  </button>
 
   <FooterButtons backButtonRouteTo="/setupGame" endGameButtonType="abortGame"/>
 </template>
@@ -29,8 +29,11 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
-import { useStore } from '@/store'
+import { store, useStore } from '@/store'
 import Expansion from '@/services/enum/Expansion'
+import ColorCardDeck from '@/services/ColorCardDeck'
+import TaskCardDeck from '@/services/TaskCardDeck'
+import router from '@/router'
 
 export default defineComponent({
   name: 'SetupAutobot',
@@ -56,6 +59,16 @@ export default defineComponent({
     hasWineExpansion() : boolean {
       return this.$store.state.setup.expansions.includes(Expansion.WINE)
     },
+  },
+  methods: {
+    startGame() : void {
+      store.commit('resetGame')
+      const colorCardDeck = ColorCardDeck.new()
+      const taskCardDeck = TaskCardDeck.new()
+      const round = { round: 1, colorCardDeck: colorCardDeck.toPersistence(), taskCardDeck: taskCardDeck.toPersistence() }
+      store.commit('round', round)
+      router.push('/round/1/bot')
+    }
   }
 })
 </script>

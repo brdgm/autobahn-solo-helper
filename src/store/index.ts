@@ -19,8 +19,8 @@ export interface Setup {
 }
 export interface Round {
   round: number
-  taskCardDeck: TaskCardDeckPersistence
   colorCardDeck: ColorCardDeckPersistence
+  taskCardDeck: TaskCardDeckPersistence
 }
 export interface TaskCardDeckPersistence {
   pile: string[]
@@ -68,6 +68,11 @@ export const store = createStore<State>({
     },
     setupToggleExpansion(state : State, expansion: Expansion) {
       toggleArrayItem(state.setup.expansions, expansion)
+    },
+    round(state : State, round : Round) {
+      state.rounds = state.rounds
+          .filter(item => item.round < round.round)
+      state.rounds.push(round)
     },
     resetGame(state : State) {
       state.rounds = []

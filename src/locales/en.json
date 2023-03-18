@@ -41,6 +41,12 @@
     "winePickCard": "Wine Module: You randomly pick one of the wine cards for yourself, and place the remaining three next to the solo board.",
     "unlimitedBudget": "Autobot has an unlimited budget. You do not need to track Autobot’s income or expenditure."
   },
+  "turnBot": {
+    "title": "Autobot's turn"
+  },
+  "turnPlayer": {
+    "title": "Your turn"
+  },
   "soloBoard": {
     "easy": "Easy Solo Board",
     "hard": "Hard Solo Board"

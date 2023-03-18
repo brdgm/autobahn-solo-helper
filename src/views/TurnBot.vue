@@ -1,6 +1,8 @@
 <template>
   <h1>{{t('turnBot.title')}}</h1>
 
+  <BotActions :color-card="colorCard" :task-card="taskCard"/>
+
   <button @click="next" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
   </button>
@@ -15,11 +17,13 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
 import { useRoute } from 'vue-router'
+import BotActions from '@/components/round/BotActions.vue'
 
 export default defineComponent({
   name: 'TurnBot',
   components: {
     FooterButtons,
+    BotActions
   },
   setup() {
     const { t } = useI18n()
@@ -29,7 +33,15 @@ export default defineComponent({
     const round = navigationState.round
     const colorCardDeck = navigationState.colorCardDeck
     const taskCardDeck = navigationState.taskCardDeck
-    return { t, round, colorCardDeck, taskCardDeck }
+
+    // draw color and task card
+    const colorCard = colorCardDeck.draw()
+    if (taskCardDeck.isPileEmpty()) {
+      taskCardDeck.reshuffleExceptHighestValueTaskQueue()      
+    }
+    const taskCard = taskCardDeck.draw()
+
+    return { t, round, colorCardDeck, taskCardDeck, colorCard, taskCard }
   },
   computed: {
     backButtonRouteTo() : string {
@@ -49,6 +61,14 @@ export default defineComponent({
   },
   methods: {
     next() : void {
+      this.taskCardDeck.putToUsed(this.taskCard)
+
+      // reshuffle decks if no color card left
+      if (this.colorCardDeck.isPileEmpty()) {
+        this.colorCardDeck.reshuffle()
+        this.taskCardDeck.reshuffleExceptHighestValueTaskQueue()
+      }
+
       const round = { round: this.round + 1,
         colorCardDeck: this.colorCardDeck.toPersistence(),
         taskCardDeck: this.taskCardDeck.toPersistence() }

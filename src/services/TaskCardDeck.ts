@@ -45,7 +45,7 @@ export default class TaskCardDeck {
   public draw() : TaskCard {
     const nextCard = this._pile.shift()
     if (!nextCard) {
-      throw new Error('Color card draw pile is empty.')
+      throw new Error('Task card draw pile is empty.')
     }
     return nextCard
   }
@@ -67,6 +67,8 @@ export default class TaskCardDeck {
    */
   public putToTaskQueue(card : TaskCard) {
     this._taskQueue.push(card)
+    // sort descendant by card order value
+    this._taskQueue.sort((cardA, cardB) => cardB.order - cardA.order)
   }
 
   /**

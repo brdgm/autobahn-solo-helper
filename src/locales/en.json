@@ -63,8 +63,7 @@
   },
   "botGainBonus": {
     "title": "Autobot Gain Bonus",
-    "discard": "<b>Discard:</b> Autobot discards an action card from the display. Once selected, slide all remaining cards to the right and draw a new card to place in the leftmost slot.",
-    "discardPrio": "Discarding a card: <b>Autobot’s Priority</b>",
+    "discard": "<b>Discard:</b> Autobot discards an action card from the display. Once selected, slide all remaining cards to the right and draw a new card to place in the leftmost slot. Priority for discarding a card:",
     "discardPrioItem1": "The leftmost card of the current color.",
     "discardPrioItem2": "The rightmost card of the color which appears most in the display.",
     "develop": "<b>Develop:</b> Move Autobot’s Marker 1 or 2 steps forward on the Development Track.",

@@ -20,7 +20,6 @@
                 <td><AppIcon type="bonus-action" name="discard"/></td>
                 <td>
                   <span v-html="t('botGainBonus.discard')"></span><br/>
-                  <span v-html="t('botGainBonus.discardPrio')"></span><br/>
                   <ol>
                     <li v-html="t('botGainBonus.discardPrioItem1')"></li>
                     <li v-html="t('botGainBonus.discardPrioItem2')"></li>

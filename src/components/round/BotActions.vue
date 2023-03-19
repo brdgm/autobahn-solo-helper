@@ -15,7 +15,7 @@
 
   <template v-if="taskCard.bonusAction">
     <div class="bonus-action">
-      <AppIcon type="bonus-action" :name="taskCard.bonusAction"/>
+      <a data-bs-toggle="modal" href="#botGainBonusModal"><AppIcon type="bonus-action" :name="taskCard.bonusAction"/></a>
     </div>
   </template>
 
@@ -84,6 +84,9 @@ export default defineComponent({
 .bonus-action {
   margin-top: 20px;
   margin-bottom: 10px;
+  a {
+    cursor: help;
+  }
   img {
     width: 50px;
     filter: drop-shadow(2px 2px 4px #333);

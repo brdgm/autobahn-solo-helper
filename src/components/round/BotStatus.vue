@@ -37,7 +37,15 @@
       <AppIcon v-for="taskCard of taskCardDeck.used" :key="taskCard.id"
         type="action" :name="taskCard.action" class="action-icon"/>
     </template>
+
+    <div class="mt-1">
+      <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#botGainBonusModal">
+        {{t('botStatus.gainBonus')}}
+      </button>
+    </div>
   </div>
+
+  <BotGainBonusModal/>
 </template>
 
 <script lang="ts">
@@ -47,12 +55,14 @@ import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n';
 import AppIcon from '../structure/AppIcon.vue';
 import AutobahnColorCard from '../structure/AutobahnColorCard.vue';
+import BotGainBonusModal from './BotGainBonusModal.vue';
 
 export default defineComponent({
   name: 'BotStatus',  
   components: {
     AutobahnColorCard,
-    AppIcon
+    AppIcon,
+    BotGainBonusModal
   },
   setup() {
     const { t } = useI18n()
@@ -96,5 +106,11 @@ export default defineComponent({
 .none {
   margin-bottom: 10px;
   font-size: small;
+}
+button img {
+  width: 30px;
+}
+.bonus-action-info {
+
 }
 </style>

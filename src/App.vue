@@ -116,5 +116,9 @@ export default defineComponent({
   h4 { font-size: calc(v-bind(baseFontSize) * $h4-font-size); }
   h5 { font-size: calc(v-bind(baseFontSize) * $h5-font-size); }
   h6 { font-size: calc(v-bind(baseFontSize) * $h6-font-size); }
+
+  .nav-tabs {
+    --bs-nav-tabs-link-active-bg: #f8f8f8;
+  }
 }
 </style>

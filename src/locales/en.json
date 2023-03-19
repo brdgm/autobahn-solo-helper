@@ -58,7 +58,28 @@
     "taskQueue": "Task Queue",
     "taskPile": "Task Pile",
     "usedColors": "Used Colors",
-    "usedTasks": "Used Tasks"
+    "usedTasks": "Used Tasks",
+    "gainBonus": "Gain Bonus"
+  },
+  "botGainBonus": {
+    "title": "Autobot Gain Bonus",
+    "discard": "<b>Discard:</b> Autobot discards an action card from the display. Once selected, slide all remaining cards to the right and draw a new card to place in the leftmost slot.",
+    "discardPrio": "Discarding a card: <b>Autobot’s Priority</b>",
+    "discardPrioItem1": "The leftmost card of the current color.",
+    "discardPrioItem2": "The rightmost card of the color which appears most in the display.",
+    "develop": "<b>Develop:</b> Move Autobot’s Marker 1 or 2 steps forward on the Development Track.",
+    "advancedCard": "<b>Take Advanced Task Card:</b> Add an advanced card to the task card deck.",
+    "takeAdvancedCard": "Take Advanced Card",
+    "promote": "<b>Promote:</b> Promote 1 of Autobot’s Employees as explained in <a href='#bonus-promotions' data-bs-toggle='tab'>Autobot’s promotions</a>.",
+    "colorCard": "<b>Take Color Card:</b> Take the <i>leftmost</i> card from the display. This will give Autobot an extra color card.",
+    "takeColorCard": "Take Color Card",
+    "promoteServiceTrade": "<b>Promote:</b> Promotions gained in this way should be taken on the Department shown if possible. If a promotion in the department shown is not possible, follow the normal priority rules in <a href='#bonus-promotions' data-bs-toggle='tab'>Autobot’s promotions</a>.",
+    "buildServiceStation": "<b>Build a Service Station:</b> Immediately perform the <a href='#buildServiceStationModal' data-bs-toggle='modal'>Build a Service Station</a> action.",
+    "buildRoadSection": "<b>Build a road section:</b> Immediately perform the <a href='#buildRoadModal' data-bs-toggle='modal'>Build a road section</a> action.",
+    "upgradeLink": "<b>Upgrade a link:</b> Immediately perform the <a href='#upgradeLinkModal' data-bs-toggle='modal'>Upgrade a link</a> action.",
+    "placeEmployee": "<b>Place an Employee:</b> Autobot places an Employee in the Office that matches the current color.",
+    "promotionInfo1": "Autobot’s promotions are limited depending on which era it is. During the first era, Autobot’s Employees may only be promoted as high as the 1st floor. During the second era, they may only be promoted as high as the 2nd floor. In the third era, Autobot’s Employees may access any floor. This limitation rule also applies to Autobot’s Employees when they are promoted during the end of era steps.",
+    "promotionInfo2": "Unless the bonus shows a particular Department, when Autobot gains a promotion, it will promote whichever Employee can reach the highest floor in any Department. If two or more Employees can reach equally high floors, the Employee in the leftmost Department is promoted."
   },
   "soloBoard": {
     "easy": "Easy Solo Board",

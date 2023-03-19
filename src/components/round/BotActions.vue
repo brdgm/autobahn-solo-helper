@@ -5,7 +5,7 @@
       <div class="action">
         <AppIcon type="action" :name="taskCard.action"/>
       </div>
-      <div class="additional-action" v-if="!colorCard.additionalBuildAction">
+      <div class="additional-action" v-if="colorCard.additionalBuildAction">
         <div class="and-or">and/or</div>
         <AppIcon type="action" name="build-road"/>
       </div>

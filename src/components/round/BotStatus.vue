@@ -1,30 +1,53 @@
 <template>
   <div class="sidebar">
-    <h5>Autobot Status</h5>
-    <h6>Task Queue</h6>
-    <AppIcon v-for="taskCard of taskCardDeck.queue" :key="taskCard.id"
-        type="action" :name="taskCard.action" class="action-icon"/>
-    <h6>Used Colors</h6>
-    <AutobahnColorCard v-for="(colorCard, index) of colorCardDeck.used" :key="index"
+    <h5 v-html="t('botStatus.title')"></h5>
+
+    <h6 v-html="t('botStatus.taskQueue')"></h6>
+    <template v-if="taskCardDeck.queue.length == 0">
+      <div class="none text-muted" v-html="t('turnBot.empty')"></div>
+    </template>
+    <template v-else>
+      <AppIcon v-for="taskCard of taskCardDeck.queue" :key="taskCard.id"
+          type="action" :name="taskCard.action" class="action-icon"/>
+    </template>
+
+    <h6 v-html="t('botStatus.usedColors')"></h6>
+    <template v-if="colorCardDeck.used.length == 0">
+      <div class="none text-muted" v-html="t('turnBot.none')"></div>
+    </template>
+    <template v-else>
+      <AutobahnColorCard v-for="(colorCard, index) of colorCardDeck.used" :key="index"
         :color-card="colorCard" class="color-card"/>
-    <h6>Used Actions</h6>
-    <AppIcon v-for="taskCard of taskCardDeck.used" :key="taskCard.id"
+    </template>
+
+    <h6 v-html="t('botStatus.usedTasks')"></h6>
+    <template v-if="taskCardDeck.used.length == 0">
+      <div class="none text-muted" v-html="t('turnBot.none')"></div>
+    </template>
+    <template v-else>
+      <AppIcon v-for="taskCard of taskCardDeck.used" :key="taskCard.id"
         type="action" :name="taskCard.action" class="action-icon"/>
+    </template>
   </div>
 </template>
 
 <script lang="ts">
 import ColorCardDeck from '@/services/ColorCardDeck';
 import TaskCardDeck from '@/services/TaskCardDeck';
-import { defineComponent, PropType } from 'vue'
+import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n';
 import AppIcon from '../structure/AppIcon.vue';
 import AutobahnColorCard from '../structure/AutobahnColorCard.vue';
 
 export default defineComponent({
-  name: 'BotStatus',
+  name: 'BotStatus',  
   components: {
     AutobahnColorCard,
     AppIcon
+  },
+  setup() {
+    const { t } = useI18n()
+    return { t }
   },
   props: {
     colorCardDeck: {
@@ -42,7 +65,12 @@ export default defineComponent({
 <style lang="scss" scoped>
 .sidebar {
   float: right;
-  width: 170px;
+  width: 200px;
+  margin-right: -12px;
+  padding: 15px;
+  background-color: rgb(200, 221, 249);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 .color-card {
   display: inline-block;
@@ -55,5 +83,9 @@ export default defineComponent({
   margin-right: 5px;
   margin-bottom: 5px;
   filter: drop-shadow(1px 1px 2px #555);
+}
+.none {
+  margin-bottom: 10px;
+  font-size: small;
 }
 </style>

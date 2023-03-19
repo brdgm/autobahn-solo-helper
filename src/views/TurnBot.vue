@@ -3,14 +3,22 @@
 
   <BotStatus :color-card-deck="colorCardDeck" :task-card-deck="taskCardDeck" :key="taskCard.id"/>
 
-  <BotActions :color-card="colorCard" :task-card="taskCard"/>
+  <template v-if="noViableActionAllTaskCards">
+    <p class="mt-4" v-html="t('turnBot.turnSkipInfo')"></p>
+    <button @click="skipTurn" class="btn btn-primary btn-lg mt-4 ms-3">
+      {{t('turnBot.turnSkip')}}
+    </button>
+  </template>
+  <template v-else>
+    <BotActions :color-card="colorCard" :task-card="taskCard"/>
 
-  <button @click="next" class="btn btn-success btn-lg mt-4">
-    {{t('turnBot.turnCompleted')}}
-  </button>
-  <button @click="actionNotViable" class="btn btn-danger btn-lg mt-4 ms-3">
-    {{t('turnBot.actionNotViable')}}
-  </button>
+    <button @click="turnCompleted" class="btn btn-success btn-lg mt-4">
+      {{t('turnBot.turnCompleted')}}
+    </button>
+    <button @click="actionNotViable" class="btn btn-danger btn-lg mt-4 ms-3">
+      {{t('turnBot.actionNotViable')}}
+    </button>
+  </template>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" :endGameButtonType="endGameButtonType"/>
 </template>
@@ -47,6 +55,12 @@ export default defineComponent({
 
     return { t, round, colorCardDeck, taskCardDeck, colorCard, taskCard }
   },
+  data() {
+    return {
+      interactionCount: 0,
+      noViableActionAllTaskCards: false
+    }
+  },
   computed: {
     backButtonRouteTo() : string {
       if (this.round == 1) {
@@ -65,10 +79,16 @@ export default defineComponent({
   },
   methods: {
     actionNotViable() : void {
-      this.taskCardDeck.putToQueue(this.taskCard)
-      this.taskCard = this.taskCardDeck.draw()
+      if (this.taskCardDeck.isPileEmpty() && this.taskCardDeck.isUsedEmpty()) {
+        this.noViableActionAllTaskCards = true
+      }
+      else {
+        this.taskCardDeck.putToQueue(this.taskCard)
+        this.taskCard = this.taskCardDeck.drawFromPile()
+      }
+      this.interactionCount++
     },
-    next() : void {
+    turnCompleted() : void {
       this.colorCardDeck.putToUsed(this.colorCard)
       this.taskCardDeck.putToUsed(this.taskCard)
 
@@ -78,6 +98,16 @@ export default defineComponent({
         this.taskCardDeck.reshuffleExceptHighestValueQueueCard()
       }
 
+      this.nextTurn();
+    },
+    skipTurn() : void {
+      this.colorCardDeck.reshuffle()
+      this.taskCardDeck.putToUsed(this.taskCard)
+      this.taskCardDeck.reshuffle()
+      this.nextTurn();
+    },
+    nextTurn() : void {
+      this.interactionCount++
       const round = { round: this.round + 1,
         colorCardDeck: this.colorCardDeck.toPersistence(),
         taskCardDeck: this.taskCardDeck.toPersistence() }

@@ -44,10 +44,20 @@
   "turnBot": {
     "title": "Autobot's turn",
     "turnCompleted": "Turn Completed",
-    "actionNotViable": "Not Viable"
+    "actionNotViable": "Not Viable",
+    "turnSkip": "Skip Turn",
+    "turnSkipInfo": "Autobot has not viable action in his whole task card deck and will skip the turn.",
+    "empty": "empty",
+    "none": "none"
   },
   "turnPlayer": {
     "title": "Your turn"
+  },
+  "botStatus": {
+    "title": "Autobot Status",
+    "taskQueue": "Task Queue",
+    "usedColors": "Used Colors",
+    "usedTasks": "Used Tasks"
   },
   "soloBoard": {
     "easy": "Easy Solo Board",

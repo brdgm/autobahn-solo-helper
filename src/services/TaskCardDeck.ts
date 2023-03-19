@@ -38,18 +38,48 @@ export default class TaskCardDeck {
     return this._pile.length == 0
   }
 
+  public isQueueEmpty() : boolean {
+    return this._queue.length == 0
+  }
+
+  public isUsedEmpty() : boolean {
+    return this._used.length == 0
+  }
+
+  /**
+   * Draw next card either from queue (if present) or from pile.
+   */
+  public draw() : TaskCard {
+    if (!this.isQueueEmpty()) {
+      return this.drawFromQueue()
+    }
+    return this.drawFromPile()
+  }
+
   /**
    * Draws a card from the draw pile.
    * If the pile is empty it is reshuffled before drawing (keeping highest value queue card).
    * @returns Next card
    */
-  public draw() : TaskCard {
+  public drawFromPile() : TaskCard {
     if (this.isPileEmpty()) {
       this.reshuffleExceptHighestValueQueueCard()      
     }
     const nextCard = this._pile.shift()
     if (!nextCard) {
       throw new Error('Task card draw pile is empty.')
+    }
+    return nextCard
+  }
+
+  /**
+   * Draws a card from the queue.
+   * @returns Next card
+   */
+  public drawFromQueue() : TaskCard {
+    const nextCard = this._queue.shift()
+    if (!nextCard) {
+      throw new Error('Task card queue is empty.')
     }
     return nextCard
   }

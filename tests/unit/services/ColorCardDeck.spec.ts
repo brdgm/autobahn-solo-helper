@@ -9,6 +9,9 @@ describe('services/ColorCardDeck', () => {
     expect(deck.pile.length, 'pile size').to.eq(6)
     expect(deck.used.length, 'used size').to.eq(0)
 
+    expect(deck.isPileEmpty(), 'pile empty').to.false
+    expect(deck.isUsedEmpty(), 'used empty').to.true
+
     const persistence = deck.toPersistence()
     expect(persistence.pile.length, 'pile size').to.eq(6)
     expect(persistence.used.length, 'used size').to.eq(0)

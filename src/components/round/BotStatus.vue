@@ -3,7 +3,7 @@
     <h5 v-html="t('botStatus.title')"></h5>
 
     <h6 v-html="t('botStatus.taskQueue')"></h6>
-    <template v-if="taskCardDeck.queue.length == 0">
+    <template v-if="taskCardDeck.isQueueEmpty()">
       <div class="none text-muted" v-html="t('turnBot.empty')"></div>
     </template>
     <template v-else>
@@ -11,8 +11,17 @@
           type="action" :name="taskCard.action" class="action-icon"/>
     </template>
 
+    <h6 v-html="t('botStatus.taskPile')"></h6>
+    <template v-if="taskCardDeck.isPileEmpty()">
+      <div class="none text-muted" v-html="t('turnBot.empty')"></div>
+    </template>
+    <template v-else>
+      <AppIcon v-for="index of taskCardDeck.pile.length" :key="index"
+          type="action" name="unknown" class="action-icon"/>
+    </template>
+
     <h6 v-html="t('botStatus.usedColors')"></h6>
-    <template v-if="colorCardDeck.used.length == 0">
+    <template v-if="colorCardDeck.isUsedEmpty()">
       <div class="none text-muted" v-html="t('turnBot.none')"></div>
     </template>
     <template v-else>
@@ -21,7 +30,7 @@
     </template>
 
     <h6 v-html="t('botStatus.usedTasks')"></h6>
-    <template v-if="taskCardDeck.used.length == 0">
+    <template v-if="taskCardDeck.isUsedEmpty()">
       <div class="none text-muted" v-html="t('turnBot.none')"></div>
     </template>
     <template v-else>
@@ -79,9 +88,9 @@ export default defineComponent({
   height: 35px;
 }
 .action-icon {
-  width: 50px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  width: 38px;
+  margin-right: 4px;
+  margin-bottom: 6px;
   filter: drop-shadow(1px 1px 2px #555);
 }
 .none {

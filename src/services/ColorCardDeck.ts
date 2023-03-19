@@ -25,6 +25,10 @@ export default class ColorCardDeck {
     return this._pile.length == 0
   }
 
+  public isUsedEmpty() : boolean {
+    return this._used.length == 0
+  }
+
   /**
    * Draws a card from the draw pile.
    * @returns Next card

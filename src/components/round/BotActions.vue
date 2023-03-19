@@ -18,7 +18,6 @@
       <AppIcon type="bonus-action" :name="taskCard.bonusAction"/>
     </div>
   </template>
-  
 
 </template>
 
@@ -86,7 +85,7 @@ export default defineComponent({
   margin-top: 20px;
   margin-bottom: 10px;
   img {
-    width: 70px;
+    width: 50px;
     filter: drop-shadow(2px 2px 4px #333);
   }
 }

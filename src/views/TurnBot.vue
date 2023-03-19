@@ -5,7 +5,7 @@
 
   <template v-if="noViableActionAllTaskCards">
     <p class="mt-4" v-html="t('turnBot.turnSkipInfo')"></p>
-    <button @click="skipTurn" class="btn btn-primary btn-lg mt-4 ms-3">
+    <button @click="skipTurn" class="btn btn-primary btn-lg mt-4">
       {{t('turnBot.turnSkip')}}
     </button>
   </template>

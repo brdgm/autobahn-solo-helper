@@ -29,7 +29,7 @@
   "setupAutobot": {
     "title": "Prepare Autobot",
     "twoPlayers": "Set up the game for 2 players.",
-    "pickPlayerColor": "Pick a player colour for Autobot. Autobot uses the 25 Employees, 8 Service Stations, 1 Development token of that player colour. Instead of taking a Truck for that colour, Autobot takes 1 Truck and 1 Development token in each of the other, unused colours.",
+    "pickPlayerColor": "Pick a player color for Autobot. Autobot uses the 25 Employees, 8 Service Stations, 1 Development token of that player color. Instead of taking a Truck for that color, Autobot takes 1 Truck and 1 Development token in each of the other, unused colors.",
     "setupAutobotComponents": "Set up Autobot’s components and play area as follows:",
     "placeSoloBoard": "Place the <b>{soloBoard}</b> in Autobot’s play area.",
     "chooseDeliveryBoard": "Randomly choose a Delivery board for Autobot and place it next to the Solo board.",
@@ -46,7 +46,7 @@
     "turnCompleted": "Turn Completed",
     "actionNotViable": "Not Viable",
     "turnSkip": "Skip Turn",
-    "turnSkipInfo": "Autobot has not viable action in his whole task card deck and will skip the turn.",
+    "turnSkipInfo": "Autobot has no viable action in his whole task card deck and will skip this turn.",
     "empty": "empty",
     "none": "none"
   },

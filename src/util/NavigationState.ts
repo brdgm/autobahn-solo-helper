@@ -16,7 +16,13 @@ export default class NavigationState {
     this.difficultyLevel = setup.difficultyLevel
     this.round = parseInt(route.params['round'] as string)
 
-    const roundData = state.rounds.find(item => item.round == this.round)
+    // in player's turn load bot data from next round, which is the result of the current round
+    let loadRound = this.round;
+    if (route.name == "TurnPlayer") {
+      loadRound = loadRound + 1
+    }
+
+    const roundData = state.rounds.find(item => item.round == loadRound)
     if (roundData) {
       this.colorCardDeck = ColorCardDeck.fromPersistence(roundData.colorCardDeck)
       this.taskCardDeck = TaskCardDeck.fromPersistence(roundData.taskCardDeck)

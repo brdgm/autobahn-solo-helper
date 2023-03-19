@@ -9,53 +9,53 @@ const cards = [
     id: '1A',
     order: 1,
     level: TaskCardLevel.A,
-    actions: [Action.BUILD_ROAD, Action.UPGRADE_LINK]
+    action: Action.BUILD_ROAD_UPGRADE_LINK
   },
   {
     id: '2A',
     order: 2,
     level: TaskCardLevel.A,
-    actions: [Action.BUILD_ROAD, Action.UPGRADE_LINK],
+    action: Action.BUILD_ROAD_UPGRADE_LINK,
     bonusAction: BonusAction.DISCARD
   },
   {
     id: '3A',
     order: 3,
     level: TaskCardLevel.A,
-    actions: [Action.BUILD_ROAD, Action.UPGRADE_LINK],
+    action: Action.BUILD_ROAD_UPGRADE_LINK,
     bonusAction: BonusAction.DEVELOP_1
   },
   {
     id: '4B',
     order: 4,
     level: TaskCardLevel.B,
-    actions: [Action.BUILD_ROAD, Action.UPGRADE_LINK],
+    action: Action.BUILD_ROAD_UPGRADE_LINK,
     bonusAction: BonusAction.DEVELOP_1
   },
   {
     id: '5A',
     order: 5,
     level: TaskCardLevel.A,
-    actions: [Action.LOAD_TRUCK]
+    action: Action.LOAD_TRUCK
   },
   {
     id: '6B',
     order: 6,
     level: TaskCardLevel.B,
-    actions: [Action.LOAD_TRUCK],
+    action: Action.LOAD_TRUCK,
     bonusAction: BonusAction.DEVELOP_1
   },
   {
     id: '7A',
     order: 7,
     level: TaskCardLevel.A,
-    actions: [Action.BUILD_SERVICE_STATION]
+    action: Action.BUILD_SERVICE_STATION
   },
   {
     id: '8B',
     order: 8,
     level: TaskCardLevel.B,
-    actions: [Action.BUILD_SERVICE_STATION],
+    action: Action.BUILD_SERVICE_STATION,
     bonusAction: BonusAction.DEVELOP_1
   },
 ]

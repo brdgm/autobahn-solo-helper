@@ -1,29 +1,36 @@
 <template>
   <h1>{{t('turnBot.title')}}</h1>
 
+  <BotStatus :color-card-deck="colorCardDeck" :task-card-deck="taskCardDeck" :key="taskCard.id"/>
+
   <BotActions :color-card="colorCard" :task-card="taskCard"/>
 
-  <button @click="next" class="btn btn-primary btn-lg mt-4">
-    {{t('action.next')}}
+  <button @click="next" class="btn btn-success btn-lg mt-4">
+    {{t('turnBot.turnCompleted')}}
+  </button>
+  <button @click="actionNotViable" class="btn btn-danger btn-lg mt-4 ms-3">
+    {{t('turnBot.actionNotViable')}}
   </button>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" :endGameButtonType="endGameButtonType"/>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
 import { useRoute } from 'vue-router'
 import BotActions from '@/components/round/BotActions.vue'
+import BotStatus from '@/components/round/BotStatus.vue'
 
 export default defineComponent({
   name: 'TurnBot',
   components: {
     FooterButtons,
-    BotActions
+    BotActions,
+    BotStatus
   },
   setup() {
     const { t } = useI18n()
@@ -36,10 +43,7 @@ export default defineComponent({
 
     // draw color and task card
     const colorCard = colorCardDeck.draw()
-    if (taskCardDeck.isPileEmpty()) {
-      taskCardDeck.reshuffleExceptHighestValueTaskQueue()      
-    }
-    const taskCard = taskCardDeck.draw()
+    const taskCard = ref(taskCardDeck.draw())
 
     return { t, round, colorCardDeck, taskCardDeck, colorCard, taskCard }
   },
@@ -60,13 +64,18 @@ export default defineComponent({
     }
   },
   methods: {
+    actionNotViable() : void {
+      this.taskCardDeck.putToQueue(this.taskCard)
+      this.taskCard = this.taskCardDeck.draw()
+    },
     next() : void {
+      this.colorCardDeck.putToUsed(this.colorCard)
       this.taskCardDeck.putToUsed(this.taskCard)
 
       // reshuffle decks if no color card left
       if (this.colorCardDeck.isPileEmpty()) {
         this.colorCardDeck.reshuffle()
-        this.taskCardDeck.reshuffleExceptHighestValueTaskQueue()
+        this.taskCardDeck.reshuffleExceptHighestValueQueueCard()
       }
 
       const round = { round: this.round + 1,

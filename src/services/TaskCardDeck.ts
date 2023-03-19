@@ -7,13 +7,13 @@ import TaskCards from "./TaskCards"
 export default class TaskCardDeck {
 
   private _pile : TaskCard[]
-  private _taskQueue : TaskCard[]
+  private _queue : TaskCard[]
   private _used : TaskCard[]
   private _advanced : TaskCard[]
 
-  public constructor(pile : TaskCard[], taskQueue : TaskCard[], used : TaskCard[], advanced : TaskCard[]) {
+  public constructor(pile : TaskCard[], queue : TaskCard[], used : TaskCard[], advanced : TaskCard[]) {
     this._pile = pile
-    this._taskQueue = taskQueue
+    this._queue = queue
     this._used = used
     this._advanced = advanced
   }
@@ -22,8 +22,8 @@ export default class TaskCardDeck {
     return this._pile
   }
 
-  public get taskQueue() : readonly TaskCard[] {
-    return this._taskQueue
+  public get queue() : readonly TaskCard[] {
+    return this._queue
   }
 
   public get used() : readonly TaskCard[] {
@@ -40,9 +40,13 @@ export default class TaskCardDeck {
 
   /**
    * Draws a card from the draw pile.
+   * If the pile is empty it is reshuffled before drawing (keeping highest value queue card).
    * @returns Next card
    */
   public draw() : TaskCard {
+    if (this.isPileEmpty()) {
+      this.reshuffleExceptHighestValueQueueCard()      
+    }
     const nextCard = this._pile.shift()
     if (!nextCard) {
       throw new Error('Task card draw pile is empty.')
@@ -56,7 +60,7 @@ export default class TaskCardDeck {
    * @param card Card
    */
   public putToUsed(card : TaskCard) {
-    this._taskQueue = this.taskQueue
+    this._queue = this._queue
         .filter(item => item.id != card.id)
     this._used.push(card)
   }
@@ -65,10 +69,10 @@ export default class TaskCardDeck {
    * Put a card to the task queue.
    * @param card Card
    */
-  public putToTaskQueue(card : TaskCard) {
-    this._taskQueue.push(card)
+  public putToQueue(card : TaskCard) {
+    this._queue.push(card)
     // sort descendant by card order value
-    this._taskQueue.sort((cardA, cardB) => cardB.order - cardA.order)
+    this._queue.sort((cardA, cardB) => cardB.order - cardA.order)
   }
 
   /**
@@ -77,23 +81,23 @@ export default class TaskCardDeck {
   public reshuffle() : void {
     this._pile.push(...this._used)
     this._used = []
-    this._pile.push(...this._taskQueue)
-    this._taskQueue = []
+    this._pile.push(...this._queue)
+    this._queue = []
     this._pile = _.shuffle(this._pile)
   }
 
   /**
    * Reshuffles all cards in a new draw pile except the highest value card in the task queue (if any present).
    */
-  public reshuffleExceptHighestValueTaskQueue() : void {
-    const highestValueCard = this._taskQueue.reduce(
+  public reshuffleExceptHighestValueQueueCard() : void {
+    const highestValueCard = this._queue.reduce(
       (highestCard, card) => (highestCard == undefined || card.order > highestCard.order) ? card : highestCard,
-      this._taskQueue[0]
+      this._queue[0]
     )
     this.reshuffle()
     if (highestValueCard) {
       this._pile = this._pile.filter(item => item.id != highestValueCard.id)
-      this._taskQueue.push(highestValueCard)
+      this._queue.push(highestValueCard)
     }
   }
 
@@ -115,7 +119,7 @@ export default class TaskCardDeck {
   public toPersistence() : TaskCardDeckPersistence {
     return {
       pile: this._pile.map(card => card.id),
-      taskQueue: this._taskQueue.map(card => card.id),
+      queue: this._queue.map(card => card.id),
       used: this._used.map(card => card.id),
       advanced: this._advanced.map(card => card.id)
     }
@@ -136,7 +140,7 @@ export default class TaskCardDeck {
   public static fromPersistence(persistence : TaskCardDeckPersistence) : TaskCardDeck {
     return new TaskCardDeck(
       persistence.pile.map(TaskCards.get),
-      persistence.taskQueue.map(TaskCards.get),
+      persistence.queue.map(TaskCards.get),
       persistence.used.map(TaskCards.get),
       persistence.advanced.map(TaskCards.get)
     )

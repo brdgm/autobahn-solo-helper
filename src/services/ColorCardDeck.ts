@@ -26,7 +26,7 @@ export default class ColorCardDeck {
   }
 
   /**
-   * Draws a card from the draw pile and adds it to the used pile.
+   * Draws a card from the draw pile.
    * @returns Next card
    */
   public draw() : ColorCard {
@@ -34,8 +34,15 @@ export default class ColorCardDeck {
     if (!nextCard) {
       throw new Error('Color card draw pile is empty.')
     }
-    this._used.push(nextCard)
     return nextCard
+  }
+
+  /**
+   * Put card to used pile.
+   * @param card Card
+   */
+  public putToUsed(card : ColorCard) {
+    this._used.push(card)
   }
 
   /**

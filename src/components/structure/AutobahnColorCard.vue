@@ -32,8 +32,8 @@ export default defineComponent({
 .card {
   display: flex;
   flex-direction: row;
-  width: 120px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   border: 3px solid black;
   border-radius: 8px;
 }

@@ -21,11 +21,13 @@ describe('services/ColorCardDeck', () => {
     })
 
     const card1 = deck.draw()
+    deck.putToUsed(card1)
     expect(card1.colors[0]).to.eq(AutobahnColor.BLACK)
     expect(deck.pile.includes(card1)).to.false
     expect(deck.used.includes(card1)).to.true
 
     const card2 = deck.draw()
+    deck.putToUsed(card2)
     expect(card2.colors[0]).to.eq(AutobahnColor.ORANGE)
     expect(deck.pile.includes(card2)).to.false
     expect(deck.used.includes(card2)).to.true

@@ -6,6 +6,6 @@ export default interface TaskCard {
   id: string
   order: number
   level: TaskCardLevel
-  actions: Action[]
+  action: Action
   bonusAction?: BonusAction
 }

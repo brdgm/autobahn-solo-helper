@@ -1,6 +1,8 @@
 <template>
   <h1>{{t('turnPlayer.title')}}</h1>
 
+  <BotStatus :colorCardDeck="colorCardDeck" :taskCardDeck="taskCardDeck" />
+
   <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
   </router-link>
@@ -15,11 +17,13 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useRoute } from 'vue-router'
 import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
+import BotStatus from '@/components/round/BotStatus.vue'
 
 export default defineComponent({
   name: 'TurnPlayer',
   components: {
     FooterButtons,
+    BotStatus
   },
   setup() {
     const { t } = useI18n()
@@ -27,7 +31,9 @@ export default defineComponent({
     const store = useStore()
     const navigationState = new NavigationState(route, store.state)
     const round = navigationState.round
-    return { t, round }
+    const colorCardDeck = navigationState.colorCardDeck
+    const taskCardDeck = navigationState.taskCardDeck
+    return { t, round, colorCardDeck, taskCardDeck }
   },
   computed: {
     backButtonRouteTo() : string {

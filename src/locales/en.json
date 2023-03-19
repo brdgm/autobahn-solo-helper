@@ -42,7 +42,9 @@
     "unlimitedBudget": "Autobot has an unlimited budget. You do not need to track Autobot’s income or expenditure."
   },
   "turnBot": {
-    "title": "Autobot's turn"
+    "title": "Autobot's turn",
+    "turnCompleted": "Turn Completed",
+    "actionNotViable": "Not Viable"
   },
   "turnPlayer": {
     "title": "Your turn"

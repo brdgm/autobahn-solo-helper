@@ -24,7 +24,7 @@ export interface Round {
 }
 export interface TaskCardDeckPersistence {
   pile: string[]
-  taskQueue: string[]
+  queue: string[]
   used: string[]
   advanced: string[]
 }

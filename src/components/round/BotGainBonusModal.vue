@@ -3,17 +3,17 @@
     <template #body>
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="bonus-actions" data-bs-toggle="tab" data-bs-target="#bonus-tab-actions" type="button" role="tab" aria-controls="bonus-tab-actions" aria-selected="false">Autobot's bonus actions</button>
+          <button class="nav-link active" id="tablink-bonus-actions" data-bs-toggle="tab" data-bs-target="#tab-bonus-actions" type="button" role="tab" aria-controls="tab-bonus-actions" aria-selected="false">{{t('botGainBonus.bonusActions')}}</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="bonus-board" data-bs-toggle="tab" data-bs-target="#bonus-tab-board" type="button" role="tab" aria-controls="bonus-tab-board" aria-selected="true">Solo Board Bonuses</button>
+          <button class="nav-link" id="tablink-bonus-board" data-bs-toggle="tab" data-bs-target="#tab-bonus-board" type="button" role="tab" aria-controls="tab-bonus-board" aria-selected="true">{{t('botGainBonus.boardBonuses')}}</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="bonus-promotions" data-bs-toggle="tab" data-bs-target="#bonus-tab-promotions" type="button" role="tab" aria-controls="bonus-tab-promotions" aria-selected="false">Autobot's promotions</button>
+          <button class="nav-link" id="tablink-bonus-promotions" data-bs-toggle="tab" data-bs-target="#tab-bonus-promotions" type="button" role="tab" aria-controls="tab-bonus-promotions" aria-selected="false">{{t('botGainBonus.autobotPromotions')}}</button>
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane show active" id="bonus-tab-actions" role="tabpanel" aria-labelledby="bonus-actions" tabindex="0">
+        <div class="tab-pane show active" id="tab-bonus-actions" role="tabpanel" aria-labelledby="tablink-bonus-actions" tabindex="0">
           <table class="table table-striped">
             <tbody>
               <tr>
@@ -55,7 +55,7 @@
             </tbody>
           </table>
         </div>
-        <div class="tab-pane" id="bonus-tab-board" role="tabpanel" aria-labelledby="bonus-board" tabindex="0">
+        <div class="tab-pane" id="tab-bonus-board" role="tabpanel" aria-labelledby="tablink-bonus-board" tabindex="0">
           <table class="table table-striped">
             <tbody>
               <tr>
@@ -85,7 +85,7 @@
             </tbody>
           </table>
         </div>
-        <div class="tab-pane" id="bonus-tab-promotions" role="tabpanel" aria-labelledby="bonus-promotions" tabindex="0">
+        <div class="tab-pane" id="tab-bonus-promotions" role="tabpanel" aria-labelledby="tablink-bonus-promotions" tabindex="0">
           <p v-html="t('botGainBonus.promotionInfo1')"></p>
           <p v-html="t('botGainBonus.promotionInfo2')"></p>
         </div>
@@ -98,8 +98,8 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n';
 import AppIcon from '../structure/AppIcon.vue';
+import enableTabLinksInContent from '@/util/enableTabLinksInContent';
 import ModalDialog from 'brdgm-commons/src/components/structure/ModalDialog.vue'
-import { Tab } from "bootstrap";
 
 export default defineComponent({
   name: 'BotGainBonusModal',  
@@ -112,37 +112,12 @@ export default defineComponent({
     return { t }
   },
   mounted() {
-    this.enableTabLinksInContent()
+    enableTabLinksInContent(this.$el as HTMLElement)
   },
-  methods: {
-    enableTabLinksInContent() : void {
-      const component = this.$el as HTMLElement
-      component.querySelectorAll('a[data-bs-toggle="tab"]').forEach(anchor => {
-        anchor.addEventListener('click', event => {
-          event.preventDefault();
-          const target = anchor.getAttribute('href')
-          if (target) {
-            const modalElement = component.querySelector(target)
-            if (modalElement) {
-              const tab = new Tab(modalElement)
-              tab.show()
-            }
-          }
-        })
-      })
-    }
-  }
 })
 </script>
 
 <style lang="scss" scoped>
-.tab-pane {
-  background-color: #f8f8f8;
-  border-left: 1px solid #dee2e6;
-  border-bottom: 1px solid #dee2e6;
-  border-right: 1px solid #dee2e6;
-  padding: 10px;
-}
 .table {
   img {
     object-fit: contain;

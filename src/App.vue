@@ -120,5 +120,12 @@ export default defineComponent({
   .nav-tabs {
     --bs-nav-tabs-link-active-bg: #f8f8f8;
   }
+  .tab-pane {
+    background-color: #f8f8f8;
+    border-left: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    padding: 10px;
+  }
 }
 </style>

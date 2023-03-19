@@ -3,11 +3,11 @@
   <div class="main-action">
     <div class="actions">
       <div class="action">
-        <AppIcon type="action" :name="taskCard.action"/>
+        <a data-bs-toggle="modal" :href="getActionInfoModalTarget(taskCard.action)"><AppIcon type="action" :name="taskCard.action"/></a>
       </div>
       <div class="additional-action" v-if="colorCard.additionalBuildAction">
         <div class="and-or">and/or</div>
-        <AppIcon type="action" name="build-road"/>
+        <a data-bs-toggle="modal" href="#buildRoadUpgradeLinkModal"><AppIcon type="action" name="build-road"/></a>
       </div>
     </div>
     <AutobahnColorCard :color-card="colorCard" class="card"/>
@@ -23,6 +23,7 @@
 
 <script lang="ts">
 import ColorCard from '@/services/ColorCard';
+import Action from '@/services/enum/Action';
 import TaskCard from '@/services/TaskCard';
 import { defineComponent, PropType } from 'vue'
 import AppIcon from '../structure/AppIcon.vue';
@@ -44,6 +45,22 @@ export default defineComponent({
       required: true
     },
   },
+  methods: {
+    getActionInfoModalTarget(action : Action) : string {
+      switch (action) {
+        case Action.BUILD_ROAD:
+        case Action.BUILD_ROAD_UPGRADE_LINK:
+        case Action.UPGRADE_LINK:
+          return '#buildRoadUpgradeLinkModal'
+        case Action.LOAD_TRUCK:
+          return '#loadTruckModal'
+        case Action.BUILD_SERVICE_STATION:
+          return '#buildServiceStationModal'
+        default:
+          return '#'
+      }
+    }
+  }
 })
 </script>
 
@@ -84,12 +101,12 @@ export default defineComponent({
 .bonus-action {
   margin-top: 20px;
   margin-bottom: 10px;
-  a {
-    cursor: help;
-  }
   img {
     width: 50px;
     filter: drop-shadow(2px 2px 4px #333);
   }
+}
+a[data-bs-toggle=modal] {
+  cursor: help;
 }
 </style>

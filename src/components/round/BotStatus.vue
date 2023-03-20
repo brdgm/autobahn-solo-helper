@@ -125,7 +125,4 @@ export default defineComponent({
 button img {
   width: 30px;
 }
-.bonus-action-info {
-
-}
 </style>

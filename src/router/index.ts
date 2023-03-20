@@ -26,12 +26,12 @@ const routes: Array<RouteRecordRaw> = [
     component: SetupAutobot
   },
   {
-    path: '/round/:round/bot',
+    path: '/turn/:turn/bot',
     name: 'TurnBot',
     component: TurnBot
   },
   {
-    path: '/round/:round/player',
+    path: '/turn/:turn/player',
     name: 'TurnPlayer',
     component: TurnPlayer
   },

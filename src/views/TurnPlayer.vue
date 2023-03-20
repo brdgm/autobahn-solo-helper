@@ -3,9 +3,9 @@
 
   <BotStatus :colorCardDeck="colorCardDeck" :taskCardDeck="taskCardDeck" />
 
-  <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
+  <button @click="nextTurn" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
-  </router-link>
+  </button>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="endGame"/>
 </template>
@@ -18,6 +18,7 @@ import { useRoute } from 'vue-router'
 import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
 import BotStatus from '@/components/round/BotStatus.vue'
+import Player from '@/services/enum/Player'
 
 export default defineComponent({
   name: 'TurnPlayer',
@@ -30,18 +31,30 @@ export default defineComponent({
     const route = useRoute()
     const store = useStore()
     const navigationState = new NavigationState(route, store.state)
-    const round = navigationState.round
+    const turn = navigationState.turn
     const colorCardDeck = navigationState.colorCardDeck
     const taskCardDeck = navigationState.taskCardDeck
-    return { t, round, colorCardDeck, taskCardDeck }
+    return { t, navigationState, turn, colorCardDeck, taskCardDeck }
   },
   computed: {
     backButtonRouteTo() : string {
-      return `/round/${this.round}/bot`
-    },
-    nextButtonRouteTo() : string {
-      return `/round/${this.round + 1}/bot`
-    },
+      return `/turn/${this.turn - 1}/bot`
+    }
   },
+  methods: {
+    nextTurn() : void {
+      const turn = {
+        turn: this.turn + 1,
+        round: this.navigationState.round + 1,
+        era: this.navigationState.era,
+        player: Player.BOT,
+        colorCardDeck: this.colorCardDeck.toPersistence(),
+        taskCardDeck: this.taskCardDeck.toPersistence()
+      }
+      this.$store.commit('turn', turn)
+      const nextButtonRouteTo = `/turn/${this.turn + 1}/bot`
+      this.$router.push(nextButtonRouteTo)
+    }
+  }
 })
 </script>

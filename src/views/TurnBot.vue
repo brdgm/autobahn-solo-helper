@@ -32,6 +32,7 @@ import { useStore } from '@/store'
 import { useRoute } from 'vue-router'
 import BotActions from '@/components/round/BotActions.vue'
 import BotStatus from '@/components/round/BotStatus.vue'
+import Player from '@/services/enum/Player'
 
 export default defineComponent({
   name: 'TurnBot',
@@ -45,7 +46,7 @@ export default defineComponent({
     const route = useRoute()
     const store = useStore()
     const navigationState = new NavigationState(route, store.state)
-    const round = navigationState.round
+    const turn = navigationState.turn
     const colorCardDeck = navigationState.colorCardDeck
     const taskCardDeck = navigationState.taskCardDeck
 
@@ -53,23 +54,22 @@ export default defineComponent({
     const colorCard = colorCardDeck.draw()
     const taskCard = ref(taskCardDeck.draw())
 
-    return { t, round, colorCardDeck, taskCardDeck, colorCard, taskCard }
+    return { t, navigationState, turn, colorCardDeck, taskCardDeck, colorCard, taskCard }
   },
   data() {
     return {
-      interactionCount: 0,
       noViableActionAllTaskCards: false
     }
   },
   computed: {
     backButtonRouteTo() : string {
-      if (this.round == 1) {
+      if (this.turn == 1) {
         return ''
       }
-      return `/round/${this.round - 1}/player`
+      return `/turn/${this.turn - 1}/player`
     },
     endGameButtonType() : string {
-      if (this.round === 1) {
+      if (this.turn === 1) {
         return 'abortGame'
       }
       else {
@@ -86,7 +86,6 @@ export default defineComponent({
         this.taskCardDeck.putToQueue(this.taskCard)
         this.taskCard = this.taskCardDeck.drawFromPile()
       }
-      this.interactionCount++
     },
     turnCompleted() : void {
       this.colorCardDeck.putToUsed(this.colorCard)
@@ -107,12 +106,16 @@ export default defineComponent({
       this.nextTurn();
     },
     nextTurn() : void {
-      this.interactionCount++
-      const round = { round: this.round + 1,
+      const turn = {
+        turn: this.turn + 1,
+        round: this.navigationState.round,
+        era: this.navigationState.era,
+        player: Player.PLAYER,
         colorCardDeck: this.colorCardDeck.toPersistence(),
-        taskCardDeck: this.taskCardDeck.toPersistence() }
-      this.$store.commit('round', round)
-      const nextButtonRouteTo = `/round/${this.round}/player`
+        taskCardDeck: this.taskCardDeck.toPersistence()
+      }
+      this.$store.commit('turn', turn)
+      const nextButtonRouteTo = `/turn/${this.turn + 1}/player`
       this.$router.push(nextButtonRouteTo)
     }
   }

@@ -34,6 +34,8 @@ import Expansion from '@/services/enum/Expansion'
 import ColorCardDeck from '@/services/ColorCardDeck'
 import TaskCardDeck from '@/services/TaskCardDeck'
 import router from '@/router'
+import Era from '@/services/enum/Era'
+import Player from '@/services/enum/Player'
 
 export default defineComponent({
   name: 'SetupAutobot',
@@ -65,9 +67,16 @@ export default defineComponent({
       store.commit('resetGame')
       const colorCardDeck = ColorCardDeck.new()
       const taskCardDeck = TaskCardDeck.new()
-      const round = { round: 1, colorCardDeck: colorCardDeck.toPersistence(), taskCardDeck: taskCardDeck.toPersistence() }
-      store.commit('round', round)
-      router.push('/round/1/bot')
+      const turn = {
+        turn: 1,
+        round: 1,
+        era: Era.ERA1,
+        player: Player.BOT,
+        colorCardDeck: colorCardDeck.toPersistence(),
+        taskCardDeck: taskCardDeck.toPersistence()
+      }
+      store.commit('turn', turn)
+      router.push('/turn/1/bot')
     }
   }
 })

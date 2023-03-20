@@ -4,6 +4,8 @@ import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
 import toggleArrayItem from "brdgm-commons/src/util/array/toggleArrayItem"
 import ColorCard from '@/services/ColorCard'
+import Player from '@/services/enum/Player'
+import Era from '@/services/enum/Era'
 
 const LOCALSTORAGE_KEY = process.env.VUE_APP_LOCALSTORAGE_KEY_PREFIX + "store"
 
@@ -11,14 +13,17 @@ export interface State {
   language: string
   baseFontSize: number
   setup: Setup
-  rounds: Round[]
+  turns: Turn[]
 }
 export interface Setup {
   difficultyLevel: DifficultyLevel
   expansions: Expansion[]
 }
-export interface Round {
+export interface Turn {
+  turn: number
   round: number
+  era: Era
+  player: Player
   colorCardDeck: ColorCardDeckPersistence
   taskCardDeck: TaskCardDeckPersistence
 }
@@ -50,7 +55,7 @@ export const store = createStore<State>({
       difficultyLevel: DifficultyLevel.LEVEL1_EASY,
       expansions: []
     },
-    rounds: []
+    turns: []
   },
   mutations: {
     // reload state from local storage
@@ -69,13 +74,13 @@ export const store = createStore<State>({
     setupToggleExpansion(state : State, expansion: Expansion) {
       toggleArrayItem(state.setup.expansions, expansion)
     },
-    round(state : State, round : Round) {
-      state.rounds = state.rounds
-          .filter(item => item.round < round.round)
-      state.rounds.push(round)
+    turn(state : State, turn : Turn) {
+      state.turns = state.turns
+          .filter(item => item.turn < turn.turn)
+      state.turns.push(turn)
     },
     resetGame(state : State) {
-      state.rounds = []
+      state.turns = []
     },
     zoomFontSize(state : State, baseFontSize: number) {
       state.baseFontSize = baseFontSize

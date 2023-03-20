@@ -30,8 +30,8 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
 import { useRoute } from 'vue-router'
-import BotActions from '@/components/round/BotActions.vue'
-import BotStatus from '@/components/round/BotStatus.vue'
+import BotActions from '@/components/turn/BotActions.vue'
+import BotStatus from '@/components/turn/BotStatus.vue'
 import Player from '@/services/enum/Player'
 
 export default defineComponent({

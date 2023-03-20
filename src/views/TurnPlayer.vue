@@ -17,7 +17,7 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useRoute } from 'vue-router'
 import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
-import BotStatus from '@/components/round/BotStatus.vue'
+import BotStatus from '@/components/turn/BotStatus.vue'
 import Player from '@/services/enum/Player'
 
 export default defineComponent({

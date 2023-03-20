@@ -42,7 +42,7 @@ describe('services/ColorCardDeck', () => {
 
   it('add', () => {
     const deck = ColorCardDeck.new()
-    deck.addCard({colors: [AutobahnColor.YELLOW,AutobahnColor.WHITE], additionalBuildAction: true})
+    deck.addCard({colors: [AutobahnColor.YELLOW,AutobahnColor.WHITE], additionalBuildRoadAction: true})
 
     expect(deck.pile.length, 'pile size').to.eq(7)
     expect(deck.used.length, 'used size').to.eq(0)

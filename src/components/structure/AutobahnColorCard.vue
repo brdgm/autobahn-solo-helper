@@ -1,7 +1,9 @@
 <template>
-  <div class="card">
-    <div v-for="color of colorCard.colors" :key="color" class="color"
-        :style="`background-color:${getColorCode(color)};`"></div>
+  <div>
+    <div class="card-border">
+      <div v-for="color of colorCard.colors" :key="color" class="color-part"
+          :style="`background-color:${getColorCode(color)};width:${100/colorCard.colors.length}%;`"></div>
+    </div>
   </div>
 </template>
 
@@ -29,23 +31,23 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
-.card {
+.card-border {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   width: 100%;
   height: 100%;
   border: 3px solid black;
   border-radius: 8px;
 }
-.color {
+.color-part {
   height: 100%;
-  width: 100%;
 }
-.color:first-child {
+.color-part:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-.color:last-child {
+.color-part:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }

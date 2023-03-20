@@ -49,8 +49,8 @@
   <BuildRoadUpgradeLinkModal/>
   <BuildServiceStationModal/>
   <LoadTruckModal/>
-  <TakeAdvancedCardModal/>
-  <TakeColorCardModal/>
+  <TakeAdvancedCardModal :task-card-deck="taskCardDeck" @task-card-added="$forceUpdate"/>
+  <TakeColorCardModal :color-card-deck="colorCardDeck"/>
 </template>
 
 <script lang="ts">

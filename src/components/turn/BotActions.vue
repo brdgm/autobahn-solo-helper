@@ -2,7 +2,7 @@
 
   <div class="main-action">
     <div class="actions">
-      <div class="additional-action" v-if="colorCard.additionalBuildAction">
+      <div class="additional-action" v-if="colorCard.additionalBuildRoadAction">
         <a data-bs-toggle="modal" href="#buildRoadUpgradeLinkModal"><AppIcon type="action" name="build-road"/></a>
         <div class="and-or">and/or</div>
       </div>

@@ -13,7 +13,7 @@
       "easy": "Easy",
       "hard": "Hard",
       "level": "Level {level}",
-      "increaseDifficulty1": "Autobot’s Trucks move 1 additional space every turn",
+      "increaseDifficulty1": "Autobot's Trucks move 1 additional space every turn",
       "increaseDifficulty2": "Autobot gets 1 Development Track step each time one of your Trucks drive past one of its Service Stations",
       "increaseDifficulty3": "Autobot moves on the Development Track if it skips its turn",
       "increaseDifficulty4": "Autobot gains more promotions at the end of each era (1/1/2)",
@@ -30,16 +30,16 @@
     "title": "Prepare Autobot",
     "twoPlayers": "Set up the game for 2 players.",
     "pickPlayerColor": "Pick a player color for Autobot. Autobot uses the 25 Employees, 8 Service Stations, 1 Development token of that player color. Instead of taking a Truck for that color, Autobot takes 1 Truck and 1 Development token in each of the other, unused colors.",
-    "setupAutobotComponents": "Set up Autobot’s components and play area as follows:",
-    "placeSoloBoard": "Place the <b>{soloBoard}</b> in Autobot’s play area.",
+    "setupAutobotComponents": "Set up Autobot's components and play area as follows:",
+    "placeSoloBoard": "Place the <b>{soloBoard}</b> in Autobot's play area.",
     "chooseDeliveryBoard": "Randomly choose a Delivery board for Autobot and place it next to the Solo board.",
-    "placeEmployees": "Place Autobot’s 25 Employees beside the Solo board.",
-    "placeServiceStations": "Place Autobot’s 8 Service Stations on the appropriate spaces of the Solo board.",
-    "placeDevelopmentToken": "Place Autobot’s Development token on the first space of the Development Track.",
-    "placeBlackConstructionOffice": "Autobot is the start player, so place 1 of Autobot’s Employees onto the first (leftmost) seat of the black Construction Office. Place one of yours on the next seat.",
+    "placeEmployees": "Place Autobot's 25 Employees beside the Solo board.",
+    "placeServiceStations": "Place Autobot's 8 Service Stations on the appropriate spaces of the Solo board.",
+    "placeDevelopmentToken": "Place Autobot's Development token on the first space of the Development Track.",
+    "placeBlackConstructionOffice": "Autobot is the start player, so place 1 of Autobot's Employees onto the first (leftmost) seat of the black Construction Office. Place one of yours on the next seat.",
     "setupPlayerPlayArea": "Set up your play area as normal, and reveal 2 Route cards from the deck. Pick one for yourself and discard the other one. Return the unused route cards back to the box. Autobot does not have a Route card.",
     "winePickCard": "Wine Module: You randomly pick one of the wine cards for yourself, and place the remaining three next to the solo board.",
-    "unlimitedBudget": "Autobot has an unlimited budget. You do not need to track Autobot’s income or expenditure."
+    "unlimitedBudget": "Autobot has an unlimited budget. You do not need to track Autobot's income or expenditure."
   },
   "turnBot": {
     "title": "Autobot's turn",
@@ -69,18 +69,18 @@
     "discard": "<b>Discard:</b> Autobot discards an action card from the display. Once selected, slide all remaining cards to the right and draw a new card to place in the leftmost slot. Priority for discarding a card:",
     "discardPrioItem1": "The leftmost card of the current color.",
     "discardPrioItem2": "The rightmost card of the color which appears most in the display.",
-    "develop": "<b>Develop:</b> Move Autobot’s Marker 1 or 2 steps forward on the Development Track.",
+    "develop": "<b>Develop:</b> Move Autobot's Marker 1 or 2 steps forward on the Development Track.",
     "advancedCard": "<b>Take Advanced Task Card:</b> Add an advanced card to the task card deck.",
     "takeAdvancedCard": "Take Advanced Card",
-    "promote": "<b>Promote:</b> Promote 1 of Autobot’s Employees as explained in <a href='#tablink-bonus-promotions' data-bs-toggle='tab'>Autobot’s promotions</a>.",
+    "promote": "<b>Promote:</b> Promote 1 of Autobot's Employees as explained in <a href='#tablink-bonus-promotions' data-bs-toggle='tab'>Autobot's promotions</a>.",
     "colorCard": "<b>Take Color Card:</b> Take the <i>leftmost</i> card from the display. This will give Autobot an extra color card.",
     "takeColorCard": "Take Color Card",
-    "promoteServiceTrade": "<b>Promote:</b> Promotions gained in this way should be taken on the Department shown if possible. If a promotion in the department shown is not possible, follow the normal priority rules in <a href='#tablink-bonus-promotions' data-bs-toggle='tab'>Autobot’s promotions</a>.",
+    "promoteServiceTrade": "<b>Promote:</b> Promotions gained in this way should be taken on the Department shown if possible. If a promotion in the department shown is not possible, follow the normal priority rules in <a href='#tablink-bonus-promotions' data-bs-toggle='tab'>Autobot's promotions</a>.",
     "buildServiceStation": "<b>Build a Service Station:</b> Immediately perform the <a href='#buildServiceStationModal' data-bs-toggle='modal'>Build a Service Station</a> action.",
     "buildRoadSection": "<b>Build a road section:</b> Immediately perform the <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Build a road section</a> action.",
     "upgradeLink": "<b>Upgrade a link:</b> Immediately perform the <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Upgrade a link</a> action.",
     "placeEmployee": "<b>Place an Employee:</b> Autobot places an Employee in the Office that matches the current color.",
-    "promotionInfo1": "Autobot’s promotions are limited depending on which era it is. During the first era, Autobot’s Employees may only be promoted as high as the 1st floor. During the second era, they may only be promoted as high as the 2nd floor. In the third era, Autobot’s Employees may access any floor. This limitation rule also applies to Autobot’s Employees when they are promoted during the end of era steps.",
+    "promotionInfo1": "Autobot's promotions are limited depending on which era it is. During the first era, Autobot's Employees may only be promoted as high as the 1st floor. During the second era, they may only be promoted as high as the 2nd floor. In the third era, Autobot's Employees may access any floor. This limitation rule also applies to Autobot's Employees when they are promoted during the end of era steps.",
     "promotionInfo2": "Unless the bonus shows a particular Department, when Autobot gains a promotion, it will promote whichever Employee can reach the highest floor in any Department. If two or more Employees can reach equally high floors, the Employee in the leftmost Department is promoted."
   },
   "buildRoadUpgradeLink": {
@@ -90,7 +90,7 @@
       "intro": "Autobot builds the next road section of the autobahn that matches the current color. If all available road sections have already been built, Autobot will instead <a href='#tablink-upgrade-link' data-bs-toggle='tab'>upgrade a complete link</a>.",
       "priority": {
         "title": "Priority:",
-        "item1": "The section of road that would allow one of Autobot’s Trucks to deliver a Goods token to or move towards its destination country. If tied, the country that appears highest on Autobot’s delivery board.",
+        "item1": "The section of road that would allow one of Autobot's Trucks to deliver a Goods token to or move towards its destination country. If tied, the country that appears highest on Autobot's delivery board.",
         "item2": "A section of road that contains a Bonus token.",
         "item3": "The section of road nearest to the black autobahn (the fewest road sections to travel).",
         "item4": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost."
@@ -111,9 +111,9 @@
   },
   "loadTruck": {
     "title": "Load Truck",
-    "intro1": "When Autobot takes the ‘Load Truck’ action it will select a destination country to deliver to and a depot to load goods at.",
+    "intro1": "When Autobot takes the ‘Load Truck' action it will select a destination country to deliver to and a depot to load goods at.",
     "intro2": "When selecting a country to deliver to, Autobot selects a country to which it has not yet delivered and is not currently delivering. In the first and second era, Autobot ignores Poland and Czech Republic.",
-    "intro3": "Autobot will select a country on Autobot’s delivery board that pairs with the loaded good type.",
+    "intro3": "Autobot will select a country on Autobot's delivery board that pairs with the loaded good type.",
     "intro4": "If there is not an undelivered to country that pairs with the current good type, Autobot cannot take this main action, so place the card aside in the Task queue.",
     "intro5": "Autobot always has the ability to use both of its Trucks. If no Truck is available Autobot cannot take this main action, so place the card aside in the Task queue.",
     "loadNonBlack": {
@@ -122,14 +122,14 @@
     },
     "loadBlack": {
       "title": "Loading on the black road",
-      "info": "If the current color is black, Autobot selects the delivery country first, then selects the good type shown on its delivery board for that country. Once the country is selected, Autobot will choose the Goods token that matches that country on Autobot’s delivery board. Place the Goods token on an available Truck and place the Truck in the depot. If Automotive goods or Chemicals are selected choose the depot nearest the delivery location."
+      "info": "If the current color is black, Autobot selects the delivery country first, then selects the good type shown on its delivery board for that country. Once the country is selected, Autobot will choose the Goods token that matches that country on Autobot's delivery board. Place the Goods token on an available Truck and place the Truck in the depot. If Automotive goods or Chemicals are selected choose the depot nearest the delivery location."
     },
     "priority": {
       "title": "Priority for selecting a country:",
       "item1": "A country connected to the network.",
       "item2": "A country that contains a Bonus token.",
       "item3": "A country with the fewest road sections left to be built.",
-      "item4": "The uppermost country shown on Autobot’s delivery board."
+      "item4": "The uppermost country shown on Autobot's delivery board."
     },
     "developmentToken": "Place the development token that matches the color of the Truck Autobot has loaded on the board beside the selected country. This marks the selected country for that Truck.",
     "loadingPharmaceuticals": {
@@ -144,17 +144,21 @@
       "title": "Priority:",
       "item1": "The Service Station space nearest to the black autobahn (the fewest road sections to travel).",
       "item2": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost.",
-      "item3": "If building on a black Service Station space, pick the closest to Bad Hersfeld, with ties broken in the first and second eras by the southernmost location, and in the third era, by the northernmost location.",
+      "item3": "If building on a black Service Station space, pick the closest to Bad Hersfeld, with ties broken in the first and second eras by the southernmost location, and in the third era, by the northernmost location."
     },
     "noViableSpace": "If there are no connected Service Station spaces that match the current color, the action is not viable.",
     "era3Info": "As usual, Service Stations cannot be built in East Germany during the first and second eras.",
-    "gainBonus": "When placing a Service Station, Autobot immediately gains the bonus depicted underneath it on the Solo board as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot’s Gain Bonus</a>."
+    "gainBonus": "When placing a Service Station, Autobot immediately gains the bonus depicted underneath it on the Solo board as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot's Gain Bonus</a>."
   },
   "takeAdvancedCard": {
-    "title": "Take Advanced Card"
+    "title": "Take Advanced Card",
+    "addCardInfo": "This will add an <b>advanced card</b> to the bot's task card deck.",
+    "noCardLeft": "All advanced cards already added."
   },
   "takeColorCard": {
-    "title": "Take Color Card"
+    "title": "Take Color Card",
+    "pickColors": "Please select the colors of the <i>leftmost</i> card from the display here, and discard it afterwards from the display.",
+    "pickAction": "Please check if the color card has a <i>Build Road</i> action on it."
   },
   "soloBoard": {
     "easy": "Easy Solo Board",

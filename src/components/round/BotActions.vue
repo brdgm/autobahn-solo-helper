@@ -2,12 +2,12 @@
 
   <div class="main-action">
     <div class="actions">
+      <div class="additional-action" v-if="colorCard.additionalBuildAction">
+        <a data-bs-toggle="modal" href="#buildRoadUpgradeLinkModal"><AppIcon type="action" name="build-road"/></a>
+        <div class="and-or">and/or</div>
+      </div>
       <div class="action">
         <a data-bs-toggle="modal" :href="getActionInfoModalTarget(taskCard.action)"><AppIcon type="action" :name="taskCard.action"/></a>
-      </div>
-      <div class="additional-action" v-if="colorCard.additionalBuildAction">
-        <div class="and-or">and/or</div>
-        <a data-bs-toggle="modal" href="#buildRoadUpgradeLinkModal"><AppIcon type="action" name="build-road"/></a>
       </div>
     </div>
     <AutobahnColorCard :color-card="colorCard" class="card"/>
@@ -90,7 +90,7 @@ export default defineComponent({
     }
     .additional-action {
       .and-or {
-        margin-top: 5px;
+        margin-bottom: 5px;
         background-color: white;
         text-align: center;
         font-weight: bold;

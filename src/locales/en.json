@@ -85,14 +85,70 @@
   },
   "buildRoadUpgradeLink": {
     "title": "Build Road Section or Upgrade Link",
-    "buildRoad": "Build Road Section",
-    "upgradeLink": "Upgrade Link"
+    "buildRoad": {
+      "title": "Build Road Section",
+      "intro": "Autobot builds the next road section of the autobahn that matches the current color. If all available road sections have already been built, Autobot will instead <a href='#tablink-upgrade-link' data-bs-toggle='tab'>upgrade a complete link</a>.",
+      "priority": {
+        "title": "Priority:",
+        "item1": "The section of road that would allow one of Autobot’s Trucks to deliver a Goods token to or move towards its destination country. If tied, the country that appears highest on Autobot’s delivery board.",
+        "item2": "A section of road that contains a Bonus token.",
+        "item3": "The section of road nearest to the black autobahn (the fewest road sections to travel).",
+        "item4": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost."
+      },
+      "employeeCostInfo": "When building a road, Autobot places an Employee in the corresponding Office as usual. Autobot never pays building costs."
+    },
+    "upgradeLink": {
+      "title": "Upgrade Link",
+      "intro": "If all road sections are built, Autobot will instead upgrade a complete link.",
+      "priority": {
+        "title": "Priority:",
+        "item1": "The section of road nearest to the black autobahn (the fewest roads spaces to travel).",
+        "item2": "The closest to Bad Hersfeld.",
+        "item3": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost."
+      },
+      "employeeCostInfo": "When upgrading a road, Autobot places an Employee in the corresponding Office as usual. Autobot never pays upgrading costs."
+    }
   },
   "loadTruck": {
-    "title": "Load Truck"
+    "title": "Load Truck",
+    "intro1": "When Autobot takes the ‘Load Truck’ action it will select a destination country to deliver to and a depot to load goods at.",
+    "intro2": "When selecting a country to deliver to, Autobot selects a country to which it has not yet delivered and is not currently delivering. In the first and second era, Autobot ignores Poland and Czech Republic.",
+    "intro3": "Autobot will select a country on Autobot’s delivery board that pairs with the loaded good type.",
+    "intro4": "If there is not an undelivered to country that pairs with the current good type, Autobot cannot take this main action, so place the card aside in the Task queue.",
+    "intro5": "Autobot always has the ability to use both of its Trucks. If no Truck is available Autobot cannot take this main action, so place the card aside in the Task queue.",
+    "loadNonBlack": {
+      "title": "Loading on the red, cyan, purple, orange or white roads",
+      "info": "Choose the depot that matches the current color and load that Goods token. Place the Goods token on an available Truck and place the Truck in the depot."
+    },
+    "loadBlack": {
+      "title": "Loading on the black road",
+      "info": "If the current color is black, Autobot selects the delivery country first, then selects the good type shown on its delivery board for that country. Once the country is selected, Autobot will choose the Goods token that matches that country on Autobot’s delivery board. Place the Goods token on an available Truck and place the Truck in the depot. If Automotive goods or Chemicals are selected choose the depot nearest the delivery location."
+    },
+    "priority": {
+      "title": "Priority for selecting a country:",
+      "item1": "A country connected to the network.",
+      "item2": "A country that contains a Bonus token.",
+      "item3": "A country with the fewest road sections left to be built.",
+      "item4": "The uppermost country shown on Autobot’s delivery board."
+    },
+    "developmentToken": "Place the development token that matches the color of the Truck Autobot has loaded on the board beside the selected country. This marks the selected country for that Truck.",
+    "loadingPharmaceuticals": {
+      "title": "Loading Pharmaceuticals",
+      "info": "During the third era, if the current color is cyan or yellow, Autobot selects Pharmaceuticals to load (instead of Automotive goods). Instead of the usual criteria, Autobot selects a connected country to which Pharmaceuticals have not yet been delivered, starting with Austria (Wien) and going clockwise around the map. If the player delivers pharmaceuticals to the selected country before Autobot, move the development token to the next connected country to which Pharmaceuticals have not yet been delivered, in clockwise order. When delivered, Autobot gains the Pharmaceuticals delivery bonus as normal."
+    }
   },
   "buildServiceStation": {
-    "title": "Build Service Station"
+    "title": "Build Service Station",
+    "intro": "Autobot builds a Service Station on the next available Service Station space on the autobahn that matches the current color.",
+    "priority": {
+      "title": "Priority:",
+      "item1": "The Service Station space nearest to the black autobahn (the fewest road sections to travel).",
+      "item2": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost.",
+      "item3": "If building on a black Service Station space, pick the closest to Bad Hersfeld, with ties broken in the first and second eras by the southernmost location, and in the third era, by the northernmost location.",
+    },
+    "noViableSpace": "If there are no connected Service Station spaces that match the current color, the action is not viable.",
+    "era3Info": "As usual, Service Stations cannot be built in East Germany during the first and second eras.",
+    "gainBonus": "When placing a Service Station, Autobot immediately gains the bonus depicted underneath it on the Solo board as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot’s Gain Bonus</a>."
   },
   "takeAdvancedCard": {
     "title": "Take Advanced Card"

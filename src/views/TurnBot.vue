@@ -21,9 +21,7 @@
 
     <div class="form-check mt-4" v-if="navigationState.canEndEra">
       <input class="form-check-input" type="checkbox" :value="true" id="endEraCheckbox" v-model="endEra">
-      <label class="form-check-label" for="endEraCheckbox">
-        <b>End Era {{navigationState.era}}</b> - Click here if Autobot built the last road of this era.
-      </label>
+      <label class="form-check-label" for="endEraCheckbox" v-html="t('turnBot.endEra', {era:navigationState.era})"></label>
     </div>
   </template>
 

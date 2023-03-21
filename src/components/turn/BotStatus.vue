@@ -4,7 +4,7 @@
 
     <h6 v-html="t('botStatus.taskQueue')"></h6>
     <template v-if="taskCardDeck.isQueueEmpty()">
-      <div class="none text-muted" v-html="t('turnBot.empty')"></div>
+      <div class="none text-muted" v-html="t('botStatus.empty')"></div>
     </template>
     <template v-else>
       <AppIcon v-for="taskCard of taskCardDeck.queue" :key="taskCard.id"
@@ -13,7 +13,7 @@
 
     <h6 v-html="t('botStatus.taskPile')"></h6>
     <template v-if="taskCardDeck.isPileEmpty()">
-      <div class="none text-muted" v-html="t('turnBot.empty')"></div>
+      <div class="none text-muted" v-html="t('botStatus.empty')"></div>
     </template>
     <template v-else>
       <AppIcon v-for="index of taskCardDeck.pile.length" :key="index"
@@ -22,7 +22,7 @@
 
     <h6 v-html="t('botStatus.usedColors')"></h6>
     <template v-if="colorCardDeck.isUsedEmpty()">
-      <div class="none text-muted" v-html="t('turnBot.none')"></div>
+      <div class="none text-muted" v-html="t('botStatus.none')"></div>
     </template>
     <template v-else>
       <AutobahnColorCard v-for="(colorCard, index) of colorCardDeck.used" :key="index"
@@ -31,7 +31,7 @@
 
     <h6 v-html="t('botStatus.usedTasks')"></h6>
     <template v-if="taskCardDeck.isUsedEmpty()">
-      <div class="none text-muted" v-html="t('turnBot.none')"></div>
+      <div class="none text-muted" v-html="t('botStatus.none')"></div>
     </template>
     <template v-else>
       <AppIcon v-for="taskCard of taskCardDeck.used" :key="taskCard.id"

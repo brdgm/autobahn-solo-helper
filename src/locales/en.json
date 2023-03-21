@@ -47,11 +47,11 @@
     "actionNotViable": "Not Viable",
     "turnSkip": "Skip Turn",
     "turnSkipInfo": "Autobot has no viable action in his whole task card deck and will skip this turn.",
-    "empty": "empty",
-    "none": "none"
+    "endEra": "<b>End Era {era}</b> - Click here if Autobot built the last road of this era."
   },
   "turnPlayer": {
-    "title": "Your turn"
+    "title": "Your turn",
+    "endEra": "<b>End Era {era}</b> - Click here if you built the last road of this era."
   },
   "endOfEra": {
     "title": "End of Era {era}"
@@ -70,7 +70,9 @@
     "taskPile": "Task Pile",
     "usedColors": "Used Colors",
     "usedTasks": "Used Tasks",
-    "gainBonus": "Gain Bonus"
+    "gainBonus": "Gain Bonus",
+    "empty": "empty",
+    "none": "none"
   },
   "botGainBonus": {
     "title": "Autobot Gain Bonus",

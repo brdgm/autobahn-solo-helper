@@ -11,7 +11,6 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useRoute } from 'vue-router'
 import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
-import Player from '@/services/enum/Player'
 
 export default defineComponent({
   name: 'EndOfGame',

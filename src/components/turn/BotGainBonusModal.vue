@@ -56,6 +56,8 @@
           </table>
         </div>
         <div class="tab-pane" id="tab-bonus-board" role="tabpanel" aria-labelledby="tablink-bonus-board" tabindex="0">
+          <p class="small" v-html="t('botGainBonus.soloBoardInfoBonusTokens')"></p>
+          <p class="small" v-html="t('botGainBonus.soloBoardInfoServiceStations')"></p>
           <table class="table table-striped">
             <tbody>
               <tr>

@@ -3,6 +3,15 @@
 
   <h1>{{t('turnPlayer.title')}}</h1>
 
+  <ol class="mt-4">
+    <li v-html="t('turnPlayer.claimDeliveryBonus')"></li>
+    <li v-html="t('turnPlayer.takeAction')"></li>
+    <li v-html="t('turnPlayer.moveTrucks')"></li>
+    <ul>
+      <li v-html="t('turnPlayer.moveTrucksAutobotInfo')"></li>
+    </ul>
+  </ol>
+
   <button @click="nextTurn" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
   </button>
@@ -52,7 +61,10 @@ export default defineComponent({
       if (this.navigationState.eraEndedLastTurn) {
         return `/turn/${this.turn - 1}/endOfEra`
       }
-      return `/turn/${this.turn - 1}/bot`
+      else if (this.navigationState.botSkippedLastTurn) {
+        return `/turn/${this.turn - 1}/bot`
+      }
+      return `/turn/${this.turn - 1}/botMoveTrucks`
     }
   },
   methods: {

@@ -43,6 +43,7 @@ export default defineComponent({
   float: right;
   width: 200px;
   margin-right: -12px;
+  margin-left: 20px;
   .last-turn {
     color: red;
     font-weight: bold;

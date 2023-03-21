@@ -26,6 +26,7 @@ export interface Turn {
   player: Player
   colorCardDeck: ColorCardDeckPersistence
   taskCardDeck: TaskCardDeckPersistence
+  botSkippedLastTurn?: boolean
   eraEndedLastTurn?: boolean
 }
 export interface TaskCardDeckPersistence {

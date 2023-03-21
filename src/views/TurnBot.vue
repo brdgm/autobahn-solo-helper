@@ -12,8 +12,8 @@
   <template v-else>
     <BotActions :color-card="colorCard" :task-card="taskCard"/>
 
-    <button @click="turnCompleted" class="btn btn-success btn-lg mt-4">
-      {{t('turnBot.turnCompleted')}}
+    <button @click="actionCompleted" class="btn btn-success btn-lg mt-4">
+      {{t('turnBot.actionCompleted')}}
     </button>
     <button @click="actionNotViable" class="btn btn-danger btn-lg mt-4 ms-3">
       {{t('turnBot.actionNotViable')}}
@@ -89,7 +89,7 @@ export default defineComponent({
         this.taskCard = this.taskCardDeck.drawFromPile()
       }
     },
-    turnCompleted() : void {
+    actionCompleted() : void {
       this.colorCardDeck.putToUsed(this.colorCard)
       this.taskCardDeck.putToUsed(this.taskCard)
 
@@ -99,15 +99,17 @@ export default defineComponent({
         this.taskCardDeck.reshuffleExceptHighestValueQueueCard()
       }
 
-      this.nextTurn();
+      this.storeNextTurn();
+      this.$router.push(`/turn/${this.turn}/botMoveTrucks`)
     },
     skipTurn() : void {
       this.colorCardDeck.reshuffle()
       this.taskCardDeck.putToUsed(this.taskCard)
       this.taskCardDeck.reshuffle()
-      this.nextTurn();
+      this.storeNextTurn(true);
+      this.$router.push(`/turn/${this.turn + 1}/player`)
     },
-    nextTurn() : void {
+    storeNextTurn(skipTurn = false) : void {
       const turn = {
         turn: this.turn + 1,
         round: this.navigationState.round,
@@ -115,17 +117,10 @@ export default defineComponent({
         player: Player.PLAYER,
         colorCardDeck: this.colorCardDeck.toPersistence(),
         taskCardDeck: this.taskCardDeck.toPersistence(),
+        botSkippedLastTurn: skipTurn ? true : undefined,
         eraEndedLastTurn: this.endEra ? true : undefined
       }
       this.$store.commit('turn', turn)
-      let nextButtonRouteTo
-      if (this.navigationState.lastTurn || (this.endEra && this.navigationState.era != Era.ERA3)) {
-        nextButtonRouteTo = `/turn/${this.turn}/endOfEra`
-      }
-      else {
-        nextButtonRouteTo = `/turn/${this.turn + 1}/player`
-      }
-      this.$router.push(nextButtonRouteTo)
     }
   }
 })

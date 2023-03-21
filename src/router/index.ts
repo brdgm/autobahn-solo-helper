@@ -4,6 +4,7 @@ import NotFound from '@/views/NotFound.vue'
 import SetupGame from '@/views/SetupGame.vue'
 import SetupAutobot from '@/views/SetupAutobot.vue'
 import TurnBot from '@/views/TurnBot.vue'
+import TurnBotMoveTrucks from '@/views/TurnBotMoveTrucks.vue'
 import TurnPlayer from '@/views/TurnPlayer.vue'
 import EndOfEra from '@/views/EndOfEra.vue'
 import EndOfGame from '@/views/EndOfGame.vue'
@@ -31,6 +32,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/turn/:turn/bot',
     name: 'TurnBot',
     component: TurnBot
+  },
+  {
+    path: '/turn/:turn/botMoveTrucks',
+    name: 'TurnBotMoveTrucks',
+    component: TurnBotMoveTrucks
   },
   {
     path: '/turn/:turn/player',

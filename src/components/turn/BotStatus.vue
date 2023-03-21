@@ -49,6 +49,7 @@
   <BuildRoadUpgradeLinkModal/>
   <BuildServiceStationModal/>
   <LoadTruckModal/>
+  <MoveTruckModal/>
   <TakeAdvancedCardModal :task-card-deck="taskCardDeck" @task-card-added="$forceUpdate"/>
   <TakeColorCardModal :color-card-deck="colorCardDeck"/>
 </template>
@@ -64,6 +65,7 @@ import BotGainBonusModal from './BotGainBonusModal.vue';
 import BuildRoadUpgradeLinkModal from './BuildRoadUpgradeLinkModal.vue';
 import BuildServiceStationModal from './BuildServiceStationModal.vue';
 import LoadTruckModal from './LoadTruckModal.vue';
+import MoveTruckModal from './MoveTruckModal.vue';
 import TakeAdvancedCardModal from './TakeAdvancedCardModal.vue';
 import TakeColorCardModal from './TakeColorCardModal.vue';
 
@@ -77,7 +79,8 @@ export default defineComponent({
     BuildServiceStationModal,
     LoadTruckModal,
     TakeAdvancedCardModal,
-    TakeColorCardModal
+    TakeColorCardModal,
+    MoveTruckModal
   },
   setup() {
     const { t } = useI18n()

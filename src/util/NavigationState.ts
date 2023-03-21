@@ -17,6 +17,7 @@ export default class NavigationState {
   readonly taskCardDeck : TaskCardDeck
   readonly eraEndedLastTurn : boolean
   readonly canEndEra : boolean
+  readonly botSkippedLastTurn : boolean
   readonly secondToLastTurn : boolean
   readonly lastTurn : boolean
 
@@ -31,6 +32,7 @@ export default class NavigationState {
       this.player = turnData.player
       this.colorCardDeck = ColorCardDeck.fromPersistence(turnData.colorCardDeck)
       this.taskCardDeck = TaskCardDeck.fromPersistence(turnData.taskCardDeck)
+      this.botSkippedLastTurn = turnData.botSkippedLastTurn ? true : false
       this.eraEndedLastTurn = turnData.eraEndedLastTurn ? true : false
     }
     else {
@@ -40,6 +42,7 @@ export default class NavigationState {
       this.player = (route.name == "TurnPlayer" ? Player.PLAYER : Player.BOT)
       this.colorCardDeck = ColorCardDeck.new()
       this.taskCardDeck = TaskCardDeck.new()
+      this.botSkippedLastTurn = false
       this.eraEndedLastTurn = false
     }
 

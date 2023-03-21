@@ -43,14 +43,23 @@
   },
   "turnBot": {
     "title": "Autobot's turn",
-    "turnCompleted": "Turn Completed",
+    "actionCompleted": "Action Completed",
     "actionNotViable": "Not Viable",
     "turnSkip": "Skip Turn",
     "turnSkipInfo": "Autobot has no viable action in his whole task card deck and will skip this turn.",
     "endEra": "<b>End Era {era}</b> - Click here if Autobot built the last road of this era."
   },
+  "turnBotMoveTrucks": {
+    "title": "Autobot's turn - Move Trucks",
+    "moveSpaces": "Move each of Autobot's trucks <b>{numberOfSpaces} spaces</b> towards the <a href='#loadTruckModal' data-bs-toggle='modal'>selected country</a>. Ignore the colors.",
+    "moveTruckInfo": "Details about <a href='#moveTruckModal' data-bs-toggle='modal'>Autobot's truck movements and delivery</a>."
+  },
   "turnPlayer": {
     "title": "Your turn",
+    "claimDeliveryBonus": "Claim delivery bonus (optional)",
+    "takeAction": "Take action",
+    "moveTrucks": "Move trucks (if you played a card)",
+    "moveTrucksAutobotInfo": "Autobot does not gain anything when your Trucks drive past its Service Stations.",
     "endEra": "<b>End Era {era}</b> - Click here if you built the last road of this era."
   },
   "endOfEra": {
@@ -94,7 +103,9 @@
     "upgradeLink": "<b>Upgrade a link:</b> Immediately perform the <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Upgrade a link</a> action.",
     "placeEmployee": "<b>Place an Employee:</b> Autobot places an Employee in the Office that matches the current color.",
     "promotionInfo1": "Autobot's promotions are limited depending on which era it is. During the first era, Autobot's Employees may only be promoted as high as the 1st floor. During the second era, they may only be promoted as high as the 2nd floor. In the third era, Autobot's Employees may access any floor. This limitation rule also applies to Autobot's Employees when they are promoted during the end of era steps.",
-    "promotionInfo2": "Unless the bonus shows a particular Department, when Autobot gains a promotion, it will promote whichever Employee can reach the highest floor in any Department. If two or more Employees can reach equally high floors, the Employee in the leftmost Department is promoted."
+    "promotionInfo2": "Unless the bonus shows a particular Department, when Autobot gains a promotion, it will promote whichever Employee can reach the highest floor in any Department. If two or more Employees can reach equally high floors, the Employee in the leftmost Department is promoted.",
+    "soloBoardInfoBonusTokens": "<b>Bonus tokens:</b> When Autobot gains Bonus tokens, it places them on the next available slot of the Solo board, starting with the top row of the Solo board from left to right, then the second row from left to right, gaining the bonus shown on the space instead of that shown on the token itself.",
+    "soloBoardInfoServiceStations": "<b>Service Stations:</b> When Autobot builds a Service Station, it immediately gains the bonus shown on the Solo board below that Service Station."
   },
   "buildRoadUpgradeLink": {
     "title": "Build Road Section or Upgrade Link",
@@ -149,6 +160,17 @@
       "title": "Loading Pharmaceuticals",
       "info": "During the third era, if the current color is cyan or yellow, Autobot selects Pharmaceuticals to load (instead of Automotive goods). Instead of the usual criteria, Autobot selects a connected country to which Pharmaceuticals have not yet been delivered, starting with Austria (Wien) and going clockwise around the map. If the player delivers pharmaceuticals to the selected country before Autobot, move the development token to the next connected country to which Pharmaceuticals have not yet been delivered, in clockwise order. When delivered, Autobot gains the Pharmaceuticals delivery bonus as normal."
     }
+  },
+  "moveTruck": {
+    "title": "Move Trucks and Deliver Goods",
+    "ignoreColor": "Autobot does not need to match the current color card to move along road sections. If a Truck cannot move forwards for any reason (such as an unbuilt road) it stays still.",
+    "passServiceStations": "Each time one of Autobot's Trucks passes one of its own Service Stations, it gains the rightmost revealed bonus as shown on the Solo board. If one of Autobot's Trucks passes your Service Stations, you gain income from the supply as normal.",
+    "deliverGoods": "If one of Autobot's Trucks reaches its selected country, it delivers its goods:",
+    "deliverGoodsItem1": "When a good is delivered, place it onto the corresponding space of Autobot's delivery board.",
+    "deliverGoodsItem2": "If the good type matches, Autobot moves 1 space up the Development Track. Autobot never receives the bonus action or money shown on the delivery board.",
+    "deliverGoodsItem3": "If Autobot delivers Pharmaceuticals it gains the delivery bonus as normal.",
+    "deliverGoodsItem4": "If the selected country has a delivery bonus tile, Autobot takes it and places the token face down on the next available slot of the Solo board and gains the bonus depicted on the slot as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Solo Board Bonuses</a>.",
+    "era3Countries": "As usual, Autobot cannot deliver goods to Poland (Warszawa) and the Czech Republic (Praha) during the first and second eras."
   },
   "buildServiceStation": {
     "title": "Build Service Station",

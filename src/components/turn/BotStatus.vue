@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="bot-status">
     <h5 v-html="t('botStatus.title')"></h5>
 
     <h6 v-html="t('botStatus.taskQueue')"></h6>
@@ -97,10 +97,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.sidebar {
-  float: right;
-  width: 200px;
-  margin-right: -12px;
+.bot-status {
+  width: 100%;
   padding: 15px;
   background-color: rgb(200, 221, 249);
   border-top-left-radius: 20px;

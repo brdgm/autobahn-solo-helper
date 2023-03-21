@@ -1,7 +1,7 @@
 <template>
-  <h1>{{t('turnPlayer.title')}}</h1>
+  <SideBar :navigation-state="navigationState" />
 
-  <BotStatus :colorCardDeck="colorCardDeck" :taskCardDeck="taskCardDeck" />
+  <h1>{{t('turnPlayer.title')}}</h1>
 
   <button @click="nextTurn" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
@@ -17,14 +17,14 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useRoute } from 'vue-router'
 import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
-import BotStatus from '@/components/turn/BotStatus.vue'
+import SideBar from '@/components/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
 
 export default defineComponent({
   name: 'TurnPlayer',
   components: {
     FooterButtons,
-    BotStatus
+    SideBar
   },
   setup() {
     const { t } = useI18n()

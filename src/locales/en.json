@@ -53,6 +53,10 @@
   "turnPlayer": {
     "title": "Your turn"
   },
+  "sidebar": {
+    "era": "Era {era}",
+    "round": "Round {round}"
+  },
   "botStatus": {
     "title": "Autobot Status",
     "taskQueue": "Task Queue",

@@ -1,7 +1,7 @@
 <template>
-  <h1>{{t('turnBot.title')}}</h1>
+  <SideBar :navigation-state="navigationState" :key="taskCard.id"/>
 
-  <BotStatus :color-card-deck="colorCardDeck" :task-card-deck="taskCardDeck" :key="taskCard.id"/>
+  <h1>{{t('turnBot.title')}}</h1>
 
   <template v-if="noViableActionAllTaskCards">
     <p class="mt-4" v-html="t('turnBot.turnSkipInfo')"></p>
@@ -31,7 +31,7 @@ import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
 import { useRoute } from 'vue-router'
 import BotActions from '@/components/turn/BotActions.vue'
-import BotStatus from '@/components/turn/BotStatus.vue'
+import SideBar from '@/components/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
 
 export default defineComponent({
@@ -39,7 +39,7 @@ export default defineComponent({
   components: {
     FooterButtons,
     BotActions,
-    BotStatus
+    SideBar
   },
   setup() {
     const { t } = useI18n()

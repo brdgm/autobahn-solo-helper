@@ -7,7 +7,14 @@
     {{t('action.next')}}
   </button>
 
-  <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="endGame"/>
+  <div class="form-check mt-4" v-if="navigationState.canEndEra">
+    <input class="form-check-input" type="checkbox" :value="true" id="endEraCheckbox" v-model="endEra">
+    <label class="form-check-label" for="endEraCheckbox">
+      <b>End Era {{navigationState.era}}</b> - Click here if you built the last road of this era.
+    </label>
+  </div>
+
+  <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
 
 <script lang="ts">
@@ -19,6 +26,7 @@ import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
 import SideBar from '@/components/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
+import Era from '@/services/enum/Era'
 
 export default defineComponent({
   name: 'TurnPlayer',
@@ -36,8 +44,16 @@ export default defineComponent({
     const taskCardDeck = navigationState.taskCardDeck
     return { t, navigationState, turn, colorCardDeck, taskCardDeck }
   },
+  data() {
+    return {
+      endEra: false
+    }
+  },
   computed: {
     backButtonRouteTo() : string {
+      if (this.navigationState.eraEndedLastTurn) {
+        return `/turn/${this.turn - 1}/endOfEra`
+      }
       return `/turn/${this.turn - 1}/bot`
     }
   },
@@ -46,13 +62,20 @@ export default defineComponent({
       const turn = {
         turn: this.turn + 1,
         round: this.navigationState.round + 1,
-        era: this.navigationState.era,
+        era: this.endEra && this.navigationState.era < Era.ERA3 ? this.navigationState.era + 1 : this.navigationState.era,
         player: Player.BOT,
         colorCardDeck: this.colorCardDeck.toPersistence(),
-        taskCardDeck: this.taskCardDeck.toPersistence()
+        taskCardDeck: this.taskCardDeck.toPersistence(),
+        eraEndedLastTurn: this.endEra ? true : undefined
       }
       this.$store.commit('turn', turn)
-      const nextButtonRouteTo = `/turn/${this.turn + 1}/bot`
+      let nextButtonRouteTo
+      if (this.navigationState.lastTurn || (this.endEra && this.navigationState.era < Era.ERA3)) {
+        nextButtonRouteTo = `/turn/${this.turn}/endOfEra`
+      }
+      else {
+        nextButtonRouteTo = `/turn/${this.turn + 1}/bot`
+      }
       this.$router.push(nextButtonRouteTo)
     }
   }

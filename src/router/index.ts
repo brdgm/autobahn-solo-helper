@@ -5,6 +5,8 @@ import SetupGame from '@/views/SetupGame.vue'
 import SetupAutobot from '@/views/SetupAutobot.vue'
 import TurnBot from '@/views/TurnBot.vue'
 import TurnPlayer from '@/views/TurnPlayer.vue'
+import EndOfEra from '@/views/EndOfEra.vue'
+import EndOfGame from '@/views/EndOfGame.vue'
 import createRouter from "brdgm-commons/src/util/router/createRouter"
 
 const LOCALSTORAGE_KEY = process.env.VUE_APP_LOCALSTORAGE_KEY_PREFIX + "route"
@@ -34,6 +36,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/turn/:turn/player',
     name: 'TurnPlayer',
     component: TurnPlayer
+  },
+  {
+    path: '/turn/:turn/endOfEra',
+    name: 'EndOfEra',
+    component: EndOfEra
+  },
+  {
+    path: '/turn/:turn/endOfGame',
+    name: 'EndOfGame',
+    component: EndOfGame
   },
   {
     path: '/:pathMatch(.*)*',

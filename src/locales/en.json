@@ -53,9 +53,16 @@
   "turnPlayer": {
     "title": "Your turn"
   },
+  "endOfEra": {
+    "title": "End of Era {era}"
+  },
+  "endOfGame": {
+    "title": "End of Game"
+  },
   "sidebar": {
     "era": "Era {era}",
-    "round": "Round {round}"
+    "round": "Round {round}",
+    "lastTurn": "Last Turn"
   },
   "botStatus": {
     "title": "Autobot Status",

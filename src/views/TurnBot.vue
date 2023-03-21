@@ -18,9 +18,16 @@
     <button @click="actionNotViable" class="btn btn-danger btn-lg mt-4 ms-3">
       {{t('turnBot.actionNotViable')}}
     </button>
+
+    <div class="form-check mt-4" v-if="navigationState.canEndEra">
+      <input class="form-check-input" type="checkbox" :value="true" id="endEraCheckbox" v-model="endEra">
+      <label class="form-check-label" for="endEraCheckbox">
+        <b>End Era {{navigationState.era}}</b> - Click here if Autobot built the last road of this era.
+      </label>
+    </div>
   </template>
 
-  <FooterButtons :backButtonRouteTo="backButtonRouteTo" :endGameButtonType="endGameButtonType"/>
+  <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
 
 <script lang="ts">
@@ -33,6 +40,7 @@ import { useRoute } from 'vue-router'
 import BotActions from '@/components/turn/BotActions.vue'
 import SideBar from '@/components/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
+import Era from '@/services/enum/Era'
 
 export default defineComponent({
   name: 'TurnBot',
@@ -58,7 +66,8 @@ export default defineComponent({
   },
   data() {
     return {
-      noViableActionAllTaskCards: false
+      noViableActionAllTaskCards: false,
+      endEra: false
     }
   },
   computed: {
@@ -66,15 +75,10 @@ export default defineComponent({
       if (this.turn == 1) {
         return ''
       }
+      else if (this.navigationState.eraEndedLastTurn) {
+        return `/turn/${this.turn - 1}/endOfEra`
+      }
       return `/turn/${this.turn - 1}/player`
-    },
-    endGameButtonType() : string {
-      if (this.turn === 1) {
-        return 'abortGame'
-      }
-      else {
-        return 'endGame'
-      }
     }
   },
   methods: {
@@ -109,13 +113,20 @@ export default defineComponent({
       const turn = {
         turn: this.turn + 1,
         round: this.navigationState.round,
-        era: this.navigationState.era,
+        era: this.endEra && this.navigationState.era < Era.ERA3 ? this.navigationState.era + 1 : this.navigationState.era,
         player: Player.PLAYER,
         colorCardDeck: this.colorCardDeck.toPersistence(),
-        taskCardDeck: this.taskCardDeck.toPersistence()
+        taskCardDeck: this.taskCardDeck.toPersistence(),
+        eraEndedLastTurn: this.endEra ? true : undefined
       }
       this.$store.commit('turn', turn)
-      const nextButtonRouteTo = `/turn/${this.turn + 1}/player`
+      let nextButtonRouteTo
+      if (this.navigationState.lastTurn || (this.endEra && this.navigationState.era != Era.ERA3)) {
+        nextButtonRouteTo = `/turn/${this.turn}/endOfEra`
+      }
+      else {
+        nextButtonRouteTo = `/turn/${this.turn + 1}/player`
+      }
       this.$router.push(nextButtonRouteTo)
     }
   }

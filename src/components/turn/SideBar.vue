@@ -3,6 +3,7 @@
     <p>
       <b><span v-html="t('sidebar.era', {era:navigationState.era})"></span></b><br/>
       <span v-html="t('sidebar.round', {round:navigationState.round})"></span>
+      <span v-if="showLastTurn" class="last-turn" v-html="t('sidebar.lastTurn')"></span>
     </p>
     <BotStatus :task-card-deck="navigationState.taskCardDeck" :color-card-deck="navigationState.colorCardDeck"/>
   </div>
@@ -29,6 +30,11 @@ export default defineComponent({
       required: true
     }
   },
+  computed: {
+    showLastTurn() : boolean {
+      return this.navigationState.lastTurn || this.navigationState.secondToLastTurn
+    }
+  }
 })
 </script>
 
@@ -37,5 +43,10 @@ export default defineComponent({
   float: right;
   width: 200px;
   margin-right: -12px;
+  .last-turn {
+    color: red;
+    font-weight: bold;
+    margin-left: 0.5em;
+  }
 }
 </style>

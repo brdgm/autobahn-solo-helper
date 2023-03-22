@@ -3,6 +3,16 @@
 
   <h1>{{t('endOfEra.title', {era:navigationState.era})}}</h1>
 
+  <ol class="mt-4">
+    <li v-html="t(`endOfEra.lastSectionBuildPromotion.${navigationState.player}`)"></li>
+    <li v-if="botExtraPromotions > 0" v-html="t(`endOfEra.botExtraPromotions`, {count:botExtraPromotions})"></li>
+    <li v-html="t('endOfEra.routeCard')"></li>
+    <li v-html="t('endOfEra.constructionBudget')"></li>
+    <ul>
+      <li v-html="t('endOfEra.constructionBudgetAutobotInfo')"></li>
+    </ul>
+  </ol>
+
   <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
   </router-link>
@@ -19,6 +29,7 @@ import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
 import SideBar from '@/components/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
+import Era from '@/services/enum/Era'
 
 export default defineComponent({
   name: 'EndOfEra',
@@ -48,6 +59,15 @@ export default defineComponent({
     },
     backButtonRouteTo() : string {
       return `/turn/${this.turn}/${this.navigationState.player}`
+    },
+    botExtraPromotions() : number {
+      if (this.navigationState.era == Era.ERA2) {
+        return 1
+      }
+      else if (this.navigationState.era == Era.ERA3) {
+        return 1
+      }
+      return 0
     }
   }
 })

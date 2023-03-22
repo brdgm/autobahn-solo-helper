@@ -63,7 +63,15 @@
     "endEra": "<b>End Era {era}</b> - Click here if you built the last road of this era."
   },
   "endOfEra": {
-    "title": "End of Era {era}"
+    "title": "End of Era {era}",
+    "lastSectionBuildPromotion": {
+      "bot": "Promotion: <b>Autobot</b> built the last section of this era, perform an <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Promotion</a>.",
+      "player": "Promotion: <b>You</b> built the last section of this era, you gain a promotion."
+    },
+    "botExtraPromotions": "Promotion: <b>Autobot</b> gains <b>{count} extra</b> <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Promotion</a>. | Promotion: <b>Autobot</b> gains <b>{count} extra</b> <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Promotions</a>.",
+    "routeCard": "Route Card: Evaluate your Route Card",
+    "constructionBudget": "Construction Budget: Distribute income from roads",
+    "constructionBudgetAutobotInfo": "When calculating the Construction budget for Construction Offices, treat Autobot as a second player where it has employees. However, Autobot does not receive its share of the construction budget."
   },
   "endOfGame": {
     "title": "End of Game"

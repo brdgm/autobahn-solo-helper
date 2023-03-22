@@ -40,11 +40,20 @@ describe('services/ColorCardDeck', () => {
     expect(deck.used.length, 'used size').to.eq(0)
   })
 
-  it('add', () => {
+  it('addCard', () => {
     const deck = ColorCardDeck.new()
     deck.addCard({colors: [AutobahnColor.YELLOW,AutobahnColor.WHITE], additionalBuildRoadAction: true})
 
     expect(deck.pile.length, 'pile size').to.eq(7)
+    expect(deck.used.length, 'used size').to.eq(0)
+  })
+
+  it('addYellowCardForEra3', () => {
+    const deck = ColorCardDeck.new()
+    deck.addYellowCardForEra3()
+
+    expect(deck.pile.length, 'pile size').to.eq(7)
+    expect(deck.pile[0], '1st card').to.eql({colors:[AutobahnColor.YELLOW],additionalBuildRoadAction:true})
     expect(deck.used.length, 'used size').to.eq(0)
   })
 })

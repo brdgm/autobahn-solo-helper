@@ -69,6 +69,9 @@ export default defineComponent({
   },
   methods: {
     nextTurn() : void {
+      if (this.endEra && this.navigationState.era == Era.ERA2) {
+        this.colorCardDeck.addYellowCardForEra3()
+      }
       const turn = {
         turn: this.turn + 1,
         round: this.navigationState.round + 1,

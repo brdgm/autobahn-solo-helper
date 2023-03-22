@@ -68,6 +68,13 @@ export default class ColorCardDeck {
   }
 
   /**
+   * Adds the yellow card for era 3 on top of the draw pile.
+   */
+  public addYellowCardForEra3() {
+    this._pile.unshift({colors:[AutobahnColor.YELLOW],additionalBuildRoadAction:true})
+  }
+
+  /**
    * Gets persistence view of card deck.
    */
   public toPersistence() : ColorCardDeckPersistence {

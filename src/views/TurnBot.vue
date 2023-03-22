@@ -110,6 +110,9 @@ export default defineComponent({
       this.$router.push(`/turn/${this.turn + 1}/player`)
     },
     storeNextTurn(skipTurn = false) : void {
+      if (this.endEra && this.navigationState.era == Era.ERA2) {
+        this.colorCardDeck.addYellowCardForEra3()
+      }
       const turn = {
         turn: this.turn + 1,
         round: this.navigationState.round,

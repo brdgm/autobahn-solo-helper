@@ -11,6 +11,7 @@
     <ul>
       <li v-html="t('endOfEra.constructionBudgetAutobotInfo')"></li>
     </ul>
+    <li v-if="showAutobotWineInfo" v-html="t('endOfEra.autobotWineInfo')"></li>
   </ol>
 
   <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
@@ -30,6 +31,7 @@ import { useStore } from '@/store'
 import SideBar from '@/components/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
 import Era from '@/services/enum/Era'
+import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'EndOfEra',
@@ -43,7 +45,8 @@ export default defineComponent({
     const store = useStore()
     const navigationState = new NavigationState(route, store.state)
     const turn = navigationState.turn
-    return { t, navigationState, turn }
+    const era = navigationState.era
+    return { t, navigationState, turn, era }
   },
   computed: {
     nextButtonRouteTo() : string {
@@ -61,14 +64,18 @@ export default defineComponent({
       return `/turn/${this.turn}/${this.navigationState.player}`
     },
     botExtraPromotions() : number {
-      if (this.navigationState.era == Era.ERA2) {
+      if (this.era == Era.ERA2) {
         return 1
       }
-      else if (this.navigationState.era == Era.ERA3) {
+      else if (this.era == Era.ERA3) {
         return 1
       }
       return 0
-    }
+    },
+    showAutobotWineInfo() : boolean {
+      return this.$store.state.setup.expansions.includes(Expansion.WINE)
+        && this.era == Era.ERA2
+    },
   }
 })
 </script>

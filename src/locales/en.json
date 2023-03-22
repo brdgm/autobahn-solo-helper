@@ -71,7 +71,8 @@
     "botExtraPromotions": "Promotion: <b>Autobot</b> gains <b>{count} extra</b> <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Promotion</a>. | Promotion: <b>Autobot</b> gains <b>{count} extra</b> <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Promotions</a>.",
     "routeCard": "Route Card: Evaluate your Route Card",
     "constructionBudget": "Construction Budget: Distribute income from roads",
-    "constructionBudgetAutobotInfo": "When calculating the Construction budget for Construction Offices, treat Autobot as a second player where it has employees. However, Autobot does not receive its share of the construction budget."
+    "constructionBudgetAutobotInfo": "When calculating the Construction budget for Construction Offices, treat Autobot as a second player where it has employees. However, Autobot does not receive its share of the construction budget.",
+    "autobotWineInfo": "Reveal the three <b>wine cards</b> from Autobot. Autobot will try to fulfill one them, see <a href='#loadTruckModal' data-bs-toggle='modal'>Load Truck</a> for details."
   },
   "endOfGame": {
     "title": "End of Game"
@@ -134,6 +135,7 @@
       "intro": "If all road sections are built, Autobot will instead upgrade a complete link.",
       "priority": {
         "title": "Priority:",
+        "itemTraffic": "Autobot will give priority to a link with a <b>traffic token</b>. Whenever the bot collects three traffic tokens it gains a <a href='#botGainBonusModal' data-bs-toggle='modal'>promotion</a> as usual.",
         "item1": "The section of road nearest to the black autobahn (the fewest roads spaces to travel).",
         "item2": "The closest to Bad Hersfeld.",
         "item3": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost."
@@ -167,6 +169,11 @@
     "loadingPharmaceuticals": {
       "title": "Loading Pharmaceuticals",
       "info": "During the third era, if the current color is cyan or yellow, Autobot selects Pharmaceuticals to load (instead of Automotive goods). Instead of the usual criteria, Autobot selects a connected country to which Pharmaceuticals have not yet been delivered, starting with Austria (Wien) and going clockwise around the map. If the player delivers pharmaceuticals to the selected country before Autobot, move the development token to the next connected country to which Pharmaceuticals have not yet been delivered, in clockwise order. When delivered, Autobot gains the Pharmaceuticals delivery bonus as normal."
+    },
+    "wineModule": {
+      "title": "Wine Module",
+      "info1": "The first time Autobot attempts to load a truck in era 3 with a color card that matches one of the three cards, discard the other two, load the truck next to the matching country, and place the destination token next to the card's destination.",
+      "info2": "When the truck reaches its destination Autobot will gain a wine delivery token."
     }
   },
   "moveTruck": {
@@ -185,6 +192,7 @@
     "intro": "Autobot builds a Service Station on the next available Service Station space on the autobahn that matches the current color.",
     "priority": {
       "title": "Priority:",
+      "itemServices": "Autobot will try to place an <b>upgraded service station</b> if possible (i.e. if there is an upgraded link in the current color with a bot's service station). In this case it will pick the leftmost service station available from the service station board, but it will always gain a <a href='#botGainBonusModal' data-bs-toggle='modal'>promotion</a> instead of the depicted bonus.",
       "item1": "The Service Station space nearest to the black autobahn (the fewest road sections to travel).",
       "item2": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost.",
       "item3": "If building on a black Service Station space, pick the closest to Bad Hersfeld, with ties broken in the first and second eras by the southernmost location, and in the third era, by the northernmost location."

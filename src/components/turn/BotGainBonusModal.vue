@@ -1,7 +1,7 @@
 <template>
   <ModalDialog id="botGainBonusModal" :title="t('botGainBonus.title')" :size-xl="true" :scrollable="true">
     <template #body>
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="tablink-bonus-actions" data-bs-toggle="tab" data-bs-target="#tab-bonus-actions" type="button" role="tab" aria-controls="tab-bonus-actions" aria-selected="false">{{t('botGainBonus.bonusActions')}}</button>
         </li>
@@ -12,7 +12,7 @@
           <button class="nav-link" id="tablink-bonus-promotions" data-bs-toggle="tab" data-bs-target="#tab-bonus-promotions" type="button" role="tab" aria-controls="tab-bonus-promotions" aria-selected="false">{{t('botGainBonus.autobotPromotions')}}</button>
         </li>
       </ul>
-      <div class="tab-content" id="myTabContent">
+      <div class="tab-content">
         <div class="tab-pane show active" id="tab-bonus-actions" role="tabpanel" aria-labelledby="tablink-bonus-actions" tabindex="0">
           <table class="table table-striped">
             <tbody>

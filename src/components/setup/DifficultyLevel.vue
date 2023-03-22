@@ -33,7 +33,6 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStore } from '@/store'
-import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Difficulty from '@/services/Difficulty'
 
 export default defineComponent({

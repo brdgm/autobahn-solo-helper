@@ -1,5 +1,7 @@
 <template>
-  <h1>{{t('endOfGame.title', {era:navigationState.era})}}</h1>
+  <h1>{{t('endOfGame.title')}}</h1>
+
+  <FinalScoring/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="endGame"/>
 </template>
@@ -11,11 +13,13 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useRoute } from 'vue-router'
 import NavigationState from '@/util/NavigationState'
 import { useStore } from '@/store'
+import FinalScoring from '@/components/scoring/FinalScoring.vue'
 
 export default defineComponent({
   name: 'EndOfGame',
   components: {
-    FooterButtons
+    FooterButtons,
+    FinalScoring
   },
   setup() {
     const { t } = useI18n()
@@ -23,7 +27,7 @@ export default defineComponent({
     const store = useStore()
     const navigationState = new NavigationState(route, store.state)
     const turn = navigationState.turn
-    return { t, navigationState, turn }
+    return { t, turn }
   },
   computed: {
     backButtonRouteTo() : string {

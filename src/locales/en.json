@@ -213,6 +213,18 @@
     "pickColors": "Please select the colors of the <i>leftmost</i> card from the display here, and discard it afterwards from the display.",
     "pickAction": "Please check if the color card has a <i>Build Road</i> action on it."
   },
+  "scoring": {
+    "bot": "Autobot",
+    "points": "Points",
+    "player": "Player",
+    "lobby": "Employees in Lobby",
+    "networkDepartment": "Network Department",
+    "tradeDepartment": "Trade Department",
+    "serviceDepartment": "Service Department",
+    "financeDepartment": "Finance Department",
+    "planningCustomsDepartment": "Planing/Customs Department (opt.)",
+    "total": "Total Points"
+  },
   "soloBoard": {
     "easy": "Easy Solo Board",
     "hard": "Hard Solo Board"

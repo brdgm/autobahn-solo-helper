@@ -55,10 +55,11 @@ export default defineComponent({
       return nextTurn?.eraEndedLastTurn ? true : false
     },
     numberOfSpaces() : number {
-      if (this.navigationState.era == Era.ERA1) {
-        return 2
+      let spaces = (this.navigationState.era == Era.ERA1) ? 2 : 3
+      if (this.navigationState.difficulty.truckMoveAdditionalStep) {
+        spaces = spaces + 1
       }
-      return 3
+      return spaces
     }
   }
 })

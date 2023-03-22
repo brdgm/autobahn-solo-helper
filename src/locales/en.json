@@ -13,11 +13,11 @@
       "easy": "Easy",
       "hard": "Hard",
       "level": "Level {level}",
-      "increaseDifficulty1": "Autobot's Trucks move 1 additional space every turn",
-      "increaseDifficulty2": "Autobot gets 1 Development Track step each time one of your Trucks drive past one of its Service Stations",
-      "increaseDifficulty3": "Autobot moves on the Development Track if it skips its turn",
-      "increaseDifficulty4": "Autobot gains more promotions at the end of each era (1/1/2)",
-      "increaseDifficulty5": "Autobot gains more promotions at the end of each era (1/2/2)"
+      "truckMoveAdditionalStep": "Autobot's Trucks move 1 additional space every turn",
+      "playerTruckPassesServiceStationDevelopmentStep": "Autobot gets 1 Development Track step each time one of your Trucks drive past one of its Service Stations",
+      "skipTurnDevelopmentStep": "Autobot moves on the Development Track if it skips its turn",
+      "endOfEraPromotions112": "Autobot gains more promotions at the end of each era (1/1/2)",
+      "endOfEraPromotions122": "Autobot gains more promotions at the end of each era (1/2/2)"
     },
     "expansions": {
       "title": "Mini-Expansions",
@@ -47,6 +47,7 @@
     "actionNotViable": "Not Viable",
     "turnSkip": "Skip Turn",
     "turnSkipInfo": "Autobot has no viable action in his whole task card deck and will skip this turn.",
+    "turnSkipInfoDevelopmentStep": "Autobot moves <b>1 Development Track step</b>.",
     "endEra": "<b>End Era {era}</b> - Click here if Autobot built the last road of this era."
   },
   "turnBotMoveTrucks": {
@@ -59,7 +60,8 @@
     "claimDeliveryBonus": "Claim delivery bonus (optional)",
     "takeAction": "Take action",
     "moveTrucks": "Move trucks (if you played a card)",
-    "moveTrucksAutobotInfo": "Autobot does not gain anything when your Trucks drive past its Service Stations.",
+    "moveTrucksAutobotInfo": "Autobot gains nothing when your Trucks drive past its Service Stations.",
+    "moveTrucksAutobotInfoGainDevelopmentStep": "Autobot gets <b>1 Development Track step</b> each time one of your Trucks drive past one of its Service Stations.",
     "endEra": "<b>End Era {era}</b> - Click here if you built the last road of this era."
   },
   "endOfEra": {

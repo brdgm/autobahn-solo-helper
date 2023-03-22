@@ -8,7 +8,9 @@
     <li v-html="t('turnPlayer.takeAction')"></li>
     <li v-html="t('turnPlayer.moveTrucks')"></li>
     <ul>
-      <li v-html="t('turnPlayer.moveTrucksAutobotInfo')"></li>
+      <li v-if="navigationState.difficulty.playerTruckPassesServiceStationDevelopmentStep"
+         v-html="t('turnPlayer.moveTrucksAutobotInfoGainDevelopmentStep')"></li>
+      <li v-else v-html="t('turnPlayer.moveTrucksAutobotInfo')"></li>
     </ul>
   </ol>
 

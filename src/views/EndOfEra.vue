@@ -64,13 +64,13 @@ export default defineComponent({
       return `/turn/${this.turn}/${this.navigationState.player}`
     },
     botExtraPromotions() : number {
-      if (this.era == Era.ERA2) {
-        return 1
+      if (this.navigationState.difficulty.endOfEraPromotions112) {
+        return (this.era == Era.ERA1 || this.era == Era.ERA2) ? 1 : 2
       }
-      else if (this.era == Era.ERA3) {
-        return 1
+      else if (this.navigationState.difficulty.endOfEraPromotions122) {
+        return (this.era == Era.ERA1) ? 1 : 2
       }
-      return 0
+      return (this.era == Era.ERA1) ? 0 : 1
     },
     showAutobotWineInfo() : boolean {
       return this.$store.state.setup.expansions.includes(Expansion.WINE)

@@ -1,4 +1,5 @@
 import ColorCardDeck from "@/services/ColorCardDeck"
+import Difficulty from "@/services/Difficulty"
 import DifficultyLevel from "@/services/enum/DifficultyLevel"
 import Era from "@/services/enum/Era"
 import Player from "@/services/enum/Player"
@@ -8,7 +9,7 @@ import { RouteLocation } from "vue-router"
 
 export default class NavigationState {
 
-  readonly difficultyLevel : DifficultyLevel
+  readonly difficulty : Difficulty
   readonly turn : number
   readonly round : number
   readonly era : Era
@@ -22,7 +23,7 @@ export default class NavigationState {
   readonly lastTurn : boolean
 
   public constructor(route : RouteLocation, state : State) {    
-    this.difficultyLevel = state.setup.difficultyLevel
+    this.difficulty = new Difficulty(state.setup.difficultyLevel)
     this.turn = parseInt(route.params['turn'] as string)
 
     const turnData = state.turns.find(item => item.turn == this.turn)

@@ -17,13 +17,12 @@
     <div class="offset-md-1 col-10 col-md-7 text-muted small">
       <span v-html="t('setup.difficultyLevel.level', {level:difficultyLevel})"></span>
       <ul>
-        <li v-if="difficultyLevel < 7" v-html="t('soloBoard.easy')"></li>
-        <li v-else v-html="t('soloBoard.hard')"></li>
-        <li v-if="between(difficultyLevel, 2, 6) || between(difficultyLevel, 8, 12)" v-html="t('setup.difficultyLevel.increaseDifficulty1')"></li>
-        <li v-if="between(difficultyLevel, 3, 6) || between(difficultyLevel, 9, 12)" v-html="t('setup.difficultyLevel.increaseDifficulty2')"></li>
-        <li v-if="between(difficultyLevel, 4, 6) || between(difficultyLevel, 10, 12)" v-html="t('setup.difficultyLevel.increaseDifficulty3')"></li>
-        <li v-if="difficultyLevel==5 || difficultyLevel==11" v-html="t('setup.difficultyLevel.increaseDifficulty4')"></li>
-        <li v-if="difficultyLevel==6 || difficultyLevel==12" v-html="t('setup.difficultyLevel.increaseDifficulty5')"></li>
+        <li v-html="t(`soloBoard.${difficulty.soloBoard}`)"></li>
+        <li v-if="difficulty.truckMoveAdditionalStep" v-html="t('setup.difficultyLevel.truckMoveAdditionalStep')"></li>
+        <li v-if="difficulty.playerTruckPassesServiceStationDevelopmentStep" v-html="t('setup.difficultyLevel.playerTruckPassesServiceStationDevelopmentStep')"></li>
+        <li v-if="difficulty.skipTurnDevelopmentStep" v-html="t('setup.difficultyLevel.skipTurnDevelopmentStep')"></li>
+        <li v-if="difficulty.endOfEraPromotions112" v-html="t('setup.difficultyLevel.endOfEraPromotions112')"></li>
+        <li v-if="difficulty.endOfEraPromotions122" v-html="t('setup.difficultyLevel.endOfEraPromotions122')"></li>
       </ul>
     </div>
   </div>  
@@ -34,6 +33,8 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStore } from '@/store'
+import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import Difficulty from '@/services/Difficulty'
 
 export default defineComponent({
   name: 'DifficultyLevel',
@@ -47,14 +48,16 @@ export default defineComponent({
       difficultyLevel: this.$store.state.setup.difficultyLevel
     }
   },
+  computed: {
+    difficulty() : Difficulty {
+      return new Difficulty(this.difficultyLevel)
+    }
+  },
   methods: {
     updateDifficultyLevel(event: Event) {
       this.difficultyLevel = parseInt((event.target as HTMLInputElement).value)
       this.$store.commit('setupDifficultyLevel', this.difficultyLevel)
     },
-    between(value : number, min : number, max : number) : boolean {
-      return value >= min && value <= max;
-    }
   }
 })
 </script>

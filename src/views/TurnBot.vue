@@ -5,6 +5,7 @@
 
   <template v-if="noViableActionAllTaskCards">
     <p class="mt-4" v-html="t('turnBot.turnSkipInfo')"></p>
+    <p v-if="navigationState.difficulty.skipTurnDevelopmentStep" v-html="t('turnBot.turnSkipInfoDevelopmentStep')"></p>
     <button @click="skipTurn" class="btn btn-primary btn-lg mt-4">
       {{t('turnBot.turnSkip')}}
     </button>

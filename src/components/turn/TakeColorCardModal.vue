@@ -12,14 +12,14 @@
       </div>
       <p class="mt-3" v-html="t('takeColorCard.pickAction')"></p>
       <div class="form-check icon-check">
-        <input class="form-check-input" type="checkbox" :value="true" id="hasBuildRoadAction" v-model="additionalBuildRoadAction">
+        <input class="form-check-input" type="checkbox" :value="true" id="hasBuildRoadAction" v-model="additionalBuildRoadAction" :disabled="!yellowCardSelected">
         <label class="form-check-label" for="hasBuildRoadAction">
-          <AppIcon class="icon" type="action" name="build-road"/>
+          <AppIcon class="icon" name="additional-build-road-action"/>
         </label>
       </div>        
     </template>
     <template #footer>
-      <button class="btn btn-primary" @click="addColorCard" data-bs-dismiss="modal">{{t('takeColorCard.title')}}</button>
+      <button class="btn btn-primary" @click="addColorCard" data-bs-dismiss="modal" :disabled="!validChoice">{{t('takeColorCard.title')}}</button>
       <button class="btn btn-secondary" data-bs-dismiss="modal">{{t('action.cancel')}}</button>
     </template>
   </ModalDialog>
@@ -59,6 +59,13 @@ export default defineComponent({
   computed: {
     allColors() : AutobahnColor[] {
       return Object.values(AutobahnColor)
+    },
+    yellowCardSelected() : boolean {
+      return this.pickedColors.includes(AutobahnColor.YELLOW)
+    },
+    validChoice() : boolean {
+      return this.pickedColors.length > 0
+        && (!this.additionalBuildRoadAction || this.yellowCardSelected)
     }
   },
   methods: {
@@ -90,6 +97,6 @@ export default defineComponent({
   width: 70px;
 }
 .icon-check .form-check-input {
-  margin-top: 25px;
+  margin-top: 10px;
 }
 </style>

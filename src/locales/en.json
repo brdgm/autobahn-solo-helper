@@ -130,7 +130,9 @@
         "item3": "The section of road nearest to the black autobahn (the fewest road sections to travel).",
         "item4": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost."
       },
-      "employeeCostInfo": "When building a road, Autobot places an Employee in the corresponding Office as usual. Autobot never pays building costs."
+      "employeeCostInfo": "When building a road, Autobot places an Employee in the corresponding Office as usual. Autobot never pays building costs.",
+      "developIcon": "If Autobot builds a road section on a space with a 'Develop' icon, move Autobot's Marker 1 steps forward on the Development Track.",
+      "bonusTile": "If Autobot builds a road section on a space with a bonus tile, Autobot places it face down on the next available slot of the Solo board and gains the bonus depicted on the slot as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Gain Bonus</a>."
     },
     "upgradeLink": {
       "title": "Upgrade Link",

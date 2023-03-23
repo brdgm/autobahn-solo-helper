@@ -158,13 +158,11 @@ export default defineComponent({
       }
     }
     .title {
+      display: inline-block;
       margin-right: 10px;
     }
     .show-details {
       display: block;
-    }
-    .title {
-      display: inline-block;
     }
   }
 }

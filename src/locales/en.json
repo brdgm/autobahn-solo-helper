@@ -105,10 +105,10 @@
     "develop": "<b>Develop:</b> Move Autobot's Marker 1 or 2 steps forward on the Development Track.",
     "advancedCard": "<b>Take Advanced Task Card:</b> Add an advanced card to the task card deck.",
     "takeAdvancedCard": "Take Advanced Card",
-    "promote": "<b>Promote:</b> Promote 1 of Autobot's Employees as explained in <a href='#tablink-bonus-promotions' data-bs-toggle='tab'>Autobot's promotions</a>.",
+    "promote": "<b>Promote:</b> Promote 1 of Autobot's Employees as explained in <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot's promotions</a>.",
     "colorCard": "<b>Take Color Card:</b> Take the <i>leftmost</i> card from the display. This will give Autobot an extra color card.",
     "takeColorCard": "Take Color Card",
-    "promoteServiceTrade": "<b>Promote:</b> Promotions gained in this way should be taken on the Department shown if possible. If a promotion in the department shown is not possible, follow the normal priority rules in <a href='#tablink-bonus-promotions' data-bs-toggle='tab'>Autobot's promotions</a>.",
+    "promoteServiceTrade": "<b>Promote:</b> Promotions gained in this way should be taken on the Department shown if possible. If a promotion in the department shown is not possible, follow the normal priority rules in <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot's promotions</a>.",
     "buildServiceStation": "<b>Build a Service Station:</b> Immediately perform the <a href='#buildServiceStationModal' data-bs-toggle='modal'>Build a Service Station</a> action.",
     "buildRoadSection": "<b>Build a road section:</b> Immediately perform the <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Build a road section</a> action.",
     "upgradeLink": "<b>Upgrade a link:</b> Immediately perform the <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Upgrade a link</a> action.",
@@ -122,7 +122,7 @@
     "title": "Build Road Section or Upgrade Link",
     "buildRoad": {
       "title": "Build Road Section",
-      "intro": "Autobot builds the next road section of the autobahn that matches the current color. If all available road sections have already been built, Autobot will instead <a href='#tablink-upgrade-link' data-bs-toggle='tab'>upgrade a complete link</a>.",
+      "intro": "Autobot builds the next road section of the autobahn that matches the current color. If all available road sections have already been built, Autobot will instead <a href='#tablink-upgrade-link' data-custom-toggle='tab'>upgrade a complete link</a>.",
       "priority": {
         "title": "Priority:",
         "item1": "The section of road that would allow one of Autobot's Trucks to deliver a Goods token to or move towards its destination country. If tied, the country that appears highest on Autobot's delivery board.",

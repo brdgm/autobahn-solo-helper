@@ -1,48 +1,54 @@
 <template>
   <div class="bot-status">
-    <h5 v-html="t('botStatus.title')"></h5>
+    <h5 class="title" v-html="t('botStatus.title')"></h5>
 
-    <h6 v-html="t('botStatus.taskQueue')"></h6>
-    <template v-if="taskCardDeck.isQueueEmpty()">
-      <div class="none text-muted" v-html="t('botStatus.empty')"></div>
-    </template>
-    <template v-else>
-      <AppIcon v-for="taskCard of taskCardDeck.queue" :key="taskCard.id"
+    <div class="status-details mb-2">
+      <h6 v-html="t('botStatus.taskQueue')"></h6>
+      <template v-if="taskCardDeck.isQueueEmpty()">
+        <div class="none text-muted" v-html="t('botStatus.empty')"></div>
+      </template>
+      <template v-else>
+        <AppIcon v-for="taskCard of taskCardDeck.queue" :key="taskCard.id"
+            type="action" :name="taskCard.action" class="action-icon"/>
+      </template>
+
+      <h6 v-html="t('botStatus.taskPile')"></h6>
+      <template v-if="taskCardDeck.isPileEmpty()">
+        <div class="none text-muted" v-html="t('botStatus.empty')"></div>
+      </template>
+      <template v-else>
+        <AppIcon v-for="index of taskCardDeck.pile.length" :key="index"
+            type="action" name="unknown" class="action-icon"/>
+      </template>
+
+      <h6 v-html="t('botStatus.usedColors')"></h6>
+      <template v-if="colorCardDeck.isUsedEmpty()">
+        <div class="none text-muted" v-html="t('botStatus.none')"></div>
+      </template>
+      <template v-else>
+        <AutobahnColorCard v-for="(colorCard, index) of colorCardDeck.used" :key="index"
+          :color-card="colorCard" class="color-card"/>
+      </template>
+
+      <h6 v-html="t('botStatus.usedTasks')"></h6>
+      <template v-if="taskCardDeck.isUsedEmpty()">
+        <div class="none text-muted" v-html="t('botStatus.none')"></div>
+      </template>
+      <template v-else>
+        <AppIcon v-for="taskCard of taskCardDeck.used" :key="taskCard.id"
           type="action" :name="taskCard.action" class="action-icon"/>
-    </template>
-
-    <h6 v-html="t('botStatus.taskPile')"></h6>
-    <template v-if="taskCardDeck.isPileEmpty()">
-      <div class="none text-muted" v-html="t('botStatus.empty')"></div>
-    </template>
-    <template v-else>
-      <AppIcon v-for="index of taskCardDeck.pile.length" :key="index"
-          type="action" name="unknown" class="action-icon"/>
-    </template>
-
-    <h6 v-html="t('botStatus.usedColors')"></h6>
-    <template v-if="colorCardDeck.isUsedEmpty()">
-      <div class="none text-muted" v-html="t('botStatus.none')"></div>
-    </template>
-    <template v-else>
-      <AutobahnColorCard v-for="(colorCard, index) of colorCardDeck.used" :key="index"
-        :color-card="colorCard" class="color-card"/>
-    </template>
-
-    <h6 v-html="t('botStatus.usedTasks')"></h6>
-    <template v-if="taskCardDeck.isUsedEmpty()">
-      <div class="none text-muted" v-html="t('botStatus.none')"></div>
-    </template>
-    <template v-else>
-      <AppIcon v-for="taskCard of taskCardDeck.used" :key="taskCard.id"
-        type="action" :name="taskCard.action" class="action-icon"/>
-    </template>
-
-    <div class="mt-1">
-      <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#botGainBonusModal">
-        {{t('botStatus.gainBonus')}}
-      </button>
+      </template>
     </div>
+
+    <button class="show-details-button btn btn-outline-secondary btn-sm me-2" @click="toggleDetails">
+      Show
+    </button>
+    <button class="hide-details-button btn btn-outline-secondary btn-sm me-2" @click="toggleDetails">
+      Hide
+    </button>
+    <button class="gain-bonus-button btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#botGainBonusModal">
+      {{t('botStatus.gainBonus')}}
+    </button>
   </div>
 
   <BotGainBonusModal/>
@@ -96,6 +102,12 @@ export default defineComponent({
       required: true
     },
   },
+  methods: {
+    toggleDetails(event : Event) : void {
+      const targetElement = event.target as HTMLElement
+      targetElement.parentElement?.classList.toggle('show-details')
+    }
+  }
 })
 </script>
 
@@ -106,24 +118,52 @@ export default defineComponent({
   background-color: rgb(200, 221, 249);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-}
-.color-card {
-  display: inline-block;
-  margin-right: 5px;
-  width: 35px;
-  height: 35px;
-}
-.action-icon {
-  width: 38px;
-  margin-right: 4px;
-  margin-bottom: 6px;
-  filter: drop-shadow(1px 1px 2px #555);
-}
-.none {
-  margin-bottom: 10px;
-  font-size: small;
-}
-button img {
-  width: 30px;
+  .color-card {
+    display: inline-block;
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+  }
+  .action-icon {
+    width: 38px;
+    margin-right: 4px;
+    margin-bottom: 6px;
+    filter: drop-shadow(1px 1px 2px #555);
+  }
+  .none {
+    margin-bottom: 10px;
+    font-size: small;
+  }
+  .show-details-button, .hide-details-button {
+    display: none;
+  }
+  @media (max-width: 500px) {
+    padding: 10px;
+    border-radius: 10px;
+    .status-details {
+      display: none;
+    }
+    .show-details-button {
+      display: unset;
+    }
+    &.show-details {
+      .status-details {
+        display: block;
+      }
+      .hide-details-button {
+        display: unset;
+      }
+      .show-details-button {
+        display: none;
+      }
+    }
+    .title {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .show-details {
+      display: block;
+    }
+  }
 }
 </style>

@@ -3,7 +3,7 @@
   "home": {
     "title": "Autobahn Solo Helper",
     "play1": "Play against Autobot, the Solo Mode opponent of <a href='https://boardgamegeek.com/boardgame/348554/autobahn' target='_blank' rel='noopener'><b>Autobahn</b></a>.",
-    "play2": "This helper application replaces the task and action card decks of Autobot and manages the difficulty levels.",
+    "play2": "This helper application replaces the task and action card decks of Autobot and manages the difficulty levels. The Autobot rules are displayed by clicking on the action icons.",
     "feedback": "Discussion and Feedback:"
   },
   "setup": {
@@ -38,7 +38,7 @@
     "placeDevelopmentToken": "Place Autobot's Development token on the first space of the Development Track.",
     "placeBlackConstructionOffice": "Autobot is the start player, so place 1 of Autobot's Employees onto the first (leftmost) seat of the black Construction Office. Place one of yours on the next seat.",
     "setupPlayerPlayArea": "Set up your play area as normal, and reveal 2 Route cards from the deck. Pick one for yourself and discard the other one. Return the unused route cards back to the box. Autobot does not have a Route card.",
-    "winePickCard": "Wine Module: You randomly pick one of the wine cards for yourself, and place the remaining three next to the solo board.",
+    "winePickCard": "Wine Module: Randomly pick one of the wine cards for yourself, and place the remaining three next to the solo board.",
     "unlimitedBudget": "Autobot has an unlimited budget. You do not need to track Autobot's income or expenditure."
   },
   "turnBot": {
@@ -52,7 +52,7 @@
   },
   "turnBotMoveTrucks": {
     "title": "Autobot's turn - Move Trucks",
-    "moveSpaces": "Move each of Autobot's trucks <b>{numberOfSpaces} spaces</b> towards the <a href='#loadTruckModal' data-bs-toggle='modal'>selected country</a>. Ignore the colors.",
+    "moveSpaces": "Move each of Autobot's loaded trucks <b>{numberOfSpaces} spaces</b> towards the <a href='#loadTruckModal' data-bs-toggle='modal'>selected country</a>. Ignore the colors.",
     "moveTruckInfo": "Details about <a href='#moveTruckModal' data-bs-toggle='modal'>Autobot's truck movements and delivery</a>."
   },
   "turnPlayer": {
@@ -105,10 +105,10 @@
     "develop": "<b>Develop:</b> Move Autobot's Marker 1 or 2 steps forward on the Development Track.",
     "advancedCard": "<b>Take Advanced Task Card:</b> Add an advanced card to the task card deck.",
     "takeAdvancedCard": "Take Advanced Card",
-    "promote": "<b>Promote:</b> Promote 1 of Autobot's Employees as explained in <a href='#tablink-bonus-promotions' data-bs-toggle='tab'>Autobot's promotions</a>.",
+    "promote": "<b>Promote:</b> Promote 1 of Autobot's Employees as explained in <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot's promotions</a>.",
     "colorCard": "<b>Take Color Card:</b> Take the <i>leftmost</i> card from the display. This will give Autobot an extra color card.",
     "takeColorCard": "Take Color Card",
-    "promoteServiceTrade": "<b>Promote:</b> Promotions gained in this way should be taken on the Department shown if possible. If a promotion in the department shown is not possible, follow the normal priority rules in <a href='#tablink-bonus-promotions' data-bs-toggle='tab'>Autobot's promotions</a>.",
+    "promoteServiceTrade": "<b>Promote:</b> Promotions gained in this way should be taken on the Department shown if possible. If a promotion in the department shown is not possible, follow the normal priority rules in <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot's promotions</a>.",
     "buildServiceStation": "<b>Build a Service Station:</b> Immediately perform the <a href='#buildServiceStationModal' data-bs-toggle='modal'>Build a Service Station</a> action.",
     "buildRoadSection": "<b>Build a road section:</b> Immediately perform the <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Build a road section</a> action.",
     "upgradeLink": "<b>Upgrade a link:</b> Immediately perform the <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Upgrade a link</a> action.",
@@ -122,7 +122,7 @@
     "title": "Build Road Section or Upgrade Link",
     "buildRoad": {
       "title": "Build Road Section",
-      "intro": "Autobot builds the next road section of the autobahn that matches the current color. If all available road sections have already been built, Autobot will instead <a href='#tablink-upgrade-link' data-bs-toggle='tab'>upgrade a complete link</a>.",
+      "intro": "Autobot builds the next road section of the autobahn that matches the current color. If all available road sections have already been built, Autobot will instead <a href='#tablink-upgrade-link' data-custom-toggle='tab'>upgrade a complete link</a>.",
       "priority": {
         "title": "Priority:",
         "item1": "The section of road that would allow one of Autobot's Trucks to deliver a Goods token to or move towards its destination country. If tied, the country that appears highest on Autobot's delivery board.",
@@ -130,7 +130,9 @@
         "item3": "The section of road nearest to the black autobahn (the fewest road sections to travel).",
         "item4": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost."
       },
-      "employeeCostInfo": "When building a road, Autobot places an Employee in the corresponding Office as usual. Autobot never pays building costs."
+      "employeeCostInfo": "When building a road, Autobot places an Employee in the corresponding Office as usual. Autobot never pays building costs.",
+      "developIcon": "If Autobot builds a road section on a space with a 'Develop' icon, move Autobot's Marker 1 steps forward on the Development Track.",
+      "bonusTile": "If Autobot builds a road section on a space with a bonus tile, Autobot places it face down on the next available slot of the Solo board and gains the bonus depicted on the slot as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Gain Bonus</a>."
     },
     "upgradeLink": {
       "title": "Upgrade Link",
@@ -183,7 +185,7 @@
     "ignoreColor": "Autobot does not need to match the current color card to move along road sections. If a Truck cannot move forwards for any reason (such as an unbuilt road) it stays still.",
     "passServiceStations": "Each time one of Autobot's Trucks passes one of its own Service Stations, it gains the rightmost revealed bonus as shown on the Solo board. If one of Autobot's Trucks passes your Service Stations, you gain income from the supply as normal.",
     "deliverGoods": "If one of Autobot's Trucks reaches its selected country, it delivers its goods:",
-    "deliverGoodsItem1": "When a good is delivered, place it onto the corresponding space of Autobot's delivery board.",
+    "deliverGoodsItem1": "When a good is delivered, place a delivery token onto the corresponding space of Autobot's delivery board.",
     "deliverGoodsItem2": "If the good type matches, Autobot moves 1 space up the Development Track. Autobot never receives the bonus action or money shown on the delivery board.",
     "deliverGoodsItem3": "If Autobot delivers Pharmaceuticals it gains the delivery bonus as normal.",
     "deliverGoodsItem4": "If the selected country has a delivery bonus tile, Autobot takes it and places the token face down on the next available slot of the Solo board and gains the bonus depicted on the slot as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Solo Board Bonuses</a>.",

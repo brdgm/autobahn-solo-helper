@@ -20,6 +20,14 @@
             <li v-html="t('buildRoadUpgradeLink.buildRoad.priority.item4')"></li>
           </ol>
           <p v-html="t('buildRoadUpgradeLink.buildRoad.employeeCostInfo')"></p>
+          <p>
+            <AppIcon type="bonus-action" name="develop-1" class="icon"/>
+            <span v-html="t('buildRoadUpgradeLink.buildRoad.developIcon')"></span>
+          </p>
+          <p>
+            <AppIcon name="bonus-tile" class="icon"/>
+            <span v-html="t('buildRoadUpgradeLink.buildRoad.bonusTile')"></span>
+          </p>
         </div>
         <div class="tab-pane" id="tab-upgrade-link" role="tabpanel" aria-labelledby="tablink-upgrade-link" tabindex="0">
           <p v-html="t('buildRoadUpgradeLink.upgradeLink.intro')"></p>
@@ -44,11 +52,13 @@ import enableTabLinksInContent from '@/util/enableTabLinksInContent';
 import ModalDialog from 'brdgm-commons/src/components/structure/ModalDialog.vue'
 import Expansion from '@/services/enum/Expansion';
 import { useStore } from '@/store';
+import AppIcon from '../structure/AppIcon.vue';
 
 export default defineComponent({
   name: 'BuildRoadUpgradeLinkModal',  
   components: {
-    ModalDialog
+    ModalDialog,
+    AppIcon
   },
   setup() {
     const { t } = useI18n()
@@ -65,3 +75,15 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.icon {
+  height: 40px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+p {
+  clear: both;
+}
+</style>

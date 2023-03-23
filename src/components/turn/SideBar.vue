@@ -1,10 +1,10 @@
 <template>
   <div class="sidebar">
-    <p>
-      <b><span v-html="t('sidebar.era', {era:navigationState.era})"></span></b><br/>
+    <div class="era" v-html="t('sidebar.era', {era:navigationState.era})"></div>
+    <div class="round">
       <span v-html="t('sidebar.round', {round:navigationState.round})"></span>
       <span v-if="showLastTurn" class="last-turn" v-html="t('sidebar.lastTurn')"></span>
-    </p>
+    </div>
     <BotStatus :task-card-deck="navigationState.taskCardDeck" :color-card-deck="navigationState.colorCardDeck"/>
   </div>
 </template>
@@ -44,10 +44,25 @@ export default defineComponent({
   width: 200px;
   margin-right: -12px;
   margin-left: 20px;
-  .last-turn {
-    color: red;
+  .era {
     font-weight: bold;
-    margin-left: 0.5em;
+  }
+  .round {
+    margin-bottom: 10px;
+    .last-turn {
+      color: red;
+      font-weight: bold;
+      margin-left: 0.5em;
+    }
+  }
+  @media (max-width: 500px) {
+    float: unset;
+    margin: 0;
+    width: 100%;
+    .round, .era {
+      display: inline-block;
+      margin-right: 5px;
+    }
   }
 }
 </style>

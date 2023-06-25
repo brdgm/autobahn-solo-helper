@@ -2,7 +2,7 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Expansion from '@/services/enum/Expansion'
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
-import toggleArrayItem from "brdgm-commons/src/util/array/toggleArrayItem"
+import toggleArrayItem from 'brdgm-commons/src/util/array/toggleArrayItem'
 import ColorCard from '@/services/ColorCard'
 import Player from '@/services/enum/Player'
 import Era from '@/services/enum/Era'

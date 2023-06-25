@@ -1,4 +1,4 @@
-import { Tab } from "bootstrap";
+import { Tab } from 'bootstrap';
 
 /**
  * Enables the links inside tab panes to be able to switch to different tabs.

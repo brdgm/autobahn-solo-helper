@@ -1,8 +1,8 @@
-import { TaskCardDeckPersistence } from "@/store"
-import * as _ from "lodash"
-import TaskCardLevel from "./enum/TaskCardLevel"
-import TaskCard from "./TaskCard"
-import TaskCards from "./TaskCards"
+import { TaskCardDeckPersistence } from '@/store'
+import * as _ from 'lodash'
+import TaskCardLevel from './enum/TaskCardLevel'
+import TaskCard from './TaskCard'
+import TaskCards from './TaskCards'
 
 export default class TaskCardDeck {
 

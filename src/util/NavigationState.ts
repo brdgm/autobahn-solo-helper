@@ -1,10 +1,10 @@
-import ColorCardDeck from "@/services/ColorCardDeck"
-import Difficulty from "@/services/Difficulty"
-import Era from "@/services/enum/Era"
-import Player from "@/services/enum/Player"
-import TaskCardDeck from "@/services/TaskCardDeck"
-import { State } from "@/store"
-import { RouteLocation } from "vue-router"
+import ColorCardDeck from '@/services/ColorCardDeck'
+import Difficulty from '@/services/Difficulty'
+import Era from '@/services/enum/Era'
+import Player from '@/services/enum/Player'
+import TaskCardDeck from '@/services/TaskCardDeck'
+import { State } from '@/store'
+import { RouteLocation } from 'vue-router'
 
 export default class NavigationState {
 

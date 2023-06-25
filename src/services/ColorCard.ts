@@ -1,4 +1,4 @@
-import AutobahnColor from "./enum/AutobahnColor"
+import AutobahnColor from './enum/AutobahnColor'
 
 export default interface ColorCard {
   colors: AutobahnColor[]

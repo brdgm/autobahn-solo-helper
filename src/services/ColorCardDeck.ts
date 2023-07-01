@@ -1,7 +1,7 @@
-import { ColorCardDeckPersistence } from "@/store"
-import * as _ from "lodash"
-import ColorCard from "./ColorCard"
-import AutobahnColor from "./enum/AutobahnColor"
+import { ColorCardDeckPersistence } from '@/store'
+import * as _ from 'lodash'
+import ColorCard from './ColorCard'
+import AutobahnColor from './enum/AutobahnColor'
 
 export default class ColorCardDeck {
 

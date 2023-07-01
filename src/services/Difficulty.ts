@@ -1,5 +1,5 @@
-import DifficultyLevel from "./enum/DifficultyLevel";
-import SoloBoard from "./enum/SoloBoard";
+import DifficultyLevel from './enum/DifficultyLevel';
+import SoloBoard from './enum/SoloBoard';
 
 export default class Difficulty {
 

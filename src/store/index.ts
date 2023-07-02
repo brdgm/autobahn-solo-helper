@@ -6,8 +6,9 @@ import toggleArrayItem from 'brdgm-commons/src/util/array/toggleArrayItem'
 import ColorCard from '@/services/ColorCard'
 import Player from '@/services/enum/Player'
 import Era from '@/services/enum/Era'
+import { name } from '@/../package.json'
 
-const LOCALSTORAGE_KEY = process.env.VUE_APP_LOCALSTORAGE_KEY_PREFIX + "store"
+const LOCALSTORAGE_KEY = `${name}.store`
 
 export interface State {
   language: string

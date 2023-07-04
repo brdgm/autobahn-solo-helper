@@ -1,7 +1,7 @@
 import TaskCardDeck from '@/services/TaskCardDeck'
 import { expect } from 'chai'
 
-describe('services/deck', () => {
+describe('services/TaskCardDeck', () => {
   it('new', () => {
     const deck = TaskCardDeck.new()
 

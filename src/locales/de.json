@@ -95,19 +95,19 @@
     "none": "keine"
   },
   "botGainBonus": {
-    "title": "Autobot Gain Bonus",
-    "bonusActions": "Autobot's bonus actions",
-    "boardBonuses": "Solo Board Bonuses",
-    "autobotPromotions": "Autobot's promotions",
-    "discard": "<b>Discard:</b> Autobot discards an action card from the display. Once selected, slide all remaining cards to the right and draw a new card to place in the leftmost slot. Priority for discarding a card:",
-    "discardPrioItem1": "The leftmost card of the current color.",
-    "discardPrioItem2": "The rightmost card of the color which appears most in the display.",
-    "develop": "<b>Develop:</b> Move Autobot's Marker 1 or 2 steps forward on the Development Track.",
-    "advancedCard": "<b>Take Advanced Task Card:</b> Add an advanced card to the task card deck.",
-    "takeAdvancedCard": "Take Advanced Card",
-    "promote": "<b>Promote:</b> Promote 1 of Autobot's Employees as explained in <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot's promotions</a>.",
-    "colorCard": "<b>Take Color Card:</b> Take the <i>leftmost</i> card from the display. This will give Autobot an extra color card.",
-    "takeColorCard": "Take Color Card",
+    "title": "Autobot Bonus",
+    "bonusActions": "Autobots Bonusaktionen",
+    "boardBonuses": "Boni des Solotableaus",
+    "autobotPromotions": "Autobot-Beförderung",
+    "discard": "<b>Abwerfen:</b> Autobot wirft 1 Aktionskarte aus der Auslage ab. Danach rückt er alle verbleibenden Karten nach rechts und zieht 1 neue Karte, die er links daneben legt. Priorität für die Kartenwahl:",
+    "discardPrioItem1": "Die am weitesten links liegende Karte der aktuellen Farbe.",
+    "discardPrioItem2": "Die am weitesten rechts liegende Karte der Farbe, die am häufigsten in der Auslage auftaucht.",
+    "develop": "<b>Entwickeln:</b> Rücke Autobots Entwicklungsmarker 1 oder 2 Schritte auf der Entwicklungsleiste nach vorne.",
+    "advancedCard": "<b>Nimm eine fortgeschrittene Anweisungskarte:</b> Füge eine fortgeschrittene Karte dem Anweisungsstapel hinzu.",
+    "takeAdvancedCard": "Fortgeschrittene Anweisungskarte hinzufügen",
+    "promote": "<b>Beförderung:</b> Befördere 1 von Autobots Arbeitskräften (siehe <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot-Beförderung</a>).",
+    "colorCard": "<b>Nimm eine Farbkarte:</b> Nimm die am <i>weitesten links</i> liegende Karte aus der Auslage. Autobot erhält diese zusätzliche Farbkarte.",
+    "takeColorCard": "Farbkarte hinzufügen",
     "promoteServiceTrade": "<b>Promote:</b> Promotions gained in this way should be taken on the Department shown if possible. If a promotion in the department shown is not possible, follow the normal priority rules in <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot's promotions</a>.",
     "buildServiceStation": "<b>Build a Service Station:</b> Immediately perform the <a href='#buildServiceStationModal' data-bs-toggle='modal'>Build a Service Station</a> action.",
     "buildRoadSection": "<b>Build a road section:</b> Immediately perform the <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Build a road section</a> action.",
@@ -206,14 +206,14 @@
     "gainBonus": "When placing a Service Station, Autobot immediately gains the bonus depicted underneath it on the Solo board as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot's Gain Bonus</a>."
   },
   "takeAdvancedCard": {
-    "title": "Take Advanced Card",
-    "addCardInfo": "This will add an <b>advanced card</b> to the bot's task card deck.",
-    "noCardLeft": "All advanced cards already added."
+    "title": "Fortgeschrittene Anweisungskarte hinzufügen",
+    "addCardInfo": "Es wird eine <b>fortgeschrittene Anweisungskarte</b> dem Anweisungsstapel von Autobot hinzugefügt.",
+    "noCardLeft": "Alle fortgeschrittenen Anweisungskarten wurden bereits hinzugefügt."
   },
   "takeColorCard": {
-    "title": "Take Color Card",
-    "pickColors": "Please select the colors of the <i>leftmost</i> card from the display here, and discard it afterwards from the display.",
-    "pickAction": "Please check if the color card has a <i>Build Road</i> action on it."
+    "title": "Farbkarte hinzufügen",
+    "pickColors": "Wähle die Farben der Farbkarte die am <i>weitesten links</i> in der Auslage liegt, und werfe die anschließend ab.",
+    "pickAction": "Hier aktivieren, falls diese Farbkarte eine <i>Straßenabschnitt bauen</i>-Aktion hat."
   },
   "scoring": {
     "bot": "Autobot",

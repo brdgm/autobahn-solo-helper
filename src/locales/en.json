@@ -152,8 +152,8 @@
     "intro1": "When Autobot takes the ‘Load Truck' action it will select a destination country to deliver to and a depot to load goods at.",
     "intro2": "When selecting a country to deliver to, Autobot selects a country to which it has not yet delivered and is not currently delivering. In the first and second era, Autobot ignores Poland and Czech Republic.",
     "intro3": "Autobot will select a country on Autobot's delivery board that pairs with the loaded good type.",
-    "intro4": "If there is not an undelivered to country that pairs with the current good type, Autobot cannot take this main action, so place the card aside in the Task queue.",
-    "intro5": "Autobot always has the ability to use both of its Trucks. If no Truck is available Autobot cannot take this main action, so place the card aside in the Task queue.",
+    "intro4": "If there is not an undelivered to country that pairs with the current good type, Autobot cannot take this main action.",
+    "intro5": "Autobot always has the ability to use both of its Trucks. If no Truck is available Autobot cannot take this main action.",
     "loadNonBlack": {
       "title": "Loading on the red, cyan, purple, orange or white roads",
       "info": "Choose the depot that matches the current color and load that Goods token. Place the Goods token on an available Truck and place the Truck in the depot."

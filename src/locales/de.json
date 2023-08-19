@@ -114,70 +114,70 @@
     "upgradeLink": "<b>Verbindung ausbauen:</b> Autobot führt sofort eine Aktion <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Verbindung ausbauen</a> aus.",
     "placeEmployee": "<b>Arbeitskraft einsetzen:</b> Autobot stellt 1 Arbeitskraft auf das Amt seiner aktuellen Farbe.",
     "promotionInfo1": "Autobots Beförderungen sind je nach Epoche begrenzt. In der ersten Epoche kann Autobot seine Arbeitskräfte nur bis in die 1. Etage befördern. In der zweiten Epoche kann er sie bis in die 2. Etage befördern. In der dritten Epoche kann Autobot seine Arbeitskräfte in jede Etage befördern. Diese Einschränkung gilt auch, falls Autobots Arbeitskräfte am Ende der Epoche befördert werden.",
-    "promotionInfo2": "Außer, falls die Präme eine bestimmte Abteilung vorgibt, befördert Autobot immer diejenige seine Arbeitskräfte, die die höchste verfügbare Etage erreichen kann, unabhängig von deren Abteilung. Falls mehrere Arbeitskräfte die gleiche höchste Etage erreichen können, befördert er die Arbeitskräfte der Abteilung, die weiter links liegt.",
+    "promotionInfo2": "Außer, falls die Prämie eine bestimmte Abteilung vorgibt, befördert Autobot immer diejenige seine Arbeitskräfte, die die höchste verfügbare Etage erreichen kann, unabhängig von deren Abteilung. Falls mehrere Arbeitskräfte die gleiche höchste Etage erreichen können, befördert er die Arbeitskräfte der Abteilung, die weiter links liegt.",
     "soloBoardInfoBonusTokens": "<b>Lieferprämienplättchen:</b> Wann immer Autobot ein Prämienplättchen erhält, legt er es auf das nächste freie Feld seines Solotableaus und erhält den dort angegeben Bonus anstelle des auf dem Plättchen gezeigten. Er beginnt in der obereren Reihen des Tableaus von links nach rechts und fährt in der zweiten Reihe ebenfalls von links nach rechts fort.",
     "soloBoardInfoServiceStations": "<b>Tankstellen:</b> Wann immer Autobot eine Tankstelle baut, erhält er sofort die unter der Tankstelle auf dem Solotableau angegebene Prämie."
   },
   "buildRoadUpgradeLink": {
-    "title": "Build Road Section or Upgrade Link",
+    "title": "Straßenabschnitt bauen oder Verbindung ausbauen",
     "buildRoad": {
-      "title": "Build Road Section",
-      "intro": "Autobot builds the next road section of the autobahn that matches the current color. If all available road sections have already been built, Autobot will instead <a href='#tablink-upgrade-link' data-custom-toggle='tab'>upgrade a complete link</a>.",
+      "title": "Straßenabschnitt bauen",
+      "intro": "Autobot baut den nächsten Straßenabschnitt der Autobahn mit der aktuellen Farbe. Falls alle verfügbaren Straßenabschnitte bereits gebaut wurden, <a href='#tablink-upgrade-link' data-custom-toggle='tab'>baut Autobot stattdessen eine fertiggestellte Verbindung aus</a>.",
       "priority": {
         "title": "Priorität:",
-        "item1": "The section of road that would allow one of Autobot's Trucks to deliver a Goods token to or move towards its destination country. If tied, the country that appears highest on Autobot's delivery board.",
-        "item2": "A section of road that contains a Bonus token.",
-        "item3": "The section of road nearest to the black autobahn (the fewest road sections to travel).",
-        "item4": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost."
+        "item1": "Der Straßenabschnitt, der es einem von Autobots LKWs erlauben würde, einen Warenmarker in Richtung seines Bestimmungslands zu bewegen. Bei Gleichstand wähle das Land, das weiter oben auf Autobots Liefertableau steht.",
+        "item2": "Ein Straßenabschnitt mit einem Prämienplättchen.",
+        "item3": "Der Straßenabschnitt, der der schwarzen Autobahn am nächsten ist (wenigste Straßenabschnitte entfernt).",
+        "item4": "In der ersten und zweiten Epoche der südlichste Abschnitt, dann der westlichste. In der dritten Epoche der nördlichste Abschnitt, dann der östlichste."
       },
-      "employeeCostInfo": "When building a road, Autobot places an Employee in the corresponding Office as usual. Autobot never pays building costs.",
-      "developIcon": "If Autobot builds a road section on a space with a 'Develop' icon, move Autobot's Marker 1 steps forward on the Development Track.",
-      "bonusTile": "If Autobot builds a road section on a space with a bonus tile, Autobot places it face down on the next available slot of the Solo board and gains the bonus depicted on the slot as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Gain Bonus</a>."
+      "employeeCostInfo": "Wann immer Autobot einen Straßenabschnitt baut, stellt er eine seiner Arbeitskräfte ins zugehörige Amt. Autobot bezahlt nie Baukosten.",
+      "developIcon": "Wann immer Autobot einen Straßenabschnitt auf einem Feld mit dem Symbol 'Entwickeln' baut, rücke Autobots Entwicklungsmarker 1 Schritt auf der Entwicklungsleiste nach vorne.",
+      "bonusTile": "Wann immer Autobot einen Straßenabschnitt auf einem Feld mit einem Prämienplättchen baut, erhält er die Prämie wie in <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Bonus</a> beschrieben."
     },
     "upgradeLink": {
-      "title": "Upgrade Link",
-      "intro": "If all road sections are built, Autobot will instead upgrade a complete link.",
+      "title": "Verbindung ausbauen",
+      "intro": "Falls alle verfügbaren Straßenabschnitte bereits gebaut wurden, baut Autobot stattdessen eine fertiggestellte Verbindung aus.",
       "priority": {
         "title": "Priorität:",
-        "itemTraffic": "Autobot will give priority to a link with a <b>traffic token</b>. Whenever the bot collects three traffic tokens it gains a <a href='#botGainBonusModal' data-bs-toggle='modal'>promotion</a> as usual.",
-        "item1": "The section of road nearest to the black autobahn (the fewest roads spaces to travel).",
-        "item2": "The closest to Bad Hersfeld.",
-        "item3": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost."
+        "itemTraffic": "Autobot gibt Verbindungen mit <b>Staumarkern</b> die höchste Priorität. Sobald Autobot 3 Staumarker gesammelt hat, <a href='#botGainBonusModal' data-bs-toggle='modal'>befördert</a> er wie üblich eine Arbeitskraft.",
+        "item1": "Die Verbindung, die der schwarzen Autobahn am nächsten ist (wenigste Straßenabschnitte entfernt).",
+        "item2": "Die Verbindung, die Bad Hersfeld am nächsten ist.",
+        "item3": "In der ersten und zweiten Epoche die südlichste Verbindung, dann die westlichste. In der dritten Epoche die nördlichste Verbindung, dann die östlichste."
       },
-      "employeeCostInfo": "When upgrading a road, Autobot places an Employee in the corresponding Office as usual. Autobot never pays upgrading costs."
+      "employeeCostInfo": "Wann immer Autobot eine Verbindung ausbaut, stellt er eine seiner Arbeitskräfte ins zugehörige Amt. Autobot bezahlt nie Baukosten."
     }
   },
   "loadTruck": {
-    "title": "Load Truck",
-    "intro1": "When Autobot takes the ‘Load Truck' action it will select a destination country to deliver to and a depot to load goods at.",
-    "intro2": "When selecting a country to deliver to, Autobot selects a country to which it has not yet delivered and is not currently delivering. In the first and second era, Autobot ignores Poland and Czech Republic.",
-    "intro3": "Autobot will select a country on Autobot's delivery board that pairs with the loaded good type.",
-    "intro4": "If there is not an undelivered to country that pairs with the current good type, Autobot cannot take this main action, so place the card aside in the Task queue.",
-    "intro5": "Autobot always has the ability to use both of its Trucks. If no Truck is available Autobot cannot take this main action, so place the card aside in the Task queue.",
+    "title": "LKW beladen",
+    "intro1": "Wann immer Autobot die Aktion 'LKW beladen' ausführt, wählt er ein Zielland für die Lieferung und ein Depot, um Waren aufzuladen.",
+    "intro2": "Als Zielland wählt Autobot ein Nachbarland, in das er noch keine Waren geliefert hat und aktuell keine Waren liefert. In der ersten und zweiten Epoche ignoriert Autobot Polen und die Tschechische Republik.",
+    "intro3": "Autobot wählt das Land von seinem Liefertableau, das die geladene Warenart bevorzugt.",
+    "intro4": "Gibt es kein Land, das Autobot noch nicht beliefert hat und das die geladene Warenart bevorzugt, kann er diese Hauptaktion nicht ausführen.",
+    "intro5": "Autobot darf immer beide seiner LKWs benutzen. Falls Autobot keinen verfügbaren LKW mehr hat, kann er diese Hauptaktion nicht ausführen.",
     "loadNonBlack": {
-      "title": "Loading on the red, cyan, purple, orange or white roads",
-      "info": "Choose the depot that matches the current color and load that Goods token. Place the Goods token on an available Truck and place the Truck in the depot."
+      "title": "Beladen auf der roten, grünen, violetten, orangen und weißen Autobahn",
+      "info": "Wähle das Depot, das der aktuellen Farbe entspricht, und lade den zugehörigen Warenmarker. Lege den Warenmarker auf ein verfügbaren LKW und stelle den LKW auf das Depot."
     },
     "loadBlack": {
-      "title": "Loading on the black road",
-      "info": "If the current color is black, Autobot selects the delivery country first, then selects the good type shown on its delivery board for that country. Once the country is selected, Autobot will choose the Goods token that matches that country on Autobot's delivery board. Place the Goods token on an available Truck and place the Truck in the depot. If Automotive goods or Chemicals are selected choose the depot nearest the delivery location."
+      "title": "Beladen auf der schwarzen Autobahn",
+      "info": "Falls die aktuelle Farbe schwarz ist, wählt Autobot zuerst ein Zielland und danach die von diesem Land bevorzugte Warenart von seinem Liefertableau. Nachdem Autobot ein Land gewählt hat, wählt er die Warenart, die das Land bevorzugt, von seinem Liefertableau. Legen den Warenmarker auf einen verfügbaren LKW und stelle den LKW auf das zugehörige Depot. Falls Automobile oder Chemikalien gewählt wurden, wähle das Depot das dem Ziel am nächsten ist."
     },
     "priority": {
-      "title": "Priority for selecting a country:",
-      "item1": "A country connected to the network.",
-      "item2": "A country that contains a Bonus token.",
-      "item3": "A country with the fewest road sections left to be built.",
-      "item4": "The uppermost country shown on Autobot's delivery board."
+      "title": "Land auswählen - Autobots Priorität:",
+      "item1": "Ein Land, das mit dem Autobahnnetz verbunden ist.",
+      "item2": "Ein Land, auf dem ein Prämienplättchen liegt.",
+      "item3": "Ein Land mit den wenigsten noch zu bauenden Straßenabschnitten.",
+      "item4": "Das oberste Land auf Autobots Liefertableau."
     },
-    "developmentToken": "Place the development token that matches the color of the Truck Autobot has loaded on the board beside the selected country. This marks the selected country for that Truck.",
+    "developmentToken": "Lege den Entwicklungsmarker in der Farbe des von Autobot beladenen LKWs neben das gewählte Land auf seinem Liefertableau. Dadurch markiert er das gewählte Zielland für den LKW.",
     "loadingPharmaceuticals": {
-      "title": "Loading Pharmaceuticals",
-      "info": "During the third era, if the current color is cyan or yellow, Autobot selects Pharmaceuticals to load (instead of Automotive goods). Instead of the usual criteria, Autobot selects a connected country to which Pharmaceuticals have not yet been delivered, starting with Austria (Wien) and going clockwise around the map. If the player delivers pharmaceuticals to the selected country before Autobot, move the development token to the next connected country to which Pharmaceuticals have not yet been delivered, in clockwise order. When delivered, Autobot gains the Pharmaceuticals delivery bonus as normal."
+      "title": "Beladen mit Pharmazeutika",
+      "info": "Falls die aktuelle Farbe Grün oder Gelb ist, wählt Autobot in der dritten Epoche Pharmazeutika als Warenart (statt Automobile). Anstatt der üblichen Auswahlkriterien wählt Autobot ein Land, das mit dem Straßennetz verbunden ist und an das noch keine Pharmazeutika geliefert wurden. Er beginne mit Österreich (Wien) und wählt dann im Uhrzeigersinn. Falls du vor Autobot Pharmazeutika in das gewählte Land lieferst, bewege den Entwicklungsmarker zum nächsten Land im Uhrzeigersinn, das mit dem Straßennetz verbunden ist und an das noch keine Pharmazeutika geliefert wurden. Falls Autobot die Lieferung abschließt, erhält er die Prämie für Pharmazeutika wie üblich."
     },
     "wineModule": {
-      "title": "Wine Module",
-      "info1": "The first time Autobot attempts to load a truck in era 3 with a color card that matches one of the three cards, discard the other two, load the truck next to the matching country, and place the destination token next to the card's destination.",
-      "info2": "When the truck reaches its destination Autobot will gain a wine delivery token."
+      "title": "Wein-Modul",
+      "info1": "Sobald Autobot das erste Mal einen LKW belädt, während seine aktuelle Farbe mit einer seiner Weinkarten übereinstimmt, wirft er die anderen beiden Weinkarten ab, belädt seinen LKW auf dem Abschnitt neben dem angegebenen Herkunftsland mit einem Weinmarker und legt einen Zielmarker neben die angegebene Zielstadt.",
+      "info2": "Sobald der LKW sein Ziel erreicht, erhält Autobot einen Wein-Liefermarker."
     }
   },
   "moveTruck": {

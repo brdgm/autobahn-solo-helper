@@ -48,7 +48,8 @@
     "turnSkip": "Skip Turn",
     "turnSkipInfo": "Autobot has no viable action in his whole task card deck and will skip this turn.",
     "turnSkipInfoDevelopmentStep": "Autobot moves <b>1 Development Track step</b>.",
-    "endEra": "<b>End Era {era}</b> - Click here if Autobot built the last road of this era."
+    "endEra": "<b>End Era {era}</b> - Click here if Autobot built the last road of this era.",
+    "andOr": "and/or"
   },
   "turnBotMoveTrucks": {
     "title": "Autobot's turn - Move Trucks",
@@ -213,7 +214,7 @@
   "takeColorCard": {
     "title": "Take Color Card",
     "pickColors": "Please select the colors of the <i>leftmost</i> card from the display here, and discard it afterwards from the display.",
-    "pickAction": "Please check if the color card has a <i>Build Road</i> action on it."
+    "pickAction": "Please check if the color card is yellow and has a <i>Build Road</i> action on it."
   },
   "scoring": {
     "bot": "Autobot",

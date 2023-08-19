@@ -4,7 +4,7 @@
     <div class="actions">
       <div class="additional-action" v-if="colorCard.additionalBuildRoadAction">
         <a data-bs-toggle="modal" href="#buildRoadUpgradeLinkModal"><AppIcon type="action" name="build-road"/></a>
-        <div class="and-or">and/or</div>
+        <div class="and-or">{{t('turnBot.andOr')}}</div>
       </div>
       <div class="action">
         <a data-bs-toggle="modal" :href="getActionInfoModalTarget(taskCard.action)"><AppIcon type="action" :name="taskCard.action"/></a>
@@ -28,6 +28,7 @@ import TaskCard from '@/services/TaskCard';
 import { defineComponent, PropType } from 'vue'
 import AppIcon from '../structure/AppIcon.vue';
 import AutobahnColorCard from '../structure/AutobahnColorCard.vue';
+import { useI18n } from 'vue-i18n';
 
 export default defineComponent({
   name: 'BotActions',
@@ -44,6 +45,10 @@ export default defineComponent({
       type: Object as PropType<TaskCard>,
       required: true
     },
+  },
+  setup() {
+    const { t } = useI18n()
+    return { t }
   },
   methods: {
     getActionInfoModalTarget(action : Action) : string {

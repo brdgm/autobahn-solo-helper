@@ -71,9 +71,9 @@
       "player": "Promotion: <b>You</b> built the last section of this era, you gain a promotion."
     },
     "botExtraPromotions": "Promotion: <b>Autobot</b> gains <b>{count} extra</b> <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Promotion</a>. | Promotion: <b>Autobot</b> gains <b>{count} extra</b> <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Promotions</a>.",
-    "routeCard": "Route Card: Evaluate your Route Card",
     "constructionBudget": "Construction Budget: Distribute income from roads",
     "constructionBudgetAutobotInfo": "When calculating the Construction budget for Construction Offices, treat Autobot as a second player where it has employees. However, Autobot does not receive its share of the construction budget.",
+    "routeCard": "Route Card: Evaluate your Route Card",
     "autobotWineInfo": "Reveal the three <b>wine cards</b> from Autobot. Autobot will try to fulfill one them, see <a href='#loadTruckModal' data-bs-toggle='modal'>Load Truck</a> for details."
   },
   "endOfGame": {
@@ -152,8 +152,8 @@
     "intro1": "When Autobot takes the ‘Load Truck' action it will select a destination country to deliver to and a depot to load goods at.",
     "intro2": "When selecting a country to deliver to, Autobot selects a country to which it has not yet delivered and is not currently delivering. In the first and second era, Autobot ignores Poland and Czech Republic.",
     "intro3": "Autobot will select a country on Autobot's delivery board that pairs with the loaded good type.",
-    "intro4": "If there is not an undelivered to country that pairs with the current good type, Autobot cannot take this main action, so place the card aside in the Task queue.",
-    "intro5": "Autobot always has the ability to use both of its Trucks. If no Truck is available Autobot cannot take this main action, so place the card aside in the Task queue.",
+    "intro4": "If there is not an undelivered to country that pairs with the current good type, Autobot cannot take this main action.",
+    "intro5": "Autobot always has the ability to use both of its Trucks. If no Truck is available Autobot cannot take this main action.",
     "loadNonBlack": {
       "title": "Loading on the red, cyan, purple, orange or white roads",
       "info": "Choose the depot that matches the current color and load that Goods token. Place the Goods token on an available Truck and place the Truck in the depot."
@@ -203,7 +203,7 @@
     },
     "noViableSpace": "If there are no connected Service Station spaces that match the current color, the action is not viable.",
     "era3Info": "As usual, Service Stations cannot be built in East Germany during the first and second eras.",
-    "gainBonus": "When placing a Service Station, Autobot immediately gains the bonus depicted underneath it on the Solo board as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot's Gain Bonus</a>."
+    "gainBonus": "When placing a Service Station, Autobot immediately gains the bonus depicted underneath it on the Solo board as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Solo Board Bonuses</a>."
   },
   "takeAdvancedCard": {
     "title": "Take Advanced Card",

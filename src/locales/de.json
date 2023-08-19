@@ -2,97 +2,97 @@
   "gameTitle": "Autobahn",
   "home": {
     "title": "Autobahn Solo Helper",
-    "play1": "Play against Autobot, the Solo Mode opponent of <a href='https://boardgamegeek.com/boardgame/348554/autobahn' target='_blank' rel='noopener'><b>Autobahn</b></a>.",
-    "play2": "This helper application replaces the task and action card decks of Autobot and manages the difficulty levels. The Autobot rules are displayed by clicking on the action icons.",
-    "feedback": "Discussion and Feedback:"
+    "play1": "Spiele gegen Autobot, den Solo-Gegner von <a href='https://boardgamegeek.com/boardgame/348554/autobahn' target='_blank' rel='noopener'><b>Autobahn</b></a>.",
+    "play2": "Diese Applikation ersetzt die Anweisungs- und Aktionskartenstapel und steuert den Schwierigkeitsgrad.  Die Autobot-Regeln werden bei klick auf die Aktions-Icons angezeigt.",
+    "feedback": "Diskussion und Feedback:"
   },
   "setup": {
-    "title": "Setup Game",
+    "title": "Spielaufbau",
     "difficultyLevel": {
-      "title": "Difficulty Level",
-      "easy": "Easy",
-      "hard": "Hard",
-      "level": "Level {level}",
-      "truckMoveAdditionalStep": "Autobot's Trucks move 1 additional space every turn",
-      "playerTruckPassesServiceStationDevelopmentStep": "Autobot gets 1 Development Track step each time one of your Trucks drive past one of its Service Stations",
-      "skipTurnDevelopmentStep": "Autobot moves on the Development Track if it skips its turn",
-      "endOfEraPromotions112": "Autobot gains more promotions at the end of each era (1/1/2)",
-      "endOfEraPromotions122": "Autobot gains more promotions at the end of each era (1/2/2)"
+      "title": "Schwierigkeitsgrad",
+      "easy": "Leicht",
+      "hard": "Schwer",
+      "level": "Stufe {level}",
+      "truckMoveAdditionalStep": "Autobots LKWs bewegen sich in jedem Zug um 1 weiteren Schritt",
+      "playerTruckPassesServiceStationDevelopmentStep": "Autobot rückt 1 Schritt auf der Entwicklungsleiste nach vorne, wann immer einer deiner LKWs eine seiner Tankstellen passiert",
+      "skipTurnDevelopmentStep": "Autobot rückt 1 Schritt auf der Entwicklungsleiste nach vorne, wann immer er seinen Zug überspringt",
+      "endOfEraPromotions112": "Autobot erhält mehr Beförderungen am Ende jeder Epoche (1/1/2)",
+      "endOfEraPromotions122": "Autobot erhält mehr Beförderungen am Ende jeder Epoche (1/2/2)"
     },
     "expansions": {
-      "title": "Mini-Expansions",
-      "wine": "Module 1: Wine",
-      "traffic": "Module 2: Traffic",
-      "services": "Module 3: Services"
+      "title": "Mini-Erweiterungen",
+      "wine": "Modul 1: Wein",
+      "traffic": "Modul 2: Stau",
+      "services": "Modul 3: Service"
     }
   },
   "setupAutobot": {
-    "title": "Prepare Autobot",
-    "twoPlayers": "Set up the game for 2 players.",
-    "pickPlayerColor": "Pick a player color for Autobot. Autobot uses the 25 Employees, 8 Service Stations, 1 Development token of that player color. Instead of taking a Truck for that color, Autobot takes 1 Truck and 1 Development token in each of the other, unused colors.",
-    "setupAutobotComponents": "Set up Autobot's components and play area as follows:",
-    "placeSoloBoard": "Place the <b>{soloBoard}</b> in Autobot's play area.",
-    "chooseDeliveryBoard": "Randomly choose a Delivery board for Autobot and place it next to the Solo board.",
-    "placeEmployees": "Place Autobot's 25 Employees beside the Solo board.",
-    "placeServiceStations": "Place Autobot's 8 Service Stations on the appropriate spaces of the Solo board.",
-    "placeDevelopmentToken": "Place Autobot's Development token on the first space of the Development Track.",
-    "placeBlackConstructionOffice": "Autobot is the start player, so place 1 of Autobot's Employees onto the first (leftmost) seat of the black Construction Office. Place one of yours on the next seat.",
-    "setupPlayerPlayArea": "Set up your play area as normal, and reveal 2 Route cards from the deck. Pick one for yourself and discard the other one. Return the unused route cards back to the box. Autobot does not have a Route card.",
-    "winePickCard": "Wine Module: Randomly pick one of the wine cards for yourself, and place the remaining three next to the solo board.",
-    "unlimitedBudget": "Autobot has an unlimited budget. You do not need to track Autobot's income or expenditure."
+    "title": "Autobot vorbereiten",
+    "twoPlayers": "Bereite alles wie in einer Partie zu zweit vor.",
+    "pickPlayerColor": "Wähle eine Farbe für Autobot. Autobot benutzt die 24 Arbeitskräfte, 8 Tankstellen und 1 Entwicklungsmarker dieser Farbe. Anstatt sich einen LKW in seiner Farbe zu nehmen, nimmt sich Autobot 1 LKW und 1 Entwicklungsmarker in jeder der anderen, ungenutzten Farben.",
+    "setupAutobotComponents": "Bereite Autobots Material und Spielbereich wie folgt vor:",
+    "placeSoloBoard": "Lege das <b>{soloBoard}</b> in Autobots Spielbereich.",
+    "chooseDeliveryBoard": "Wähle ein zufälliges Liefertableau für Autobot und lege es neben sein Solotableau.",
+    "placeEmployees": "Stelle Autobots 25 Arbeitskräfte neben sein Solotableau.",
+    "placeServiceStations": "Stelle Autobots 8 Tankstellen auf die zugehörigen Felder seines Solotableaus.",
+    "placeDevelopmentToken": "Lege Autobots Entwicklungsmarker auf das 1. Feld der Entwicklungsleiste.",
+    "placeBlackConstructionOffice": "Autobot beginnt die Partie. Stelle also 1 von Autobots Arbeitskräften auf den ersten Sitz (von links) des schwarzen Bauamts. Stelle 1 deiner Arbeitskräfte auf den nächsten Sitz.",
+    "setupPlayerPlayArea": "Bereite deinen Spielbereich wie üblich vor und decke 2 Routenkarten vom Stapel auf. Wähle eine davon für dich und wirf die andere ab. Legen die ungenutzten Routenkarten zurück in die Schachtel. Autobot hat keine Routenkarte.",
+    "winePickCard": "Wein-Modul: Wähle eine zufällige Weinkarte für dich und lege die drei übrigen neben das Solotableau.",
+    "unlimitedBudget": "Autobot verfügt über ein unbegrenztes Budget. Du musst sein Einkommen und seine Ausgaben nicht verfolgen."
   },
   "turnBot": {
-    "title": "Autobot's turn",
-    "actionCompleted": "Action Completed",
-    "actionNotViable": "Not Viable",
-    "turnSkip": "Skip Turn",
-    "turnSkipInfo": "Autobot has no viable action in his whole task card deck and will skip this turn.",
-    "turnSkipInfoDevelopmentStep": "Autobot moves <b>1 Development Track step</b>.",
-    "endEra": "<b>End Era {era}</b> - Click here if Autobot built the last road of this era."
+    "title": "Autobot",
+    "actionCompleted": "Aktion ausgeführt",
+    "actionNotViable": "Nicht zulässig",
+    "turnSkip": "Zug überspringen",
+    "turnSkipInfo": "Autobot hat keine zulässige Aktion in seinem Anweisungsstapel und überspringt diesen Zug.",
+    "turnSkipInfoDevelopmentStep": "Autobot rückt <b>1 Schritt auf der Entwicklungsleiste</b> nach vorne.",
+    "endEra": "<b>Ende Epoche {era}</b> - Hier klicken wenn Autobot den letzten Straßenabschnitt in dieser Epoche gebaut hat."
   },
   "turnBotMoveTrucks": {
-    "title": "Autobot's turn - Move Trucks",
-    "moveSpaces": "Move each of Autobot's loaded trucks <b>{numberOfSpaces} spaces</b> towards the <a href='#loadTruckModal' data-bs-toggle='modal'>selected country</a>. Ignore the colors.",
-    "moveTruckInfo": "Details about <a href='#moveTruckModal' data-bs-toggle='modal'>Autobot's truck movements and delivery</a>."
+    "title": "Autobot - LKWs bewegen",
+    "moveSpaces": "Bewegen jeden LKW von Autobot auf dem Spielplan um <b>{numberOfSpaces} Schritte</b> in Richtung seines <a href='#loadTruckModal' data-bs-toggle='modal'>Ziellandes</a>. Ignoriere die Farben der Straßenabschnitte.",
+    "moveTruckInfo": "Details zu <a href='#moveTruckModal' data-bs-toggle='modal'>Autobot LKW-Bewegung und Lieferung</a>."
   },
   "turnPlayer": {
-    "title": "Your turn",
-    "claimDeliveryBonus": "Claim delivery bonus (optional)",
-    "takeAction": "Take action",
-    "moveTrucks": "Move trucks (if you played a card)",
+    "title": "Dein Zug",
+    "claimDeliveryBonus": "Erhalte 1 Lieferprämie (optional)",
+    "takeAction": "Führe Deine Aktion durch",
+    "moveTrucks": "Bewege deine LKWs (wenn du eine Karte gespielt hat)",
     "moveTrucksAutobotInfo": "Autobot gains nothing when your Trucks drive past its Service Stations.",
-    "moveTrucksAutobotInfoGainDevelopmentStep": "Autobot gets <b>1 Development Track step</b> each time one of your Trucks drive past one of its Service Stations.",
-    "endEra": "<b>End Era {era}</b> - Click here if you built the last road of this era."
+    "moveTrucksAutobotInfoGainDevelopmentStep": "Autobot rückt <b>1 Schritte auf der Entwicklungsleiste</b> nach vorne, wann immer einer deiner LKWs eine seiner Tankstellen passiert.",
+    "endEra": "<b>Ende Epoche {era}</b> - Hier klicken wenn du den letzten Straßenabschnitt in dieser Epoche gebaut hast."
   },
   "endOfEra": {
-    "title": "End of Era {era}",
+    "title": "Ende Epoche {era}",
     "lastSectionBuildPromotion": {
-      "bot": "Promotion: <b>Autobot</b> built the last section of this era, perform an <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Promotion</a>.",
-      "player": "Promotion: <b>You</b> built the last section of this era, you gain a promotion."
+      "bot": "Beförderung: <b>Autobot</b> hat den letzten Straßenabschnitt dieser Epoche gebaut und erhält eine <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot-Beförderung</a>.",
+      "player": "Beförderung: <b>Du</b> hast den letzten Straßenabschnitt dieser Epoche gebaut und erhältst eine Beförderung."
     },
-    "botExtraPromotions": "Promotion: <b>Autobot</b> gains <b>{count} extra</b> <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Promotion</a>. | Promotion: <b>Autobot</b> gains <b>{count} extra</b> <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Promotions</a>.",
-    "constructionBudget": "Construction Budget: Distribute income from roads",
-    "constructionBudgetAutobotInfo": "When calculating the Construction budget for Construction Offices, treat Autobot as a second player where it has employees. However, Autobot does not receive its share of the construction budget.",
-    "routeCard": "Route Card: Evaluate your Route Card",
-    "autobotWineInfo": "Reveal the three <b>wine cards</b> from Autobot. Autobot will try to fulfill one them, see <a href='#loadTruckModal' data-bs-toggle='modal'>Load Truck</a> for details."
+    "botExtraPromotions": "Beförderung: <b>Autobot</b> erhält <b>{count} Extra-</b><a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot-Beförderung</a>. | Beförderung: <b>Autobot</b> erhält <b>{count} Extra-</b><a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot-Beförderungen</a>.",
+    "constructionBudget": "Baubudget: Verteile das Einkommen für die Autobahnen",
+    "constructionBudgetAutobotInfo": "Wenn du das Baubudget für die Bauämter berechnest, zähle die Autobot-Arbeitskräfte mit. Allerdings erhält Autobot keinen Teil des Baubudgets.",
+    "routeCard": "Routenkarte: Werte deine Routenkarte",
+    "autobotWineInfo": "Decke die drei <b>Weinkarten</b> von Autobot auf. Autobot wird versuchen eine davon zu erfüllen, siehe <a href='#loadTruckModal' data-bs-toggle='modal'>LKW beladen</a>."
   },
   "endOfGame": {
-    "title": "End of Game"
+    "title": "Spielende"
   },
   "sidebar": {
-    "era": "Era {era}",
-    "round": "Round {round}",
-    "lastTurn": "Last Turn"
+    "era": "Epoche {era}",
+    "round": "Runde {round}",
+    "lastTurn": "Letzter Zug"
   },
   "botStatus": {
-    "title": "Autobot Status",
-    "taskQueue": "Task Queue",
-    "taskPile": "Task Pile",
-    "usedColors": "Used Colors",
-    "usedTasks": "Used Tasks",
-    "gainBonus": "Gain Bonus",
-    "empty": "empty",
-    "none": "none"
+    "title": "Autobot-Status",
+    "taskQueue": "Warteschlange",
+    "taskPile": "Anweisungsstapel",
+    "usedColors": "Gespielte Farben",
+    "usedTasks": "Gespielte Anweisungen",
+    "gainBonus": "Bonus erhalten",
+    "empty": "leer",
+    "none": "keine"
   },
   "botGainBonus": {
     "title": "Autobot Gain Bonus",
@@ -217,43 +217,42 @@
   },
   "scoring": {
     "bot": "Autobot",
-    "points": "Points",
-    "player": "Player",
-    "lobby": "Employees in Lobby",
-    "networkDepartment": "Network Department",
-    "tradeDepartment": "Trade Department",
-    "serviceDepartment": "Service Department",
-    "financeDepartment": "Finance Department",
-    "planningCustomsDepartment": "Planing/Customs Department (opt.)",
-    "total": "Total Points"
+    "points": "Punkte",
+    "player": "Spieler",
+    "lobby": "Arbeitskräfte in der Eingangshalle",
+    "networkDepartment": "Netzwerkabteilung",
+    "tradeDepartment": "Handelsabteilung",
+    "serviceDepartment": "Dienstleistungsabteilung",
+    "financeDepartment": "Finanzabteilung",
+    "planningCustomsDepartment": "Planungs-/Zollabteilung (opt.)",
+    "total": "Summe"
   },
   "soloBoard": {
-    "easy": "Easy Solo Board",
-    "hard": "Hard Solo Board"
+    "easy": "Solotableau (leicht)",
+    "hard": "Solotableau (schwer)"
   },
   "notfound": {
-    "title": "Not Found"
+    "title": "Nicht Gefunden"
   },
   "action": {
-    "playGame": "Play Game",
-    "startGame": "Start Game",
-    "next": "Next",
-    "nextRound": "Next Round",
-    "abortGame": "Abort Game",
-    "abortGameConfirm": "Aborting the running game - are you sure?",
-    "endGame": "End Game",
-    "endGameConfirm": "End this game and return to home screen - are you sure?",
-    "cancel": "Cancel",
-    "backToHome": "Back to Home",
-    "back": "Back",
-    "close": "Close",
-    "reset": "Reset"
+    "playGame": "Spielen",
+    "startGame": "Spiel starten",
+    "next": "Weiter",
+    "nextRound": "Nächste Runde",
+    "abortGame": "Spiel abbrechen",
+    "abortGameConfirm": "Das aktuelle Spiel wird abgebrochen - bist Du sicher?",
+    "endGame": "Spiel beenden",
+    "endGameConfirm": "Dieses Spiel wird beendet - bist Du sicher?",
+    "cancel": "Abbrechen",
+    "backToHome": "Zurück zum Anfang",
+    "back": "Zurück",
+    "close": "Schließen"
   },
   "footer": {
     "credits": "Credits"
   },
   "serviceWorkerUpdatedRefresh": {
-    "title": "Refresh Application",
-    "notice": "The application was updated - do you want to refresh to use the latest version?"
+    "title": "Applikation neu laden",
+    "notice": "Die Applikation wurde aktualisiert - möchtest du die Seite neu laden um die neueste Version zu nutzen?"
   }
 }

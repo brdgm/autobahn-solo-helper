@@ -3,7 +3,7 @@
   "home": {
     "title": "Autobahn Solo Helper",
     "play1": "Spiele gegen Autobot, den Solo-Gegner von <a href='https://boardgamegeek.com/boardgame/348554/autobahn' target='_blank' rel='noopener'><b>Autobahn</b></a>.",
-    "play2": "Diese Applikation ersetzt die Anweisungs- und Aktionskartenstapel und steuert den Schwierigkeitsgrad.  Die Autobot-Regeln werden bei klick auf die Aktions-Icons angezeigt.",
+    "play2": "Diese Applikation ersetzt die Anweisungs- und Aktionskartenstapel und steuert den Schwierigkeitsgrad.  Die Autobot-Regeln werden beim Anklicken der Aktions-Icons angezeigt.",
     "feedback": "Diskussion und Feedback:"
   },
   "setup": {
@@ -48,7 +48,8 @@
     "turnSkip": "Zug überspringen",
     "turnSkipInfo": "Autobot hat keine zulässige Aktion in seinem Anweisungsstapel und überspringt diesen Zug.",
     "turnSkipInfoDevelopmentStep": "Autobot rückt <b>1 Schritt auf der Entwicklungsleiste</b> nach vorne.",
-    "endEra": "<b>Ende Epoche {era}</b> - Hier klicken wenn Autobot den letzten Straßenabschnitt in dieser Epoche gebaut hat."
+    "endEra": "<b>Ende Epoche {era}</b> - Hier klicken wenn Autobot den letzten Straßenabschnitt in dieser Epoche gebaut hat.",
+    "andOr": "und/oder"
   },
   "turnBotMoveTrucks": {
     "title": "Autobot - LKWs bewegen",
@@ -213,7 +214,7 @@
   "takeColorCard": {
     "title": "Farbkarte hinzufügen",
     "pickColors": "Wähle die Farben der Farbkarte die am <i>weitesten links</i> in der Auslage liegt, und werfe die anschließend ab.",
-    "pickAction": "Hier aktivieren, falls diese Farbkarte eine <i>Straßenabschnitt bauen</i>-Aktion hat."
+    "pickAction": "Hier aktivieren, falls diese Farbkarte gelb ist und eine <i>Straßenabschnitt bauen</i>-Aktion hat."
   },
   "scoring": {
     "bot": "Autobot",

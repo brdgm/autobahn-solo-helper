@@ -108,15 +108,15 @@
     "promote": "<b>Beförderung:</b> Befördere 1 von Autobots Arbeitskräften (siehe <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot-Beförderung</a>).",
     "colorCard": "<b>Nimm eine Farbkarte:</b> Nimm die am <i>weitesten links</i> liegende Karte aus der Auslage. Autobot erhält diese zusätzliche Farbkarte.",
     "takeColorCard": "Farbkarte hinzufügen",
-    "promoteServiceTrade": "<b>Promote:</b> Promotions gained in this way should be taken on the Department shown if possible. If a promotion in the department shown is not possible, follow the normal priority rules in <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot's promotions</a>.",
-    "buildServiceStation": "<b>Build a Service Station:</b> Immediately perform the <a href='#buildServiceStationModal' data-bs-toggle='modal'>Build a Service Station</a> action.",
-    "buildRoadSection": "<b>Build a road section:</b> Immediately perform the <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Build a road section</a> action.",
-    "upgradeLink": "<b>Upgrade a link:</b> Immediately perform the <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Upgrade a link</a> action.",
-    "placeEmployee": "<b>Place an Employee:</b> Autobot places an Employee in the Office that matches the current color.",
-    "promotionInfo1": "Autobot's promotions are limited depending on which era it is. During the first era, Autobot's Employees may only be promoted as high as the 1st floor. During the second era, they may only be promoted as high as the 2nd floor. In the third era, Autobot's Employees may access any floor. This limitation rule also applies to Autobot's Employees when they are promoted during the end of era steps.",
-    "promotionInfo2": "Unless the bonus shows a particular Department, when Autobot gains a promotion, it will promote whichever Employee can reach the highest floor in any Department. If two or more Employees can reach equally high floors, the Employee in the leftmost Department is promoted.",
-    "soloBoardInfoBonusTokens": "<b>Bonus tokens:</b> When Autobot gains Bonus tokens, it places them on the next available slot of the Solo board, starting with the top row of the Solo board from left to right, then the second row from left to right, gaining the bonus shown on the space instead of that shown on the token itself.",
-    "soloBoardInfoServiceStations": "<b>Service Stations:</b> When Autobot builds a Service Station, it immediately gains the bonus shown on the Solo board below that Service Station."
+    "promoteServiceTrade": "<b>Beförderung:</b> Beförderungen, die Autobot auf diese Weise erhält, sollten, falls möglich, in der angegeben Abteilung ausgeführt werden. Falls eine Beförderung in der angegebenen Abteilung nicht möglich ist, folgt Autobot den üblichen Prioritäten der <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot-Beförderung</a>.",
+    "buildServiceStation": "<b>Tankstelle bauen:</b> Autobot führt sofort eine Aktion <a href='#buildServiceStationModal' data-bs-toggle='modal'>Tankstelle bauen</a> aus.",
+    "buildRoadSection": "<b>Straßenabschnitt bauen:</b> Autobot führt sofort eine Aktion <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Straßenabschnitt bauen</a> aus.",
+    "upgradeLink": "<b>Verbindung ausbauen:</b> Autobot führt sofort eine Aktion <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Verbindung ausbauen</a> aus.",
+    "placeEmployee": "<b>Arbeitskraft einsetzen:</b> Autobot stellt 1 Arbeitskraft auf das Amt seiner aktuellen Farbe.",
+    "promotionInfo1": "Autobots Beförderungen sind je nach Epoche begrenzt. In der ersten Epoche kann Autobot seine Arbeitskräfte nur bis in die 1. Etage befördern. In der zweiten Epoche kann er sie bis in die 2. Etage befördern. In der dritten Epoche kann Autobot seine Arbeitskräfte in jede Etage befördern. Diese Einschränkung gilt auch, falls Autobots Arbeitskräfte am Ende der Epoche befördert werden.",
+    "promotionInfo2": "Außer, falls die Präme eine bestimmte Abteilung vorgibt, befördert Autobot immer diejenige seine Arbeitskräfte, die die höchste verfügbare Etage erreichen kann, unabhängig von deren Abteilung. Falls mehrere Arbeitskräfte die gleiche höchste Etage erreichen können, befördert er die Arbeitskräfte der Abteilung, die weiter links liegt.",
+    "soloBoardInfoBonusTokens": "<b>Lieferprämienplättchen:</b> Wann immer Autobot ein Prämienplättchen erhält, legt er es auf das nächste freie Feld seines Solotableaus und erhält den dort angegeben Bonus anstelle des auf dem Plättchen gezeigten. Er beginnt in der obereren Reihen des Tableaus von links nach rechts und fährt in der zweiten Reihe ebenfalls von links nach rechts fort.",
+    "soloBoardInfoServiceStations": "<b>Tankstellen:</b> Wann immer Autobot eine Tankstelle baut, erhält er sofort die unter der Tankstelle auf dem Solotableau angegebene Prämie."
   },
   "buildRoadUpgradeLink": {
     "title": "Build Road Section or Upgrade Link",
@@ -124,7 +124,7 @@
       "title": "Build Road Section",
       "intro": "Autobot builds the next road section of the autobahn that matches the current color. If all available road sections have already been built, Autobot will instead <a href='#tablink-upgrade-link' data-custom-toggle='tab'>upgrade a complete link</a>.",
       "priority": {
-        "title": "Priority:",
+        "title": "Priorität:",
         "item1": "The section of road that would allow one of Autobot's Trucks to deliver a Goods token to or move towards its destination country. If tied, the country that appears highest on Autobot's delivery board.",
         "item2": "A section of road that contains a Bonus token.",
         "item3": "The section of road nearest to the black autobahn (the fewest road sections to travel).",
@@ -138,7 +138,7 @@
       "title": "Upgrade Link",
       "intro": "If all road sections are built, Autobot will instead upgrade a complete link.",
       "priority": {
-        "title": "Priority:",
+        "title": "Priorität:",
         "itemTraffic": "Autobot will give priority to a link with a <b>traffic token</b>. Whenever the bot collects three traffic tokens it gains a <a href='#botGainBonusModal' data-bs-toggle='modal'>promotion</a> as usual.",
         "item1": "The section of road nearest to the black autobahn (the fewest roads spaces to travel).",
         "item2": "The closest to Bad Hersfeld.",
@@ -181,29 +181,29 @@
     }
   },
   "moveTruck": {
-    "title": "Move Trucks and Deliver Goods",
-    "ignoreColor": "Autobot does not need to match the current color card to move along road sections. If a Truck cannot move forwards for any reason (such as an unbuilt road) it stays still.",
-    "passServiceStations": "Each time one of Autobot's Trucks passes one of its own Service Stations, it gains the rightmost revealed bonus as shown on the Solo board. If one of Autobot's Trucks passes your Service Stations, you gain income from the supply as normal.",
-    "deliverGoods": "If one of Autobot's Trucks reaches its selected country, it delivers its goods:",
-    "deliverGoodsItem1": "When a good is delivered, place a delivery token onto the corresponding space of Autobot's delivery board.",
-    "deliverGoodsItem2": "If the good type matches, Autobot moves 1 space up the Development Track. Autobot never receives the bonus action or money shown on the delivery board.",
-    "deliverGoodsItem3": "If Autobot delivers Pharmaceuticals it gains the delivery bonus as normal.",
-    "deliverGoodsItem4": "If the selected country has a delivery bonus tile, Autobot takes it and places the token face down on the next available slot of the Solo board and gains the bonus depicted on the slot as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Solo Board Bonuses</a>.",
-    "era3Countries": "As usual, Autobot cannot deliver goods to Poland (Warszawa) and the Czech Republic (Praha) during the first and second eras."
+    "title": "LKW-Bewegungen und Lieferungen",
+    "ignoreColor": "Autobot darf seine LKWs auch dann bewegen, falls sie sich auf Straßenabschnitten befinden, die nicht mit der aktuellen Farbe übereinstimmen. Falls sich ein LKW aus irgendeinem Grund nicht weiterbewegen kann (z.B. ein nicht gebauter Streckenabschnitt), dann bleibt er stehen.",
+    "passServiceStations": "Wann immer einer von Autobots LKWs eine seiner Tankstellen passiert, erhält er die aufgedeckte Prämie seines Solotableaus, die sich am weitesten rechts befindet. Wann immer einer von Autobots LKWs eine deiner Tankstellen passiert, erhältst du Münzen aus dem Vorrat wie üblich.",
+    "deliverGoods": "Wann immer einer von Autobots LKWs sein Zielland erreicht, schließt er die Lieferung seiner Ware ab:",
+    "deliverGoodsItem1": "Wann immer Autobot eine Lieferung abschließt, lege einen Liefermarker auf das zugehörige Feld auf Autobots Liefertableau.",
+    "deliverGoodsItem2": "Falls die Warenart der von dem Land bevorzugten entspricht, rückt Autobot seinen Entwicklungsmarker nach vorne. Autobot erhält niemals die auf dem Liefertableau angegebenen Prämien.",
+    "deliverGoodsItem3": "Falls Autobot Pharmazeutika liefert, erhält er die zugehörige Lieferprämie wie üblich.",
+    "deliverGoodsItem4": "Falls ein Lieferprämienplättchen auf dem gewählten Land liegt, legt Autobot es verdeckt auf das nächste freie Feld seines Solotableaus und erhält die zugehörige Prämie, siehe <a href='#botGainBonusModal' data-bs-toggle='modal'>Boni des Solotableaus</a>.",
+    "era3Countries": "Wie üblich kann Autobot in der ersten und zweiten Epoche keine Waren nach Polen (Warszawa) und Tschechische Republik (Praha) liefern."
   },
   "buildServiceStation": {
-    "title": "Build Service Station",
-    "intro": "Autobot builds a Service Station on the next available Service Station space on the autobahn that matches the current color.",
+    "title": "Tankstelle bauen",
+    "intro": "Autobot baut eine Tankstelle auf dem nächsten verfügbaren Tankstellenfeld der Autobahn seiner aktuellen Farbe.",
     "priority": {
-      "title": "Priority:",
-      "itemServices": "Autobot will try to place an <b>upgraded service station</b> if possible (i.e. if there is an upgraded link in the current color with a bot's service station). In this case it will pick the leftmost service station available from the service station board, but it will always gain a <a href='#botGainBonusModal' data-bs-toggle='modal'>promotion</a> instead of the depicted bonus.",
-      "item1": "The Service Station space nearest to the black autobahn (the fewest road sections to travel).",
-      "item2": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost.",
-      "item3": "If building on a black Service Station space, pick the closest to Bad Hersfeld, with ties broken in the first and second eras by the southernmost location, and in the third era, by the northernmost location."
+      "title": "Priorität:",
+      "itemServices": "Autobot versucht wenn möglich eine <b>Verbesserung für Tankstellen</b> zu bauen (d.h. falls er eine Tankstelle auf eine ausgebauten Verbindung in der aktuellen Farbe hat). In diesem Fall baut er die Verbesserung, die am weitesten links auf dem Tankstellentableau steht. Er erhält jedoch immer eine <a href='#botGainBonusModal' data-bs-toggle='modal'>Beförderung</a> anstatt der zugehörigen Prämie.",
+      "item1": "Die Tankstelle, die der schwarzen Autobahn am nächsten ist (wenigste Streckenabschnitte entfernt).",
+      "item2": "In der ersten und zweiten Epoche die südlichste, dann die westlichste Tankstelle. In der dritten Epoche die nördlichste, dann die östlichste Tankstelle.",
+      "item3": "Falls Autobot eine Tankstelle an der schwarzen Autobahn baut, wählt er das Feld, das Bad Hersfeld am nächsten ist. Bei Gleichstand wählt er in der ersten und zweiten Epoche das südlichste und in de dritten Epoche das nördlichste Feld."
     },
-    "noViableSpace": "If there are no connected Service Station spaces that match the current color, the action is not viable.",
-    "era3Info": "As usual, Service Stations cannot be built in East Germany during the first and second eras.",
-    "gainBonus": "When placing a Service Station, Autobot immediately gains the bonus depicted underneath it on the Solo board as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot's Gain Bonus</a>."
+    "noViableSpace": "Falls kein Tankstellenfeld in der aktuellen Farbe mit dem Autobahnnetz verbunden ist, ist die Aktion nicht zulässig.",
+    "era3Info": "Wie üblich kann Autobot während der ersten beiden Epochen keine Tankstellen in Ostdeutschland bauen.",
+    "gainBonus": "Wann immer Autobot eine Tankstelle baut, erhält er sofort die unter ihr auf dem Solotableau abgebildete Prämie, siehe <a href='#botGainBonusModal' data-bs-toggle='modal'>Boni des Solotableaus</a>."
   },
   "takeAdvancedCard": {
     "title": "Fortgeschrittene Anweisungskarte hinzufügen",

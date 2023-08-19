@@ -203,7 +203,7 @@
     },
     "noViableSpace": "If there are no connected Service Station spaces that match the current color, the action is not viable.",
     "era3Info": "As usual, Service Stations cannot be built in East Germany during the first and second eras.",
-    "gainBonus": "When placing a Service Station, Autobot immediately gains the bonus depicted underneath it on the Solo board as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot's Gain Bonus</a>."
+    "gainBonus": "When placing a Service Station, Autobot immediately gains the bonus depicted underneath it on the Solo board as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Solo Board Bonuses</a>."
   },
   "takeAdvancedCard": {
     "title": "Take Advanced Card",

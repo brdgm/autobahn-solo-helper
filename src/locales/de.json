@@ -1,0 +1,258 @@
+{
+  "gameTitle": "Autobahn",
+  "home": {
+    "title": "Autobahn Solo Helper",
+    "play1": "Spiele gegen Autobot, den Solo-Gegner von <a href='https://boardgamegeek.com/boardgame/348554/autobahn' target='_blank' rel='noopener'><b>Autobahn</b></a>.",
+    "play2": "Diese Applikation ersetzt die Anweisungs- und Aktionskartenstapel und steuert den Schwierigkeitsgrad.  Die Autobot-Regeln werden bei klick auf die Aktions-Icons angezeigt.",
+    "feedback": "Diskussion und Feedback:"
+  },
+  "setup": {
+    "title": "Spielaufbau",
+    "difficultyLevel": {
+      "title": "Schwierigkeitsgrad",
+      "easy": "Leicht",
+      "hard": "Schwer",
+      "level": "Stufe {level}",
+      "truckMoveAdditionalStep": "Autobots LKWs bewegen sich in jedem Zug um 1 weiteren Schritt",
+      "playerTruckPassesServiceStationDevelopmentStep": "Autobot rückt 1 Schritt auf der Entwicklungsleiste nach vorne, wann immer einer deiner LKWs eine seiner Tankstellen passiert",
+      "skipTurnDevelopmentStep": "Autobot rückt 1 Schritt auf der Entwicklungsleiste nach vorne, wann immer er seinen Zug überspringt",
+      "endOfEraPromotions112": "Autobot erhält mehr Beförderungen am Ende jeder Epoche (1/1/2)",
+      "endOfEraPromotions122": "Autobot erhält mehr Beförderungen am Ende jeder Epoche (1/2/2)"
+    },
+    "expansions": {
+      "title": "Mini-Erweiterungen",
+      "wine": "Modul 1: Wein",
+      "traffic": "Modul 2: Stau",
+      "services": "Modul 3: Service"
+    }
+  },
+  "setupAutobot": {
+    "title": "Autobot vorbereiten",
+    "twoPlayers": "Bereite alles wie in einer Partie zu zweit vor.",
+    "pickPlayerColor": "Wähle eine Farbe für Autobot. Autobot benutzt die 24 Arbeitskräfte, 8 Tankstellen und 1 Entwicklungsmarker dieser Farbe. Anstatt sich einen LKW in seiner Farbe zu nehmen, nimmt sich Autobot 1 LKW und 1 Entwicklungsmarker in jeder der anderen, ungenutzten Farben.",
+    "setupAutobotComponents": "Bereite Autobots Material und Spielbereich wie folgt vor:",
+    "placeSoloBoard": "Lege das <b>{soloBoard}</b> in Autobots Spielbereich.",
+    "chooseDeliveryBoard": "Wähle ein zufälliges Liefertableau für Autobot und lege es neben sein Solotableau.",
+    "placeEmployees": "Stelle Autobots 25 Arbeitskräfte neben sein Solotableau.",
+    "placeServiceStations": "Stelle Autobots 8 Tankstellen auf die zugehörigen Felder seines Solotableaus.",
+    "placeDevelopmentToken": "Lege Autobots Entwicklungsmarker auf das 1. Feld der Entwicklungsleiste.",
+    "placeBlackConstructionOffice": "Autobot beginnt die Partie. Stelle also 1 von Autobots Arbeitskräften auf den ersten Sitz (von links) des schwarzen Bauamts. Stelle 1 deiner Arbeitskräfte auf den nächsten Sitz.",
+    "setupPlayerPlayArea": "Bereite deinen Spielbereich wie üblich vor und decke 2 Routenkarten vom Stapel auf. Wähle eine davon für dich und wirf die andere ab. Legen die ungenutzten Routenkarten zurück in die Schachtel. Autobot hat keine Routenkarte.",
+    "winePickCard": "Wein-Modul: Wähle eine zufällige Weinkarte für dich und lege die drei übrigen neben das Solotableau.",
+    "unlimitedBudget": "Autobot verfügt über ein unbegrenztes Budget. Du musst sein Einkommen und seine Ausgaben nicht verfolgen."
+  },
+  "turnBot": {
+    "title": "Autobot",
+    "actionCompleted": "Aktion ausgeführt",
+    "actionNotViable": "Nicht zulässig",
+    "turnSkip": "Zug überspringen",
+    "turnSkipInfo": "Autobot hat keine zulässige Aktion in seinem Anweisungsstapel und überspringt diesen Zug.",
+    "turnSkipInfoDevelopmentStep": "Autobot rückt <b>1 Schritt auf der Entwicklungsleiste</b> nach vorne.",
+    "endEra": "<b>Ende Epoche {era}</b> - Hier klicken wenn Autobot den letzten Straßenabschnitt in dieser Epoche gebaut hat."
+  },
+  "turnBotMoveTrucks": {
+    "title": "Autobot - LKWs bewegen",
+    "moveSpaces": "Bewegen jeden LKW von Autobot auf dem Spielplan um <b>{numberOfSpaces} Schritte</b> in Richtung seines <a href='#loadTruckModal' data-bs-toggle='modal'>Ziellandes</a>. Ignoriere die Farben der Straßenabschnitte.",
+    "moveTruckInfo": "Details zu <a href='#moveTruckModal' data-bs-toggle='modal'>Autobot LKW-Bewegung und Lieferung</a>."
+  },
+  "turnPlayer": {
+    "title": "Dein Zug",
+    "claimDeliveryBonus": "Erhalte 1 Lieferprämie (optional)",
+    "takeAction": "Führe Deine Aktion durch",
+    "moveTrucks": "Bewege deine LKWs (wenn du eine Karte gespielt hat)",
+    "moveTrucksAutobotInfo": "Autobot gains nothing when your Trucks drive past its Service Stations.",
+    "moveTrucksAutobotInfoGainDevelopmentStep": "Autobot rückt <b>1 Schritte auf der Entwicklungsleiste</b> nach vorne, wann immer einer deiner LKWs eine seiner Tankstellen passiert.",
+    "endEra": "<b>Ende Epoche {era}</b> - Hier klicken wenn du den letzten Straßenabschnitt in dieser Epoche gebaut hast."
+  },
+  "endOfEra": {
+    "title": "Ende Epoche {era}",
+    "lastSectionBuildPromotion": {
+      "bot": "Beförderung: <b>Autobot</b> hat den letzten Straßenabschnitt dieser Epoche gebaut und erhält eine <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot-Beförderung</a>.",
+      "player": "Beförderung: <b>Du</b> hast den letzten Straßenabschnitt dieser Epoche gebaut und erhältst eine Beförderung."
+    },
+    "botExtraPromotions": "Beförderung: <b>Autobot</b> erhält <b>{count} Extra-</b><a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot-Beförderung</a>. | Beförderung: <b>Autobot</b> erhält <b>{count} Extra-</b><a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot-Beförderungen</a>.",
+    "constructionBudget": "Baubudget: Verteile das Einkommen für die Autobahnen",
+    "constructionBudgetAutobotInfo": "Wenn du das Baubudget für die Bauämter berechnest, zähle die Autobot-Arbeitskräfte mit. Allerdings erhält Autobot keinen Teil des Baubudgets.",
+    "routeCard": "Routenkarte: Werte deine Routenkarte",
+    "autobotWineInfo": "Decke die drei <b>Weinkarten</b> von Autobot auf. Autobot wird versuchen eine davon zu erfüllen, siehe <a href='#loadTruckModal' data-bs-toggle='modal'>LKW beladen</a>."
+  },
+  "endOfGame": {
+    "title": "Spielende"
+  },
+  "sidebar": {
+    "era": "Epoche {era}",
+    "round": "Runde {round}",
+    "lastTurn": "Letzter Zug"
+  },
+  "botStatus": {
+    "title": "Autobot-Status",
+    "taskQueue": "Warteschlange",
+    "taskPile": "Anweisungsstapel",
+    "usedColors": "Gespielte Farben",
+    "usedTasks": "Gespielte Anweisungen",
+    "gainBonus": "Bonus erhalten",
+    "empty": "leer",
+    "none": "keine"
+  },
+  "botGainBonus": {
+    "title": "Autobot Bonus",
+    "bonusActions": "Autobots Bonusaktionen",
+    "boardBonuses": "Boni des Solotableaus",
+    "autobotPromotions": "Autobot-Beförderung",
+    "discard": "<b>Abwerfen:</b> Autobot wirft 1 Aktionskarte aus der Auslage ab. Danach rückt er alle verbleibenden Karten nach rechts und zieht 1 neue Karte, die er links daneben legt. Priorität für die Kartenwahl:",
+    "discardPrioItem1": "Die am weitesten links liegende Karte der aktuellen Farbe.",
+    "discardPrioItem2": "Die am weitesten rechts liegende Karte der Farbe, die am häufigsten in der Auslage auftaucht.",
+    "develop": "<b>Entwickeln:</b> Rücke Autobots Entwicklungsmarker 1 oder 2 Schritte auf der Entwicklungsleiste nach vorne.",
+    "advancedCard": "<b>Nimm eine fortgeschrittene Anweisungskarte:</b> Füge eine fortgeschrittene Karte dem Anweisungsstapel hinzu.",
+    "takeAdvancedCard": "Fortgeschrittene Anweisungskarte hinzufügen",
+    "promote": "<b>Beförderung:</b> Befördere 1 von Autobots Arbeitskräften (siehe <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot-Beförderung</a>).",
+    "colorCard": "<b>Nimm eine Farbkarte:</b> Nimm die am <i>weitesten links</i> liegende Karte aus der Auslage. Autobot erhält diese zusätzliche Farbkarte.",
+    "takeColorCard": "Farbkarte hinzufügen",
+    "promoteServiceTrade": "<b>Beförderung:</b> Beförderungen, die Autobot auf diese Weise erhält, sollten, falls möglich, in der angegeben Abteilung ausgeführt werden. Falls eine Beförderung in der angegebenen Abteilung nicht möglich ist, folgt Autobot den üblichen Prioritäten der <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>Autobot-Beförderung</a>.",
+    "buildServiceStation": "<b>Tankstelle bauen:</b> Autobot führt sofort eine Aktion <a href='#buildServiceStationModal' data-bs-toggle='modal'>Tankstelle bauen</a> aus.",
+    "buildRoadSection": "<b>Straßenabschnitt bauen:</b> Autobot führt sofort eine Aktion <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Straßenabschnitt bauen</a> aus.",
+    "upgradeLink": "<b>Verbindung ausbauen:</b> Autobot führt sofort eine Aktion <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>Verbindung ausbauen</a> aus.",
+    "placeEmployee": "<b>Arbeitskraft einsetzen:</b> Autobot stellt 1 Arbeitskraft auf das Amt seiner aktuellen Farbe.",
+    "promotionInfo1": "Autobots Beförderungen sind je nach Epoche begrenzt. In der ersten Epoche kann Autobot seine Arbeitskräfte nur bis in die 1. Etage befördern. In der zweiten Epoche kann er sie bis in die 2. Etage befördern. In der dritten Epoche kann Autobot seine Arbeitskräfte in jede Etage befördern. Diese Einschränkung gilt auch, falls Autobots Arbeitskräfte am Ende der Epoche befördert werden.",
+    "promotionInfo2": "Außer, falls die Prämie eine bestimmte Abteilung vorgibt, befördert Autobot immer diejenige seine Arbeitskräfte, die die höchste verfügbare Etage erreichen kann, unabhängig von deren Abteilung. Falls mehrere Arbeitskräfte die gleiche höchste Etage erreichen können, befördert er die Arbeitskräfte der Abteilung, die weiter links liegt.",
+    "soloBoardInfoBonusTokens": "<b>Lieferprämienplättchen:</b> Wann immer Autobot ein Prämienplättchen erhält, legt er es auf das nächste freie Feld seines Solotableaus und erhält den dort angegeben Bonus anstelle des auf dem Plättchen gezeigten. Er beginnt in der obereren Reihen des Tableaus von links nach rechts und fährt in der zweiten Reihe ebenfalls von links nach rechts fort.",
+    "soloBoardInfoServiceStations": "<b>Tankstellen:</b> Wann immer Autobot eine Tankstelle baut, erhält er sofort die unter der Tankstelle auf dem Solotableau angegebene Prämie."
+  },
+  "buildRoadUpgradeLink": {
+    "title": "Straßenabschnitt bauen oder Verbindung ausbauen",
+    "buildRoad": {
+      "title": "Straßenabschnitt bauen",
+      "intro": "Autobot baut den nächsten Straßenabschnitt der Autobahn mit der aktuellen Farbe. Falls alle verfügbaren Straßenabschnitte bereits gebaut wurden, <a href='#tablink-upgrade-link' data-custom-toggle='tab'>baut Autobot stattdessen eine fertiggestellte Verbindung aus</a>.",
+      "priority": {
+        "title": "Priorität:",
+        "item1": "Der Straßenabschnitt, der es einem von Autobots LKWs erlauben würde, einen Warenmarker in Richtung seines Bestimmungslands zu bewegen. Bei Gleichstand wähle das Land, das weiter oben auf Autobots Liefertableau steht.",
+        "item2": "Ein Straßenabschnitt mit einem Prämienplättchen.",
+        "item3": "Der Straßenabschnitt, der der schwarzen Autobahn am nächsten ist (wenigste Straßenabschnitte entfernt).",
+        "item4": "In der ersten und zweiten Epoche der südlichste Abschnitt, dann der westlichste. In der dritten Epoche der nördlichste Abschnitt, dann der östlichste."
+      },
+      "employeeCostInfo": "Wann immer Autobot einen Straßenabschnitt baut, stellt er eine seiner Arbeitskräfte ins zugehörige Amt. Autobot bezahlt nie Baukosten.",
+      "developIcon": "Wann immer Autobot einen Straßenabschnitt auf einem Feld mit dem Symbol 'Entwickeln' baut, rücke Autobots Entwicklungsmarker 1 Schritt auf der Entwicklungsleiste nach vorne.",
+      "bonusTile": "Wann immer Autobot einen Straßenabschnitt auf einem Feld mit einem Prämienplättchen baut, erhält er die Prämie wie in <a href='#botGainBonusModal' data-bs-toggle='modal'>Autobot Bonus</a> beschrieben."
+    },
+    "upgradeLink": {
+      "title": "Verbindung ausbauen",
+      "intro": "Falls alle verfügbaren Straßenabschnitte bereits gebaut wurden, baut Autobot stattdessen eine fertiggestellte Verbindung aus.",
+      "priority": {
+        "title": "Priorität:",
+        "itemTraffic": "Autobot gibt Verbindungen mit <b>Staumarkern</b> die höchste Priorität. Sobald Autobot 3 Staumarker gesammelt hat, <a href='#botGainBonusModal' data-bs-toggle='modal'>befördert</a> er wie üblich eine Arbeitskraft.",
+        "item1": "Die Verbindung, die der schwarzen Autobahn am nächsten ist (wenigste Straßenabschnitte entfernt).",
+        "item2": "Die Verbindung, die Bad Hersfeld am nächsten ist.",
+        "item3": "In der ersten und zweiten Epoche die südlichste Verbindung, dann die westlichste. In der dritten Epoche die nördlichste Verbindung, dann die östlichste."
+      },
+      "employeeCostInfo": "Wann immer Autobot eine Verbindung ausbaut, stellt er eine seiner Arbeitskräfte ins zugehörige Amt. Autobot bezahlt nie Baukosten."
+    }
+  },
+  "loadTruck": {
+    "title": "LKW beladen",
+    "intro1": "Wann immer Autobot die Aktion 'LKW beladen' ausführt, wählt er ein Zielland für die Lieferung und ein Depot, um Waren aufzuladen.",
+    "intro2": "Als Zielland wählt Autobot ein Nachbarland, in das er noch keine Waren geliefert hat und aktuell keine Waren liefert. In der ersten und zweiten Epoche ignoriert Autobot Polen und die Tschechische Republik.",
+    "intro3": "Autobot wählt das Land von seinem Liefertableau, das die geladene Warenart bevorzugt.",
+    "intro4": "Gibt es kein Land, das Autobot noch nicht beliefert hat und das die geladene Warenart bevorzugt, kann er diese Hauptaktion nicht ausführen.",
+    "intro5": "Autobot darf immer beide seiner LKWs benutzen. Falls Autobot keinen verfügbaren LKW mehr hat, kann er diese Hauptaktion nicht ausführen.",
+    "loadNonBlack": {
+      "title": "Beladen auf der roten, grünen, violetten, orangen und weißen Autobahn",
+      "info": "Wähle das Depot, das der aktuellen Farbe entspricht, und lade den zugehörigen Warenmarker. Lege den Warenmarker auf ein verfügbaren LKW und stelle den LKW auf das Depot."
+    },
+    "loadBlack": {
+      "title": "Beladen auf der schwarzen Autobahn",
+      "info": "Falls die aktuelle Farbe schwarz ist, wählt Autobot zuerst ein Zielland und danach die von diesem Land bevorzugte Warenart von seinem Liefertableau. Nachdem Autobot ein Land gewählt hat, wählt er die Warenart, die das Land bevorzugt, von seinem Liefertableau. Legen den Warenmarker auf einen verfügbaren LKW und stelle den LKW auf das zugehörige Depot. Falls Automobile oder Chemikalien gewählt wurden, wähle das Depot das dem Ziel am nächsten ist."
+    },
+    "priority": {
+      "title": "Land auswählen - Autobots Priorität:",
+      "item1": "Ein Land, das mit dem Autobahnnetz verbunden ist.",
+      "item2": "Ein Land, auf dem ein Prämienplättchen liegt.",
+      "item3": "Ein Land mit den wenigsten noch zu bauenden Straßenabschnitten.",
+      "item4": "Das oberste Land auf Autobots Liefertableau."
+    },
+    "developmentToken": "Lege den Entwicklungsmarker in der Farbe des von Autobot beladenen LKWs neben das gewählte Land auf seinem Liefertableau. Dadurch markiert er das gewählte Zielland für den LKW.",
+    "loadingPharmaceuticals": {
+      "title": "Beladen mit Pharmazeutika",
+      "info": "Falls die aktuelle Farbe Grün oder Gelb ist, wählt Autobot in der dritten Epoche Pharmazeutika als Warenart (statt Automobile). Anstatt der üblichen Auswahlkriterien wählt Autobot ein Land, das mit dem Straßennetz verbunden ist und an das noch keine Pharmazeutika geliefert wurden. Er beginne mit Österreich (Wien) und wählt dann im Uhrzeigersinn. Falls du vor Autobot Pharmazeutika in das gewählte Land lieferst, bewege den Entwicklungsmarker zum nächsten Land im Uhrzeigersinn, das mit dem Straßennetz verbunden ist und an das noch keine Pharmazeutika geliefert wurden. Falls Autobot die Lieferung abschließt, erhält er die Prämie für Pharmazeutika wie üblich."
+    },
+    "wineModule": {
+      "title": "Wein-Modul",
+      "info1": "Sobald Autobot das erste Mal einen LKW belädt, während seine aktuelle Farbe mit einer seiner Weinkarten übereinstimmt, wirft er die anderen beiden Weinkarten ab, belädt seinen LKW auf dem Abschnitt neben dem angegebenen Herkunftsland mit einem Weinmarker und legt einen Zielmarker neben die angegebene Zielstadt.",
+      "info2": "Sobald der LKW sein Ziel erreicht, erhält Autobot einen Wein-Liefermarker."
+    }
+  },
+  "moveTruck": {
+    "title": "LKW-Bewegungen und Lieferungen",
+    "ignoreColor": "Autobot darf seine LKWs auch dann bewegen, falls sie sich auf Straßenabschnitten befinden, die nicht mit der aktuellen Farbe übereinstimmen. Falls sich ein LKW aus irgendeinem Grund nicht weiterbewegen kann (z.B. ein nicht gebauter Streckenabschnitt), dann bleibt er stehen.",
+    "passServiceStations": "Wann immer einer von Autobots LKWs eine seiner Tankstellen passiert, erhält er die aufgedeckte Prämie seines Solotableaus, die sich am weitesten rechts befindet. Wann immer einer von Autobots LKWs eine deiner Tankstellen passiert, erhältst du Münzen aus dem Vorrat wie üblich.",
+    "deliverGoods": "Wann immer einer von Autobots LKWs sein Zielland erreicht, schließt er die Lieferung seiner Ware ab:",
+    "deliverGoodsItem1": "Wann immer Autobot eine Lieferung abschließt, lege einen Liefermarker auf das zugehörige Feld auf Autobots Liefertableau.",
+    "deliverGoodsItem2": "Falls die Warenart der von dem Land bevorzugten entspricht, rückt Autobot seinen Entwicklungsmarker nach vorne. Autobot erhält niemals die auf dem Liefertableau angegebenen Prämien.",
+    "deliverGoodsItem3": "Falls Autobot Pharmazeutika liefert, erhält er die zugehörige Lieferprämie wie üblich.",
+    "deliverGoodsItem4": "Falls ein Lieferprämienplättchen auf dem gewählten Land liegt, legt Autobot es verdeckt auf das nächste freie Feld seines Solotableaus und erhält die zugehörige Prämie, siehe <a href='#botGainBonusModal' data-bs-toggle='modal'>Boni des Solotableaus</a>.",
+    "era3Countries": "Wie üblich kann Autobot in der ersten und zweiten Epoche keine Waren nach Polen (Warszawa) und Tschechische Republik (Praha) liefern."
+  },
+  "buildServiceStation": {
+    "title": "Tankstelle bauen",
+    "intro": "Autobot baut eine Tankstelle auf dem nächsten verfügbaren Tankstellenfeld der Autobahn seiner aktuellen Farbe.",
+    "priority": {
+      "title": "Priorität:",
+      "itemServices": "Autobot versucht wenn möglich eine <b>Verbesserung für Tankstellen</b> zu bauen (d.h. falls er eine Tankstelle auf eine ausgebauten Verbindung in der aktuellen Farbe hat). In diesem Fall baut er die Verbesserung, die am weitesten links auf dem Tankstellentableau steht. Er erhält jedoch immer eine <a href='#botGainBonusModal' data-bs-toggle='modal'>Beförderung</a> anstatt der zugehörigen Prämie.",
+      "item1": "Die Tankstelle, die der schwarzen Autobahn am nächsten ist (wenigste Streckenabschnitte entfernt).",
+      "item2": "In der ersten und zweiten Epoche die südlichste, dann die westlichste Tankstelle. In der dritten Epoche die nördlichste, dann die östlichste Tankstelle.",
+      "item3": "Falls Autobot eine Tankstelle an der schwarzen Autobahn baut, wählt er das Feld, das Bad Hersfeld am nächsten ist. Bei Gleichstand wählt er in der ersten und zweiten Epoche das südlichste und in de dritten Epoche das nördlichste Feld."
+    },
+    "noViableSpace": "Falls kein Tankstellenfeld in der aktuellen Farbe mit dem Autobahnnetz verbunden ist, ist die Aktion nicht zulässig.",
+    "era3Info": "Wie üblich kann Autobot während der ersten beiden Epochen keine Tankstellen in Ostdeutschland bauen.",
+    "gainBonus": "Wann immer Autobot eine Tankstelle baut, erhält er sofort die unter ihr auf dem Solotableau abgebildete Prämie, siehe <a href='#botGainBonusModal' data-bs-toggle='modal'>Boni des Solotableaus</a>."
+  },
+  "takeAdvancedCard": {
+    "title": "Fortgeschrittene Anweisungskarte hinzufügen",
+    "addCardInfo": "Es wird eine <b>fortgeschrittene Anweisungskarte</b> dem Anweisungsstapel von Autobot hinzugefügt.",
+    "noCardLeft": "Alle fortgeschrittenen Anweisungskarten wurden bereits hinzugefügt."
+  },
+  "takeColorCard": {
+    "title": "Farbkarte hinzufügen",
+    "pickColors": "Wähle die Farben der Farbkarte die am <i>weitesten links</i> in der Auslage liegt, und werfe die anschließend ab.",
+    "pickAction": "Hier aktivieren, falls diese Farbkarte eine <i>Straßenabschnitt bauen</i>-Aktion hat."
+  },
+  "scoring": {
+    "bot": "Autobot",
+    "points": "Punkte",
+    "player": "Spieler",
+    "lobby": "Arbeitskräfte in der Eingangshalle",
+    "networkDepartment": "Netzwerkabteilung",
+    "tradeDepartment": "Handelsabteilung",
+    "serviceDepartment": "Dienstleistungsabteilung",
+    "financeDepartment": "Finanzabteilung",
+    "planningCustomsDepartment": "Planungs-/Zollabteilung (opt.)",
+    "total": "Summe"
+  },
+  "soloBoard": {
+    "easy": "Solotableau (leicht)",
+    "hard": "Solotableau (schwer)"
+  },
+  "notfound": {
+    "title": "Nicht Gefunden"
+  },
+  "action": {
+    "playGame": "Spielen",
+    "startGame": "Spiel starten",
+    "next": "Weiter",
+    "nextRound": "Nächste Runde",
+    "abortGame": "Spiel abbrechen",
+    "abortGameConfirm": "Das aktuelle Spiel wird abgebrochen - bist Du sicher?",
+    "endGame": "Spiel beenden",
+    "endGameConfirm": "Dieses Spiel wird beendet - bist Du sicher?",
+    "cancel": "Abbrechen",
+    "backToHome": "Zurück zum Anfang",
+    "back": "Zurück",
+    "close": "Schließen"
+  },
+  "footer": {
+    "credits": "Credits"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "Applikation neu laden",
+    "notice": "Die Applikation wurde aktualisiert - möchtest du die Seite neu laden um die neueste Version zu nutzen?"
+  }
+}

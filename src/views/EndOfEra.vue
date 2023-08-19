@@ -6,11 +6,11 @@
   <ol class="mt-4">
     <li v-html="t(`endOfEra.lastSectionBuildPromotion.${navigationState.player}`)"></li>
     <li v-if="botExtraPromotions > 0" v-html="t(`endOfEra.botExtraPromotions`, {count:botExtraPromotions})"></li>
-    <li v-html="t('endOfEra.routeCard')"></li>
     <li v-html="t('endOfEra.constructionBudget')"></li>
     <ul>
       <li v-html="t('endOfEra.constructionBudgetAutobotInfo')"></li>
     </ul>
+    <li v-html="t('endOfEra.routeCard')"></li>
     <li v-if="showAutobotWineInfo" v-html="t('endOfEra.autobotWineInfo')"></li>
   </ol>
 

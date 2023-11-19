@@ -2,7 +2,7 @@
 
   <div class="float-end m-2 w-25">
     <a href="https://boardgamegeek.com/boardgame/348554/autobahn" target="_blank" rel="noopener">
-      <img src="../assets/game-autobahn.webp" class="rounded shadow w-100"/>
+      <img src="../assets/game-autobahn.webp" class="rounded shadow w-100" alt=""/>
     </a>
   </div>
 
@@ -23,7 +23,7 @@
     This is not an official Alley Cat Games product and has no affiliation with <a href="https://www.alleycatgames.com/" target="_blank" rel="noopener">Alley Cat Games</a>.
     All art in this app is from <a href="https://www.alleycatgames.com/autobahn" target="_blank" rel="noopener">Autobahn</a>.
     See <a href="#" data-bs-toggle="modal" data-bs-target="#creditsModal">{{t('footer.credits')}}</a>.
-    <a href="https://ko-fi.com/brdgm_me" target="_blank" rel="noopener"><img class="kofi-button" src="@/assets/kofi_button_dark.png"/></a>
+    <a href="https://ko-fi.com/brdgm_me" target="_blank" rel="noopener"><img class="kofi-button" src="@/assets/kofi_button_dark.png" alt="Support me on Ko-fi"/></a>
   </p>
 
 </template>

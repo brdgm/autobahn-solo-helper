@@ -1,9 +1,9 @@
 <template>
   <table>
     <tr>
-      <th scope="row" colspan="2" v-html="t('scoring.points')"></th>
-      <th v-html="t('scoring.bot')"></th>
-      <th v-html="t('scoring.player')"></th>
+      <th scope="col" colspan="2" v-html="t('scoring.points')"></th>
+      <th scope="col" v-html="t('scoring.bot')"></th>
+      <th scope="col" v-html="t('scoring.player')"></th>
     </tr>
     <tr>
       <th scope="row" v-html="t('scoring.lobby')"></th>

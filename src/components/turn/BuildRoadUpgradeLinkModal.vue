@@ -47,12 +47,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n';
-import enableTabLinksInContent from '@/util/enableTabLinksInContent';
+import { useI18n } from 'vue-i18n'
+import enableTabLinksInContent from 'brdgm-commons/src/util/tab/enableTabLinksInContent'
 import ModalDialog from 'brdgm-commons/src/components/structure/ModalDialog.vue'
-import Expansion from '@/services/enum/Expansion';
-import { useStore } from '@/store';
-import AppIcon from '../structure/AppIcon.vue';
+import Expansion from '@/services/enum/Expansion'
+import { useStore } from '@/store'
+import AppIcon from '../structure/AppIcon.vue'
 
 export default defineComponent({
   name: 'BuildRoadUpgradeLinkModal',  

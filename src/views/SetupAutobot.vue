@@ -16,7 +16,7 @@
   </ol>
   <p v-html="t('setupAutobot.unlimitedBudget')"></p>
   
-  <img class="bot-setup" src="../assets/bot-setup.png"/>
+  <img class="bot-setup" src="../assets/bot-setup.png" alt=""/>
 
   <button @click="startGame" class="btn btn-primary btn-lg mt-4">
     {{t('action.startGame')}}

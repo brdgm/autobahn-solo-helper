@@ -32,8 +32,8 @@ export default class NavigationState {
       this.player = turnData.player
       this.colorCardDeck = ColorCardDeck.fromPersistence(turnData.colorCardDeck)
       this.taskCardDeck = TaskCardDeck.fromPersistence(turnData.taskCardDeck)
-      this.botSkippedLastTurn = turnData.botSkippedLastTurn ? true : false
-      this.eraEndedLastTurn = turnData.eraEndedLastTurn ? true : false
+      this.botSkippedLastTurn = turnData.botSkippedLastTurn ?? false
+      this.eraEndedLastTurn = turnData.eraEndedLastTurn ?? false
     }
     else {
       console.log(`ERROR: No data found for turn ${this.turn}`)

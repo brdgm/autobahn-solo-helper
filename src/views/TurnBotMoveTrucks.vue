@@ -52,7 +52,7 @@ export default defineComponent({
     },
     endEra() : boolean {
       const nextTurn = this.$store.state.turns.find(item => item.turn == this.turn + 1)
-      return nextTurn?.eraEndedLastTurn ? true : false
+      return nextTurn?.eraEndedLastTurn ?? false
     },
     numberOfSpaces() : number {
       let spaces = (this.navigationState.era == Era.ERA1) ? 2 : 3

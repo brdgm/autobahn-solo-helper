@@ -1,5 +1,5 @@
 import { TaskCardDeckPersistence } from '@/store'
-import * as _ from 'lodash'
+import { shuffle } from 'lodash'
 import TaskCardLevel from './enum/TaskCardLevel'
 import TaskCard from './TaskCard'
 import TaskCards from './TaskCards'
@@ -113,7 +113,7 @@ export default class TaskCardDeck {
     this._used = []
     this._pile.push(...this._queue)
     this._queue = []
-    this._pile = _.shuffle(this._pile)
+    this._pile = shuffle(this._pile)
   }
 
   /**
@@ -140,7 +140,7 @@ export default class TaskCardDeck {
       throw new Error('No advanced card left.')
     }
     this._pile.push(card)
-    this._pile = _.shuffle(this._pile)
+    this._pile = shuffle(this._pile)
   }
 
   /**
@@ -159,8 +159,8 @@ export default class TaskCardDeck {
    * Creates a shuffled new deck with all task cards level A, and advanced level B cards in reserve.
    */
   public static new() : TaskCardDeck {
-    const pile = _.shuffle(TaskCards.getAll(TaskCardLevel.A))
-    const advanced = _.shuffle(TaskCards.getAll(TaskCardLevel.B))
+    const pile = shuffle(TaskCards.getAll(TaskCardLevel.A))
+    const advanced = shuffle(TaskCards.getAll(TaskCardLevel.B))
     return new TaskCardDeck(pile, [], [], advanced)
   }
 

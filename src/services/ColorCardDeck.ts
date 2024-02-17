@@ -1,5 +1,5 @@
 import { ColorCardDeckPersistence } from '@/store'
-import * as _ from 'lodash'
+import { shuffle, clone } from 'lodash'
 import ColorCard from './ColorCard'
 import AutobahnColor from './enum/AutobahnColor'
 
@@ -55,7 +55,7 @@ export default class ColorCardDeck {
   public reshuffle() : void {
     this._pile.push(...this._used)
     this._used = []
-    this._pile = _.shuffle(this._pile)
+    this._pile = shuffle(this._pile)
   }
 
   /**
@@ -64,7 +64,7 @@ export default class ColorCardDeck {
    */
   public addCard(card : ColorCard) {
     this._pile.push(card)
-    this._pile = _.shuffle(this._pile)
+    this._pile = shuffle(this._pile)
   }
 
   /**
@@ -79,8 +79,8 @@ export default class ColorCardDeck {
    */
   public toPersistence() : ColorCardDeckPersistence {
     return {
-      pile: _.clone(this._pile),
-      used: _.clone(this._used)
+      pile: clone(this._pile),
+      used: clone(this._used)
     }
   }
 
@@ -88,7 +88,7 @@ export default class ColorCardDeck {
    * Creates shuffled new deck of all non-yellow color cards.
    */
   public static new() : ColorCardDeck {
-    const pile = _.shuffle(Object.values(AutobahnColor)
+    const pile = shuffle(Object.values(AutobahnColor)
       .filter(color => color != AutobahnColor.YELLOW)
       .map(color => ({ colors: [color] })))
     return new ColorCardDeck(pile, [])
@@ -99,8 +99,8 @@ export default class ColorCardDeck {
    */
   public static fromPersistence(persistence : ColorCardDeckPersistence) : ColorCardDeck {
     return new ColorCardDeck(
-      _.clone(persistence.pile),
-      _.clone(persistence.used)
+      clone(persistence.pile),
+      clone(persistence.used)
     )
   }
 

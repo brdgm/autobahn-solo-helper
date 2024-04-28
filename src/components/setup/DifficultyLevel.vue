@@ -30,22 +30,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import Difficulty from '@/services/Difficulty'
 
 export default defineComponent({
   name: 'DifficultyLevel',
   setup() {
     const { t } = useI18n()
-    useStore()
-    return { t }
-  },
-  data() {
-    return {
-      difficultyLevel: this.$store.state.setup.difficultyLevel
-    }
+    const state = useStateStore()
+
+    const difficultyLevel = ref(state.setup.difficultyLevel)
+
+    return { t, state, difficultyLevel }
   },
   computed: {
     difficulty() : Difficulty {
@@ -55,7 +53,7 @@ export default defineComponent({
   methods: {
     updateDifficultyLevel(event: Event) {
       this.difficultyLevel = parseInt((event.target as HTMLInputElement).value)
-      this.$store.commit('setupDifficultyLevel', this.difficultyLevel)
+      this.state.setup.difficultyLevel = this.difficultyLevel
     },
   }
 })

@@ -10,10 +10,10 @@
 </template>
 
 <script lang="ts">
-import NavigationState from '@/util/NavigationState';
+import NavigationState from '@/util/NavigationState'
 import { defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n';
-import BotStatus from './BotStatus.vue';
+import { useI18n } from 'vue-i18n'
+import BotStatus from './BotStatus.vue'
 
 export default defineComponent({
   name: 'SideBar',  

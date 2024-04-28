@@ -48,10 +48,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n';
+import { useI18n } from 'vue-i18n'
 import ModalDialog from 'brdgm-commons/src/components/structure/ModalDialog.vue'
-import { useStore } from '@/store';
-import Expansion from '@/services/enum/Expansion';
+import { useStateStore } from '@/store/state'
+import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'LoadTruckModal',  
@@ -60,12 +60,12 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    useStore()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   computed: {
     hasWineExpansion() : boolean {
-      return this.$store.state.setup.expansions.includes(Expansion.WINE)
+      return this.state.setup.expansions.includes(Expansion.WINE)
     },
   }
 })

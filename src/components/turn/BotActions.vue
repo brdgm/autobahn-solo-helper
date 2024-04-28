@@ -22,13 +22,13 @@
 </template>
 
 <script lang="ts">
-import ColorCard from '@/services/ColorCard';
-import Action from '@/services/enum/Action';
-import TaskCard from '@/services/TaskCard';
+import ColorCard from '@/services/ColorCard'
+import Action from '@/services/enum/Action'
+import TaskCard from '@/services/TaskCard'
 import { defineComponent, PropType } from 'vue'
-import AppIcon from '../structure/AppIcon.vue';
-import AutobahnColorCard from '../structure/AutobahnColorCard.vue';
-import { useI18n } from 'vue-i18n';
+import AppIcon from '../structure/AppIcon.vue'
+import AutobahnColorCard from '../structure/AutobahnColorCard.vue'
+import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
   name: 'BotActions',

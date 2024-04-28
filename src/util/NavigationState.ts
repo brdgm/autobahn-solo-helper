@@ -3,7 +3,7 @@ import Difficulty from '@/services/Difficulty'
 import Era from '@/services/enum/Era'
 import Player from '@/services/enum/Player'
 import TaskCardDeck from '@/services/TaskCardDeck'
-import { State } from '@/store'
+import { State } from '@/store/state'
 import { RouteLocation } from 'vue-router'
 
 export default class NavigationState {
@@ -21,7 +21,7 @@ export default class NavigationState {
   readonly secondToLastTurn : boolean
   readonly lastTurn : boolean
 
-  public constructor(route : RouteLocation, state : State) {    
+  public constructor(route : RouteLocation, state : State) {
     this.difficulty = new Difficulty(state.setup.difficultyLevel)
     this.turn = parseInt(route.params['turn'] as string)
 

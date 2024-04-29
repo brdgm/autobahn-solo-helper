@@ -100,14 +100,14 @@ export default defineComponent({
         this.taskCardDeck.reshuffleExceptHighestValueQueueCard()
       }
 
-      this.storeNextTurn();
+      this.storeNextTurn()
       this.$router.push(`/turn/${this.turn}/botMoveTrucks`)
     },
     skipTurn() : void {
       this.colorCardDeck.reshuffle()
       this.taskCardDeck.putToUsed(this.taskCard)
       this.taskCardDeck.reshuffle()
-      this.storeNextTurn(true);
+      this.storeNextTurn(true)
       this.$router.push(`/turn/${this.turn + 1}/player`)
     },
     storeNextTurn(skipTurn = false) : void {

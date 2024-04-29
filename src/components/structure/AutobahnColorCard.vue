@@ -8,8 +8,8 @@
 </template>
 
 <script lang="ts">
-import ColorCard from '@/services/ColorCard';
-import AutobahnColor from '@/services/enum/AutobahnColor';
+import ColorCard from '@/services/ColorCard'
+import AutobahnColor from '@/services/enum/AutobahnColor'
 import getAutobahnColorCode from '@/util/getAutobahnColorCode'
 import { defineComponent, PropType } from 'vue'
 

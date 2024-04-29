@@ -18,7 +18,7 @@ import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import NavigationState from '@/util/NavigationState'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import { useRoute } from 'vue-router'
 import SideBar from '@/components/turn/SideBar.vue'
 import Era from '@/services/enum/Era'
@@ -32,11 +32,11 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
     const route = useRoute()
-    const store = useStore()
-    const navigationState = new NavigationState(route, store.state)
+    const state = useStateStore()
+    const navigationState = new NavigationState(route, state)
     const turn = navigationState.turn
 
-    return { t, navigationState, turn }
+    return { t, state, navigationState, turn }
   },
   computed: {
     nextButtonRouteTo() : string {
@@ -51,7 +51,7 @@ export default defineComponent({
       return `/turn/${this.turn}/bot`
     },
     endEra() : boolean {
-      const nextTurn = this.$store.state.turns.find(item => item.turn == this.turn + 1)
+      const nextTurn = this.state.turns.find(item => item.turn == this.turn + 1)
       return nextTurn?.eraEndedLastTurn ?? false
     },
     numberOfSpaces() : number {

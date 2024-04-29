@@ -1,8 +1,8 @@
-import findMandatory from 'brdgm-commons/src/util/map/findMandatory';
-import Action from './enum/Action';
-import BonusAction from './enum/BonusAction';
-import TaskCardLevel from './enum/TaskCardLevel';
-import Card from './TaskCard';
+import findMandatory from 'brdgm-commons/src/util/map/findMandatory'
+import Action from './enum/Action'
+import BonusAction from './enum/BonusAction'
+import TaskCardLevel from './enum/TaskCardLevel'
+import Card from './TaskCard'
 
 const cards = [
   {

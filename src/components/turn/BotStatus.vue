@@ -61,19 +61,19 @@
 </template>
 
 <script lang="ts">
-import ColorCardDeck from '@/services/ColorCardDeck';
-import TaskCardDeck from '@/services/TaskCardDeck';
+import ColorCardDeck from '@/services/ColorCardDeck'
+import TaskCardDeck from '@/services/TaskCardDeck'
 import { defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n';
-import AppIcon from '../structure/AppIcon.vue';
-import AutobahnColorCard from '../structure/AutobahnColorCard.vue';
-import BotGainBonusModal from './BotGainBonusModal.vue';
-import BuildRoadUpgradeLinkModal from './BuildRoadUpgradeLinkModal.vue';
-import BuildServiceStationModal from './BuildServiceStationModal.vue';
-import LoadTruckModal from './LoadTruckModal.vue';
-import MoveTruckModal from './MoveTruckModal.vue';
-import TakeAdvancedCardModal from './TakeAdvancedCardModal.vue';
-import TakeColorCardModal from './TakeColorCardModal.vue';
+import { useI18n } from 'vue-i18n'
+import AppIcon from '../structure/AppIcon.vue'
+import AutobahnColorCard from '../structure/AutobahnColorCard.vue'
+import BotGainBonusModal from './BotGainBonusModal.vue'
+import BuildRoadUpgradeLinkModal from './BuildRoadUpgradeLinkModal.vue'
+import BuildServiceStationModal from './BuildServiceStationModal.vue'
+import LoadTruckModal from './LoadTruckModal.vue'
+import MoveTruckModal from './MoveTruckModal.vue'
+import TakeAdvancedCardModal from './TakeAdvancedCardModal.vue'
+import TakeColorCardModal from './TakeColorCardModal.vue'
 
 export default defineComponent({
   name: 'BotStatus',  

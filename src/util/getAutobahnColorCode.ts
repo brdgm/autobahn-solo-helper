@@ -1,4 +1,4 @@
-import AutobahnColor from '@/services/enum/AutobahnColor';
+import AutobahnColor from '@/services/enum/AutobahnColor'
 
 /**
  * Get color code for autobahn color.

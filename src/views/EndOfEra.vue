@@ -27,7 +27,7 @@ import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useRoute } from 'vue-router'
 import NavigationState from '@/util/NavigationState'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import SideBar from '@/components/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
 import Era from '@/services/enum/Era'
@@ -42,11 +42,11 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
     const route = useRoute()
-    const store = useStore()
-    const navigationState = new NavigationState(route, store.state)
+    const state = useStateStore()
+    const navigationState = new NavigationState(route, state)
     const turn = navigationState.turn
     const era = navigationState.era
-    return { t, navigationState, turn, era }
+    return { t, state, navigationState, turn, era }
   },
   computed: {
     nextButtonRouteTo() : string {
@@ -73,7 +73,7 @@ export default defineComponent({
       return (this.era == Era.ERA1) ? 0 : 1
     },
     showAutobotWineInfo() : boolean {
-      return this.$store.state.setup.expansions.includes(Expansion.WINE)
+      return this.state.setup.expansions.includes(Expansion.WINE)
         && this.era == Era.ERA2
     },
   }

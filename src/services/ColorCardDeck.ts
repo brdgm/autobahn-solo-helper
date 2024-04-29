@@ -1,4 +1,4 @@
-import { ColorCardDeckPersistence } from '@/store'
+import { ColorCardDeckPersistence } from '@/store/state'
 import { shuffle, clone } from 'lodash'
 import ColorCard from './ColorCard'
 import AutobahnColor from './enum/AutobahnColor'

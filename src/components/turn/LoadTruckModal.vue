@@ -2,13 +2,13 @@
   <ModalDialog id="loadTruckModal" :title="t('loadTruck.title')" :size-xl="true" :scrollable="true">
     <template #body>
       <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation">
+        <li class="nav-item">
           <button class="nav-link active" id="tablink-load-truck" data-bs-toggle="tab" data-bs-target="#tab-load-truck" type="button" role="tab" aria-controls="tab-load-truck" aria-selected="false">{{t('loadTruck.title')}}</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item">
           <button class="nav-link" id="tablink-pharmaceuticals" data-bs-toggle="tab" data-bs-target="#tab-pharmaceuticals" type="button" role="tab" aria-controls="tab-pharmaceuticals" aria-selected="true">{{t('loadTruck.loadingPharmaceuticals.title')}}</button>
         </li>
-        <li v-if="hasWineExpansion" class="nav-item" role="presentation">
+        <li v-if="hasWineExpansion" class="nav-item">
           <button class="nav-link" id="tablink-wine-module" data-bs-toggle="tab" data-bs-target="#tab-wine-module" type="button" role="tab" aria-controls="tab-wine-module" aria-selected="true">{{t('loadTruck.wineModule.title')}}</button>
         </li>
       </ul>

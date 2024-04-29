@@ -2,10 +2,10 @@
   <ModalDialog id="buildRoadUpgradeLinkModal" :title="t('buildRoadUpgradeLink.title')" :size-xl="true" :scrollable="true">
     <template #body>
       <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation">
+        <li class="nav-item">
           <button class="nav-link active" id="tablink-build-road" data-bs-toggle="tab" data-bs-target="#tab-build-road" type="button" role="tab" aria-controls="tab-build-road" aria-selected="false">{{t('buildRoadUpgradeLink.buildRoad.title')}}</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item">
           <button class="nav-link" id="tablink-upgrade-link" data-bs-toggle="tab" data-bs-target="#tab-upgrade-link" type="button" role="tab" aria-controls="tab-upgrade-link" aria-selected="true">{{t('buildRoadUpgradeLink.upgradeLink.title')}}</button>
         </li>
       </ul>

@@ -1,7 +1,7 @@
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Expansion from '@/services/enum/Expansion'
 import { defineStore } from 'pinia'
-import toggleArrayItem from 'brdgm-commons/src/util/array/toggleArrayItem'
+import toggleArrayItem from '@brdgm/brdgm-commons/src/util/array/toggleArrayItem'
 import ColorCard from '@/services/ColorCard'
 import Player from '@/services/enum/Player'
 import Era from '@/services/enum/Era'

@@ -29,7 +29,7 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
-import { store, useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import Expansion from '@/services/enum/Expansion'
 import ColorCardDeck from '@/services/ColorCardDeck'
 import TaskCardDeck from '@/services/TaskCardDeck'
@@ -44,27 +44,27 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    useStore()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   computed: {
     difficultyLevel() : number {
-      return this.$store.state.setup.difficultyLevel;
+      return this.state.setup.difficultyLevel;
     },
     soloBoardMode() : string {
       if (this.difficultyLevel >= 7) {
-        return 'hard';
+        return 'hard'
       } else {
-        return 'easy';
+        return 'easy'
       }    
     },
     hasWineExpansion() : boolean {
-      return this.$store.state.setup.expansions.includes(Expansion.WINE)
+      return this.state.setup.expansions.includes(Expansion.WINE)
     },
   },
   methods: {
     startGame() : void {
-      store.commit('resetGame')
+      this.state.resetGame()
       const colorCardDeck = ColorCardDeck.new()
       const taskCardDeck = TaskCardDeck.new()
       const turn = {
@@ -75,7 +75,7 @@ export default defineComponent({
         colorCardDeck: colorCardDeck.toPersistence(),
         taskCardDeck: taskCardDeck.toPersistence()
       }
-      store.commit('turn', turn)
+      this.state.turn(turn)
       router.push('/turn/1/bot')
     }
   }

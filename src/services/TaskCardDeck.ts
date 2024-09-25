@@ -1,4 +1,4 @@
-import { TaskCardDeckPersistence } from '@/store'
+import { TaskCardDeckPersistence } from '@/store/state'
 import { shuffle } from 'lodash'
 import TaskCardLevel from './enum/TaskCardLevel'
 import TaskCard from './TaskCard'

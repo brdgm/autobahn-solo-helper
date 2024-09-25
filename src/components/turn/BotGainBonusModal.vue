@@ -2,13 +2,13 @@
   <ModalDialog id="botGainBonusModal" :title="t('botGainBonus.title')" :size-xl="true" :scrollable="true">
     <template #body>
       <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation">
+        <li class="nav-item">
           <button class="nav-link active" id="tablink-bonus-actions" data-bs-toggle="tab" data-bs-target="#tab-bonus-actions" type="button" role="tab" aria-controls="tab-bonus-actions" aria-selected="false">{{t('botGainBonus.bonusActions')}}</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item">
           <button class="nav-link" id="tablink-bonus-board" data-bs-toggle="tab" data-bs-target="#tab-bonus-board" type="button" role="tab" aria-controls="tab-bonus-board" aria-selected="true">{{t('botGainBonus.boardBonuses')}}</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item">
           <button class="nav-link" id="tablink-bonus-promotions" data-bs-toggle="tab" data-bs-target="#tab-bonus-promotions" type="button" role="tab" aria-controls="tab-bonus-promotions" aria-selected="false">{{t('botGainBonus.autobotPromotions')}}</button>
         </li>
       </ul>
@@ -100,8 +100,8 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import AppIcon from '../structure/AppIcon.vue'
-import enableTabLinksInContent from 'brdgm-commons/src/util/tab/enableTabLinksInContent'
-import ModalDialog from 'brdgm-commons/src/components/structure/ModalDialog.vue'
+import enableTabLinksInContent from '@brdgm/brdgm-commons/src/util/tab/enableTabLinksInContent'
+import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDialog.vue'
 
 export default defineComponent({
   name: 'BotGainBonusModal',  

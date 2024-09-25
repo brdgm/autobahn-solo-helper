@@ -34,7 +34,7 @@ import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import NavigationState from '@/util/NavigationState'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import { useRoute } from 'vue-router'
 import BotActions from '@/components/turn/BotActions.vue'
 import SideBar from '@/components/turn/SideBar.vue'
@@ -51,8 +51,8 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
     const route = useRoute()
-    const store = useStore()
-    const navigationState = new NavigationState(route, store.state)
+    const state = useStateStore()
+    const navigationState = new NavigationState(route, state)
     const turn = navigationState.turn
     const colorCardDeck = navigationState.colorCardDeck
     const taskCardDeck = navigationState.taskCardDeck
@@ -61,7 +61,7 @@ export default defineComponent({
     const colorCard = colorCardDeck.draw()
     const taskCard = ref(taskCardDeck.draw())
 
-    return { t, navigationState, turn, colorCardDeck, taskCardDeck, colorCard, taskCard }
+    return { t, state, navigationState, turn, colorCardDeck, taskCardDeck, colorCard, taskCard }
   },
   data() {
     return {
@@ -100,14 +100,14 @@ export default defineComponent({
         this.taskCardDeck.reshuffleExceptHighestValueQueueCard()
       }
 
-      this.storeNextTurn();
+      this.storeNextTurn()
       this.$router.push(`/turn/${this.turn}/botMoveTrucks`)
     },
     skipTurn() : void {
       this.colorCardDeck.reshuffle()
       this.taskCardDeck.putToUsed(this.taskCard)
       this.taskCardDeck.reshuffle()
-      this.storeNextTurn(true);
+      this.storeNextTurn(true)
       this.$router.push(`/turn/${this.turn + 1}/player`)
     },
     storeNextTurn(skipTurn = false) : void {
@@ -124,7 +124,7 @@ export default defineComponent({
         botSkippedLastTurn: skipTurn ? true : undefined,
         eraEndedLastTurn: this.endEra ? true : undefined
       }
-      this.$store.commit('turn', turn)
+      this.state.turn(turn)
     }
   }
 })

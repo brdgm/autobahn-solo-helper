@@ -2,13 +2,13 @@
   <ModalDialog id="loadTruckModal" :title="t('loadTruck.title')" :size-xl="true" :scrollable="true">
     <template #body>
       <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation">
+        <li class="nav-item">
           <button class="nav-link active" id="tablink-load-truck" data-bs-toggle="tab" data-bs-target="#tab-load-truck" type="button" role="tab" aria-controls="tab-load-truck" aria-selected="false">{{t('loadTruck.title')}}</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item">
           <button class="nav-link" id="tablink-pharmaceuticals" data-bs-toggle="tab" data-bs-target="#tab-pharmaceuticals" type="button" role="tab" aria-controls="tab-pharmaceuticals" aria-selected="true">{{t('loadTruck.loadingPharmaceuticals.title')}}</button>
         </li>
-        <li v-if="hasWineExpansion" class="nav-item" role="presentation">
+        <li v-if="hasWineExpansion" class="nav-item">
           <button class="nav-link" id="tablink-wine-module" data-bs-toggle="tab" data-bs-target="#tab-wine-module" type="button" role="tab" aria-controls="tab-wine-module" aria-selected="true">{{t('loadTruck.wineModule.title')}}</button>
         </li>
       </ul>
@@ -48,10 +48,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n';
-import ModalDialog from 'brdgm-commons/src/components/structure/ModalDialog.vue'
-import { useStore } from '@/store';
-import Expansion from '@/services/enum/Expansion';
+import { useI18n } from 'vue-i18n'
+import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDialog.vue'
+import { useStateStore } from '@/store/state'
+import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'LoadTruckModal',  
@@ -60,12 +60,12 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    useStore()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   computed: {
     hasWineExpansion() : boolean {
-      return this.$store.state.setup.expansions.includes(Expansion.WINE)
+      return this.state.setup.expansions.includes(Expansion.WINE)
     },
   }
 })

@@ -32,7 +32,7 @@ import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useRoute } from 'vue-router'
 import NavigationState from '@/util/NavigationState'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import SideBar from '@/components/turn/SideBar.vue'
 import Player from '@/services/enum/Player'
 import Era from '@/services/enum/Era'
@@ -46,12 +46,12 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
     const route = useRoute()
-    const store = useStore()
-    const navigationState = new NavigationState(route, store.state)
+    const state = useStateStore()
+    const navigationState = new NavigationState(route, state)
     const turn = navigationState.turn
     const colorCardDeck = navigationState.colorCardDeck
     const taskCardDeck = navigationState.taskCardDeck
-    return { t, navigationState, turn, colorCardDeck, taskCardDeck }
+    return { t, state, navigationState, turn, colorCardDeck, taskCardDeck }
   },
   data() {
     return {
@@ -83,7 +83,7 @@ export default defineComponent({
         taskCardDeck: this.taskCardDeck.toPersistence(),
         eraEndedLastTurn: this.endEra ? true : undefined
       }
-      this.$store.commit('turn', turn)
+      this.state.turn(turn)
       let nextButtonRouteTo
       if (this.navigationState.lastTurn || (this.endEra && this.navigationState.era < Era.ERA3)) {
         nextButtonRouteTo = `/turn/${this.turn}/endOfEra`

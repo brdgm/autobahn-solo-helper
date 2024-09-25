@@ -18,9 +18,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n';
-import ModalDialog from 'brdgm-commons/src/components/structure/ModalDialog.vue'
-import TaskCardDeck from '@/services/TaskCardDeck';
+import { useI18n } from 'vue-i18n'
+import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDialog.vue'
+import TaskCardDeck from '@/services/TaskCardDeck'
 
 export default defineComponent({
   name: 'TakeAdvancedCardModal',  

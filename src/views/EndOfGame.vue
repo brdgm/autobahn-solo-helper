@@ -12,7 +12,7 @@ import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useRoute } from 'vue-router'
 import NavigationState from '@/util/NavigationState'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import FinalScoring from '@/components/scoring/FinalScoring.vue'
 
 export default defineComponent({
@@ -24,8 +24,8 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
     const route = useRoute()
-    const store = useStore()
-    const navigationState = new NavigationState(route, store.state)
+    const state = useStateStore()
+    const navigationState = new NavigationState(route, state)
     const turn = navigationState.turn
     return { t, turn }
   },

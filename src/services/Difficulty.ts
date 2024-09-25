@@ -1,5 +1,5 @@
-import DifficultyLevel from './enum/DifficultyLevel';
-import SoloBoard from './enum/SoloBoard';
+import DifficultyLevel from './enum/DifficultyLevel'
+import SoloBoard from './enum/SoloBoard'
 
 export default class Difficulty {
 
@@ -43,5 +43,5 @@ export default class Difficulty {
 }
 
 function between(value : number, min : number, max : number) : boolean {
-  return value >= min && value <= max;
+  return value >= min && value <= max
 }

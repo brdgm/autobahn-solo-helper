@@ -9,38 +9,38 @@
       <tr>
         <th scope="row" v-html="t('scoring.lobby')"></th>
         <td><AppIcon type="scoring" name="lobby" class="icon"/></td>
-        <td><input type="number" min="0" max="99" step="2" @focus="inputSelectAll" v-model="pointsBot[0]"/></td>
-        <td><input type="number" min="0" max="99" step="2" @focus="inputSelectAll" v-model="pointsPlayer[0]"/></td>
+        <td><ScoringTextInput v-model="pointsBot[0]"/></td>
+        <td><ScoringTextInput v-model="pointsPlayer[0]"/></td>
       </tr>
       <tr>
         <th scope="row" v-html="t('scoring.networkDepartment')"></th>
         <td><AppIcon type="scoring" name="network-department" class="icon"/></td>
-        <td><input type="number" min="0" max="99" step="1" @focus="inputSelectAll" v-model="pointsBot[1]"/></td>
-        <td><input type="number" min="0" max="99" step="1" @focus="inputSelectAll" v-model="pointsPlayer[1]"/></td>
+        <td><ScoringTextInput v-model="pointsBot[1]"/></td>
+        <td><ScoringTextInput v-model="pointsPlayer[1]"/></td>
       </tr>
       <tr>
         <th scope="row" v-html="t('scoring.tradeDepartment')"></th>
         <td><AppIcon type="scoring" name="trade-department" class="icon"/></td>
-        <td><input type="number" min="0" max="99" step="1" @focus="inputSelectAll" v-model="pointsBot[2]"/></td>
-        <td><input type="number" min="0" max="99" step="1" @focus="inputSelectAll" v-model="pointsPlayer[2]"/></td>
+        <td><ScoringTextInput v-model="pointsBot[2]"/></td>
+        <td><ScoringTextInput v-model="pointsPlayer[2]"/></td>
       </tr>
       <tr>
         <th scope="row" v-html="t('scoring.serviceDepartment')"></th>
         <td><AppIcon type="scoring" name="service-department" class="icon"/></td>
-        <td><input type="number" min="0" max="99" step="1" @focus="inputSelectAll" v-model="pointsBot[3]"/></td>
-        <td><input type="number" min="0" max="99" step="1" @focus="inputSelectAll" v-model="pointsPlayer[3]"/></td>
+        <td><ScoringTextInput v-model="pointsBot[3]"/></td>
+        <td><ScoringTextInput v-model="pointsPlayer[3]"/></td>
       </tr>
       <tr>
         <th scope="row" v-html="t('scoring.financeDepartment')"></th>
         <td><AppIcon type="scoring" name="finance-department" class="icon"/></td>
         <td></td>
-        <td><input type="number" min="0" max="99" step="1" @focus="inputSelectAll" v-model="pointsPlayer[4]"/></td>
+        <td><ScoringTextInput v-model="pointsPlayer[4]"/></td>
       </tr>
       <tr>
         <th scope="row" v-html="t('scoring.planningCustomsDepartment')"></th>
         <td><AppIcon type="scoring" name="planning-department" class="icon"/><AppIcon type="scoring" name="customs-department" class="icon"/></td>
-        <td><input type="number" min="0" max="99" step="1" @focus="inputSelectAll" v-model="pointsBot[4]"/></td>
-        <td><input type="number" min="0" max="99" step="1" @focus="inputSelectAll" v-model="pointsPlayer[5]"></td>
+        <td><ScoringTextInput v-model="pointsBot[4]"/></td>
+        <td><ScoringTextInput v-model="pointsPlayer[5]"/></td>
       </tr>
       <tr>
         <th scope="row" colspan="2" v-html="t('scoring.total')"></th>
@@ -55,11 +55,13 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import AppIcon from '../structure/AppIcon.vue'
+import ScoringTextInput from '@brdgm/brdgm-commons/src/components/form/ScoringTextInput.vue'
 
 export default defineComponent({
   name: 'FinalScoring',
   components: {
-    AppIcon
+    AppIcon,
+    ScoringTextInput
   },
   setup() {
     const { t } = useI18n()
@@ -80,10 +82,6 @@ export default defineComponent({
     }
   },
   methods: {
-    inputSelectAll(event: Event) : void {
-      const input = event.target as HTMLInputElement
-      input.select()
-    },
     toNumber(value? : number) {
       if (typeof value == 'string') {
         return 0

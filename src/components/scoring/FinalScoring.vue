@@ -9,38 +9,38 @@
       <tr>
         <th scope="row" v-html="t('scoring.lobby')"></th>
         <td><AppIcon type="scoring" name="lobby" class="icon"/></td>
-        <td><ScoringTextInput v-model="pointsBot[0]"/></td>
-        <td><ScoringTextInput v-model="pointsPlayer[0]"/></td>
+        <td><NumberInput v-model="pointsBot[0]"/></td>
+        <td><NumberInput v-model="pointsPlayer[0]"/></td>
       </tr>
       <tr>
         <th scope="row" v-html="t('scoring.networkDepartment')"></th>
         <td><AppIcon type="scoring" name="network-department" class="icon"/></td>
-        <td><ScoringTextInput v-model="pointsBot[1]"/></td>
-        <td><ScoringTextInput v-model="pointsPlayer[1]"/></td>
+        <td><NumberInput v-model="pointsBot[1]"/></td>
+        <td><NumberInput v-model="pointsPlayer[1]"/></td>
       </tr>
       <tr>
         <th scope="row" v-html="t('scoring.tradeDepartment')"></th>
         <td><AppIcon type="scoring" name="trade-department" class="icon"/></td>
-        <td><ScoringTextInput v-model="pointsBot[2]"/></td>
-        <td><ScoringTextInput v-model="pointsPlayer[2]"/></td>
+        <td><NumberInput v-model="pointsBot[2]"/></td>
+        <td><NumberInput v-model="pointsPlayer[2]"/></td>
       </tr>
       <tr>
         <th scope="row" v-html="t('scoring.serviceDepartment')"></th>
         <td><AppIcon type="scoring" name="service-department" class="icon"/></td>
-        <td><ScoringTextInput v-model="pointsBot[3]"/></td>
-        <td><ScoringTextInput v-model="pointsPlayer[3]"/></td>
+        <td><NumberInput v-model="pointsBot[3]"/></td>
+        <td><NumberInput v-model="pointsPlayer[3]"/></td>
       </tr>
       <tr>
         <th scope="row" v-html="t('scoring.financeDepartment')"></th>
         <td><AppIcon type="scoring" name="finance-department" class="icon"/></td>
         <td></td>
-        <td><ScoringTextInput v-model="pointsPlayer[4]"/></td>
+        <td><NumberInput v-model="pointsPlayer[4]"/></td>
       </tr>
       <tr>
         <th scope="row" v-html="t('scoring.planningCustomsDepartment')"></th>
         <td><AppIcon type="scoring" name="planning-department" class="icon"/><AppIcon type="scoring" name="customs-department" class="icon"/></td>
-        <td><ScoringTextInput v-model="pointsBot[4]"/></td>
-        <td><ScoringTextInput v-model="pointsPlayer[5]"/></td>
+        <td><NumberInput v-model="pointsBot[4]"/></td>
+        <td><NumberInput v-model="pointsPlayer[5]"/></td>
       </tr>
       <tr>
         <th scope="row" colspan="2" v-html="t('scoring.total')"></th>
@@ -55,13 +55,14 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import AppIcon from '../structure/AppIcon.vue'
-import ScoringTextInput from '@brdgm/brdgm-commons/src/components/form/ScoringTextInput.vue'
+import NumberInput from '@brdgm/brdgm-commons/src/components/form/NumberInput.vue'
+import toNumber from '@brdgm/brdgm-commons/src/util/form/toNumber'
 
 export default defineComponent({
   name: 'FinalScoring',
   components: {
     AppIcon,
-    ScoringTextInput
+    NumberInput
   },
   setup() {
     const { t } = useI18n()
@@ -75,20 +76,10 @@ export default defineComponent({
   },
   computed: {
     totalPointsBot() : number {
-      return this.pointsBot.reduce((a,b) => this.toNumber(a)+this.toNumber(b),0)
+      return this.pointsBot.reduce((a,b) => toNumber(a)+toNumber(b),0)
     },
     totalPointsPlayer() : number {
-      return this.pointsPlayer.reduce((a,b) => this.toNumber(a)+this.toNumber(b),0)
-    }
-  },
-  methods: {
-    toNumber(value? : number) {
-      if (typeof value == 'string') {
-        return 0
-      }
-      else {
-        return value ?? 0
-      }
+      return this.pointsPlayer.reduce((a,b) => toNumber(a)+toNumber(b),0)
     }
   }
 })

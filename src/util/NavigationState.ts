@@ -23,7 +23,7 @@ export default class NavigationState {
 
   public constructor(route : RouteLocation, state : State) {
     this.difficulty = new Difficulty(state.setup.difficultyLevel)
-    this.turn = parseInt(route.params['turn'] as string)
+    this.turn = Number.parseInt(route.params['turn'] as string)
 
     const turnData = state.turns.find(item => item.turn == this.turn)
     if (turnData) {

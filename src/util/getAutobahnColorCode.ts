@@ -5,7 +5,7 @@ import AutobahnColor from '@/services/enum/AutobahnColor'
  * @param autobahnColor Autobahn color
  * @returns Color code
  */
-export default function(autobahnColor: AutobahnColor) : string {
+export default function getAutobahnColorCode(autobahnColor: AutobahnColor) : string {
   switch (autobahnColor) {
     case AutobahnColor.RED:
       return '#b1433c'

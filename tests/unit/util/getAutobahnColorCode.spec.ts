@@ -4,8 +4,8 @@ import { expect } from 'chai'
 
 describe('util/getAutobahnColorCode', () => {
   it('get', () => {
-    Object.values(AutobahnColor).forEach(color => {
+    for (const color of Object.values(AutobahnColor)) {
       expect(getAutobahnColorCode(color)).to.not.undefined
-    })
+    }
   })
 })

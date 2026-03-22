@@ -1,0 +1,259 @@
+{
+  "gameTitle": "아우토반",
+  "home": {
+    "title": "아우토반 솔로 헬퍼",
+    "play1": "<a href='https://boardgamegeek.com/boardgame/348554/autobahn' target='_blank' rel='noopener'><b>아우토반</b></a>의 솔로 모드 상대인 오토봇과 대결하세요.",
+    "play2": "이 헬퍼 앱은 오토봇의 작업 카드와 행동 카드 덱을 대신하고 난이도를 관리합니다. 행동 아이콘을 클릭하면 오토봇 규칙이 표시됩니다.",
+    "feedback": "토론 및 피드백:"
+  },
+  "setup": {
+    "title": "게임 설정",
+    "difficultyLevel": {
+      "title": "난이도",
+      "easy": "쉬움",
+      "hard": "어려움",
+      "level": "레벨 {level}",
+      "truckMoveAdditionalStep": "오토봇의 트럭이 매 턴마다 1칸 추가로 이동",
+      "playerTruckPassesServiceStationDevelopmentStep": "당신의 트럭이 오토봇의 휴게소를 지날 때마다 오토봇이 개발 트랙 1단계 획득",
+      "skipTurnDevelopmentStep": "오토봇이 턴을 건너뛸 때 개발 트랙에서 이동",
+      "endOfEraPromotions112": "각 시대 종료 시 오토봇이 더 많은 승진 획득 (1/1/2)",
+      "endOfEraPromotions122": "각 시대 종료 시 오토봇이 더 많은 승진 획득 (1/2/2)"
+    },
+    "expansions": {
+      "title": "미니 확장판",
+      "wine": "모듈 1: 와인",
+      "traffic": "모듈 2: 교통",
+      "services": "모듈 3: 서비스"
+    }
+  },
+  "setupAutobot": {
+    "title": "오토봇 준비",
+    "twoPlayers": "2인 게임으로 설정합니다.",
+    "pickPlayerColor": "오토봇용 플레이어 색상을 선택합니다. 오토봇은 해당 색상의 직원 25명, 휴게소 8개, 개발 토큰 1개를 사용합니다. 해당 색상의 트럭을 가져가는 대신, 오토봇은 사용하지 않는 다른 색상마다 트럭 1개와 개발 토큰 1개를 가져갑니다.",
+    "setupAutobotComponents": "오토봇의 구성 요소와 플레이 영역을 다음과 같이 설정합니다:",
+    "placeSoloBoard": "오토봇의 플레이 영역에 <b>{soloBoard}</b>를 놓습니다.",
+    "chooseDeliveryBoard": "오토봇용 배송 보드를 무작위로 선택하여 솔로 보드 옆에 놓습니다.",
+    "placeEmployees": "오토봇의 직원 25명을 솔로 보드 옆에 놓습니다.",
+    "placeServiceStations": "오토봇의 휴게소 8개를 솔로 보드의 해당 칸에 놓습니다.",
+    "placeDevelopmentToken": "오토봇의 개발 토큰을 개발 트랙의 첫 번째 칸에 놓습니다.",
+    "placeBlackConstructionOffice": "오토봇이 시작 플레이어이므로, 오토봇의 직원 1명을 검은색 건설 사무소의 첫 번째(가장 왼쪽) 자리에 놓습니다. 당신의 직원 1명을 다음 자리에 놓습니다.",
+    "setupPlayerPlayArea": "당신의 플레이 영역을 평소대로 설정하고, 덱에서 경로 카드 2장을 공개합니다. 그 중 1장을 선택하고 나머지 1장은 버립니다. 사용하지 않은 경로 카드는 상자에 다시 넣습니다. 오토봇은 경로 카드를 가지지 않습니다.",
+    "winePickCard": "와인 모듈: 와인 카드 중 1장을 무작위로 선택하고, 나머지 3장은 솔로 보드 옆에 놓습니다.",
+    "unlimitedBudget": "오토봇은 무제한 예산을 가집니다. 오토봇의 수입이나 지출을 추적할 필요가 없습니다."
+  },
+  "turnBot": {
+    "title": "오토봇의 턴",
+    "actionCompleted": "행동 완료",
+    "actionNotViable": "실행 불가",
+    "turnSkip": "턴 건너뛰기",
+    "turnSkipInfo": "오토봇의 전체 작업 카드 덱에 실행 가능한 행동이 없어 이번 턴을 건너뜁니다.",
+    "turnSkipInfoDevelopmentStep": "오토봇이 <b>개발 트랙 1단계</b>를 이동합니다.",
+    "endEra": "<b>시대 {era} 종료</b> - 오토봇이 이 시대의 마지막 도로를 건설했다면 여기를 클릭하세요.",
+    "andOr": "그리고/또는"
+  },
+  "turnBotMoveTrucks": {
+    "title": "오토봇의 턴 - 트럭 이동",
+    "moveSpaces": "짐을 실은 오토봇의 각 트럭을 <a href='#loadTruckModal' data-bs-toggle='modal'>선택된 국가</a> 방향으로 <b>{numberOfSpaces}칸</b> 이동시킵니다. 색상은 무시합니다.",
+    "moveTruckInfo": "<a href='#moveTruckModal' data-bs-toggle='modal'>오토봇의 트럭 이동 및 배송</a>에 대한 세부사항."
+  },
+  "turnPlayer": {
+    "title": "당신의 턴",
+    "claimDeliveryBonus": "배송 보너스 획득 (선택사항)",
+    "takeAction": "행동 수행",
+    "moveTrucks": "트럭 이동 (카드를 냈다면)",
+    "moveTrucksAutobotInfo": "당신의 트럭이 오토봇의 휴게소를 지나가도 오토봇은 아무것도 얻지 않습니다.",
+    "moveTrucksAutobotInfoGainDevelopmentStep": "당신의 트럭이 오토봇의 휴게소 중 하나를 지날 때마다 오토봇이 <b>개발 트랙 1단계</b>를 얻습니다.",
+    "endEra": "<b>시대 {era} 종료</b> - 당신이 이 시대의 마지막 도로를 건설했다면 여기를 클릭하세요."
+  },
+  "endOfEra": {
+    "title": "시대 {era} 종료",
+    "lastSectionBuildPromotion": {
+      "bot": "승진: <b>오토봇</b>이 이 시대의 마지막 구간을 건설했습니다. <a href='#botGainBonusModal' data-bs-toggle='modal'>오토봇 승진</a>을 수행하세요.",
+      "player": "승진: <b>당신</b>이 이 시대의 마지막 구간을 건설했습니다. 승진을 얻습니다."
+    },
+    "botExtraPromotions": "승진: <b>오토봇</b>이 <b>{count}번의 추가</b> <a href='#botGainBonusModal' data-bs-toggle='modal'>오토봇 승진</a>을 얻습니다. | 승진: <b>오토봇</b>이 <b>{count}번의 추가</b> <a href='#botGainBonusModal' data-bs-toggle='modal'>오토봇 승진</a>을 얻습니다.",
+    "constructionBudget": "건설 예산: 도로에서 수입 배분",
+    "constructionBudgetAutobotInfo": "건설 사무소의 건설 예산을 계산할 때, 직원이 있는 곳에서는 오토봇을 두 번째 플레이어로 취급합니다. 하지만 오토봇은 건설 예산의 몫을 받지 않습니다.",
+    "routeCard": "경로 카드: 경로 카드 평가",
+    "autobotWineInfo": "오토봇의 <b>와인 카드</b> 3장을 공개합니다. 오토봇은 그 중 하나를 충족하려고 시도합니다. 자세한 내용은 <a href='#loadTruckModal' data-bs-toggle='modal'>트럭 적재</a>를 참조하세요."
+  },
+  "endOfGame": {
+    "title": "게임 종료"
+  },
+  "sidebar": {
+    "era": "시대 {era}",
+    "round": "라운드 {round}",
+    "lastTurn": "마지막 턴"
+  },
+  "botStatus": {
+    "title": "오토봇 상태",
+    "taskQueue": "작업 대기열",
+    "taskPile": "작업 더미",
+    "usedColors": "사용된 색상",
+    "usedTasks": "사용된 작업",
+    "gainBonus": "보너스 획득",
+    "empty": "비어있음",
+    "none": "없음"
+  },
+  "botGainBonus": {
+    "title": "오토봇 보너스 획득",
+    "bonusActions": "오토봇의 보너스 행동",
+    "boardBonuses": "솔로 보드 보너스",
+    "autobotPromotions": "오토봇의 승진",
+    "discard": "<b>버리기:</b> 오토봇이 디스플레이에서 행동 카드 하나를 버립니다. 선택 후, 남은 카드들을 모두 오른쪽으로 밀고 새 카드를 뽑아 맨 왼쪽 칸에 놓습니다. 카드를 버리는 우선순위:",
+    "discardPrioItem1": "현재 색깔의 맨 왼쪽 카드.",
+    "discardPrioItem2": "디스플레이에서 가장 많이 나타나는 색깔의 맨 오른쪽 카드.",
+    "develop": "<b>개발:</b> 개발 트랙에서 오토봇의 마커를 1칸 또는 2칸 앞으로 이동시킵니다.",
+    "advancedCard": "<b>고급 작업 카드 가져오기:</b> 작업 카드 덱에 고급 카드를 추가합니다.",
+    "takeAdvancedCard": "고급 카드 가져오기",
+    "promote": "<b>승진:</b> <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>오토봇의 승진</a>에서 설명하는 대로 오토봇의 직원 1명을 승진시킵니다.",
+    "colorCard": "<b>색깔 카드 가져오기:</b> 디스플레이에서 <i>맨 왼쪽</i> 카드를 가져옵니다. 이렇게 하면 오토봇이 색깔 카드를 하나 더 얻게 됩니다.",
+    "takeColorCard": "색깔 카드 가져오기",
+    "promoteServiceTrade": "<b>승진:</b> 이런 방식으로 얻은 승진은 가능하면 표시된 부서에서 받아야 합니다. 표시된 부서에서 승진이 불가능하면 <a href='#tablink-bonus-promotions' data-custom-toggle='tab'>오토봇의 승진</a>에서 일반적인 우선순위 규칙을 따릅니다.",
+    "buildServiceStation": "<b>휴게소 건설:</b> 즉시 <a href='#buildServiceStationModal' data-bs-toggle='modal'>휴게소 건설</a> 행동을 수행합니다.",
+    "buildRoadSection": "<b>도로 구간 건설:</b> 즉시 <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>도로 구간 건설</a> 행동을 수행합니다.",
+    "upgradeLink": "<b>도로 연결 업그레이드:</b> 즉시 <a href='#buildRoadUpgradeLinkModal' data-bs-toggle='modal'>도로 연결 업그레이드</a> 행동을 수행합니다.",
+    "placeEmployee": "<b>직원 배치:</b> 오토봇이 현재 색깔과 일치하는 사무실에 직원을 배치합니다.",
+    "promotionInfo1": "오토봇의 승진은 현재 시대에 따라 제한됩니다. 1시대에는 오토봇의 직원이 1층까지만 승진할 수 있습니다. 2시대에는 2층까지만 승진할 수 있습니다. 3시대에는 오토봇의 직원이 어느 층이든 올라갈 수 있습니다. 이 제한 규칙은 시대 종료 단계에서 오토봇의 직원이 승진할 때도 적용됩니다.",
+    "promotionInfo2": "보너스에서 특정 부서를 표시하지 않는 한, 오토봇이 승진을 얻으면 어느 부서에서든 가장 높은 층에 올라갈 수 있는 직원을 승진시킵니다. 두 명 이상의 직원이 똑같이 높은 층에 올라갈 수 있다면, 가장 왼쪽 부서의 직원을 승진시킵니다.",
+    "soloBoardInfoBonusTokens": "<b>보너스 토큰:</b> 오토봇이 보너스 토큰을 얻으면, 솔로 보드의 다음 빈 칸에 놓습니다. 솔로 보드의 맨 윗줄을 왼쪽부터 오른쪽으로, 그 다음 둘째 줄을 왼쪽부터 오른쪽으로 채우며, 토큰 자체에 표시된 보너스가 아닌 해당 칸에 표시된 보너스를 얻습니다.",
+    "soloBoardInfoServiceStations": "<b>휴게소:</b> 오토봇이 휴게소를 건설하면, 해당 휴게소 아래 솔로 보드에 표시된 보너스를 즉시 얻습니다."
+  },
+  "buildRoadUpgradeLink": {
+    "title": "도로 구간 건설 또는 도로 연결 업그레이드",
+    "buildRoad": {
+      "title": "도로 구간 건설",
+      "intro": "오토봇이 현재 색깔과 일치하는 아우토반의 다음 도로 구간을 건설합니다. 건설 가능한 모든 도로 구간이 이미 건설되었다면, 오토봇은 대신 <a href='#tablink-upgrade-link' data-custom-toggle='tab'>완성된 도로 연결을 업그레이드</a>합니다.",
+      "priority": {
+        "title": "우선순위:",
+        "item1": "오토봇의 트럭 중 하나가 상품 토큰을 목적지 국가로 배송하거나 그쪽으로 이동할 수 있게 하는 도로 구간. 동점이면 오토봇의 배송 보드에서 더 위쪽에 있는 국가.",
+        "item2": "보너스 토큰이 있는 도로 구간.",
+        "item3": "검은 아우토반에서 가장 가까운 도로 구간(이동해야 할 도로 구간 수가 가장 적은).",
+        "item4": "1시대와 2시대에는 가장 남쪽, 그 다음 가장 서쪽 위치. 3시대에는 가장 북쪽, 그 다음 가장 동쪽 위치."
+      },
+      "employeeCostInfo": "도로를 건설할 때, 오토봇은 평소처럼 해당 사무실에 직원을 배치합니다. 오토봇은 건설 비용을 지불하지 않습니다.",
+      "developIcon": "오토봇이 '개발' 아이콘이 있는 칸에서 도로 구간을 건설하면, 개발 트랙에서 오토봇의 마커를 1칸 앞으로 이동시킵니다.",
+      "bonusTile": "오토봇이 보너스 타일이 있는 칸에서 도로 구간을 건설하면, 오토봇은 그것을 뒷면으로 솔로 보드의 다음 빈 칸에 놓고 <a href='#botGainBonusModal' data-bs-toggle='modal'>보너스 획득</a>에서 설명하는 대로 해당 칸에 묘사된 보너스를 얻습니다."
+    },
+    "upgradeLink": {
+      "title": "도로 연결 업그레이드",
+      "intro": "모든 도로 구간이 건설되었다면, 오토봇은 대신 완성된 도로 연결을 업그레이드합니다.",
+      "priority": {
+        "title": "우선순위:",
+        "itemTraffic": "오토봇은 <b>교통 토큰</b>이 있는 도로 연결을 우선시합니다. 봇이 교통 토큰 3개를 모을 때마다 평소처럼 <a href='#botGainBonusModal' data-bs-toggle='modal'>승진</a>을 얻습니다.",
+        "item1": "검은 아우토반에서 가장 가까운 도로 구간(이동해야 할 도로 칸 수가 가장 적은).",
+        "item2": "바트 헤르스펠트에서 가장 가까운 곳.",
+        "item3": "1시대와 2시대에는 가장 남쪽, 그 다음 가장 서쪽 위치. 3시대에는 가장 북쪽, 그 다음 가장 동쪽 위치."
+      },
+      "employeeCostInfo": "도로를 업그레이드할 때, 오토봇은 평소처럼 해당 사무실에 직원을 배치합니다. 오토봇은 업그레이드 비용을 지불하지 않습니다."
+    }
+  },
+  "loadTruck": {
+    "title": "트럭 화물 적재",
+    "intro1": "오토봇이 '트럭 화물 적재' 행동을 할 때, 배송할 목적지 국가와 화물을 적재할 창고를 선택합니다.",
+    "intro2": "배송할 국가를 선택할 때, 오토봇은 아직 배송하지 않았고 현재 배송 중이지도 않은 국가를 선택합니다. 1시대와 2시대에는 오토봇은 폴란드와 체코 공화국을 무시합니다.",
+    "intro3": "오토봇은 적재할 화물 유형과 연결된 오토봇의 배송 보드에 있는 국가를 선택합니다.",
+    "intro4": "현재 화물 유형과 연결되는 미배송 국가가 없다면, 오토봇은 이 주요 행동을 할 수 없습니다.",
+    "intro5": "오토봇은 항상 두 트럭을 모두 사용할 수 있습니다. 사용 가능한 트럭이 없다면 오토봇은 이 주요 행동을 할 수 없습니다.",
+    "loadNonBlack": {
+      "title": "빨강, 청록, 보라, 주황 또는 흰색 도로에서 적재",
+      "info": "현재 색깔과 일치하는 창고를 선택하고 해당 화물 토큰을 적재합니다. 화물 토큰을 사용 가능한 트럭에 올리고 트럭을 창고에 배치합니다."
+    },
+    "loadBlack": {
+      "title": "검정 도로에서 적재",
+      "info": "현재 색깔이 검정이면, 오토봇은 먼저 배송 국가를 선택한 후, 해당 국가에 대한 오토봇의 배송 보드에 표시된 화물 유형을 선택합니다. 국가를 선택한 후, 오토봇은 오토봇의 배송 보드에서 해당 국가와 일치하는 화물 토큰을 선택합니다. 화물 토큰을 사용 가능한 트럭에 올리고 트럭을 창고에 배치합니다. 자동차 화물이나 화학 제품을 선택했다면 배송 위치에서 가장 가까운 창고를 선택합니다."
+    },
+    "priority": {
+      "title": "국가 선택 우선순위:",
+      "item1": "네트워크에 연결된 국가.",
+      "item2": "보너스 토큰이 있는 국가.",
+      "item3": "건설해야 할 도로 구간이 가장 적게 남은 국가.",
+      "item4": "오토봇의 배송 보드에서 가장 위에 표시된 국가."
+    },
+    "developmentToken": "오토봇이 적재한 트럭의 색깔과 일치하는 개발 토큰을 선택된 국가 옆 보드에 배치합니다. 이것은 해당 트럭의 선택된 국가를 표시합니다.",
+    "loadingPharmaceuticals": {
+      "title": "의약품 적재",
+      "info": "3시대에 현재 색깔이 청록색 또는 노란색이면, 오토봇은 (자동차 화물 대신) 의약품을 적재하도록 선택합니다. 일반적인 기준 대신, 오토봇은 의약품이 아직 배송되지 않은 연결된 국가를 선택하며, 오스트리아(비엔나)부터 시작하여 지도에서 시계 방향으로 진행합니다. 플레이어가 오토봇보다 먼저 선택된 국가에 의약품을 배송하면, 개발 토큰을 시계 방향으로 의약품이 아직 배송되지 않은 다음 연결된 국가로 이동합니다. 배송되면 오토봇은 평소대로 의약품 배송 보너스를 얻습니다."
+    },
+    "wineModule": {
+      "title": "와인 모듈",
+      "info1": "오토봇이 3시대에서 세 카드 중 하나와 일치하는 색깔 카드로 트럭에 화물을 적재하려고 처음 시도할 때, 나머지 두 카드를 버리고, 일치하는 국가 옆에 트럭을 적재하고, 카드의 목적지 옆에 목적지 토큰을 배치합니다.",
+      "info2": "트럭이 목적지에 도착하면 오토봇은 와인 배송 토큰을 얻습니다."
+    }
+  },
+  "moveTruck": {
+    "title": "트럭 이동 및 화물 배송",
+    "ignoreColor": "오토봇은 도로 구간을 따라 이동할 때 현재 색깔 카드와 일치시킬 필요가 없습니다. 어떤 이유로든 트럭이 앞으로 이동할 수 없다면(미건설 도로 등) 그 자리에 머물러 있습니다.",
+    "passServiceStations": "오토봇의 트럭 중 하나가 자신의 휴게소를 지날 때마다, 솔로 보드에 표시된 대로 가장 오른쪽에 공개된 보너스를 얻습니다. 오토봇의 트럭 중 하나가 당신의 휴게소를 지나면, 평소대로 공급처에서 수입을 얻습니다.",
+    "deliverGoods": "오토봇의 트럭 중 하나가 선택된 국가에 도달하면, 화물을 배송합니다:",
+    "deliverGoodsItem1": "화물이 배송되면, 오토봇의 배송 보드의 해당 공간에 배송 토큰을 배치합니다.",
+    "deliverGoodsItem2": "화물 유형이 일치하면, 오토봇은 개발 트랙에서 1칸 위로 이동합니다. 오토봇은 배송 보드에 표시된 보너스 행동이나 돈을 받지 않습니다.",
+    "deliverGoodsItem3": "오토봇이 의약품을 배송하면 평소대로 배송 보너스를 얻습니다.",
+    "deliverGoodsItem4": "선택된 국가에 배송 보너스 타일이 있다면, 오토봇은 그것을 가져와서 솔로 보드의 다음 사용 가능한 슬롯에 토큰을 뒷면으로 배치하고 <a href='#botGainBonusModal' data-bs-toggle='modal'>솔로 보드 보너스</a>에 설명된 대로 슬롯에 표시된 보너스를 얻습니다.",
+    "era3Countries": "평소와 같이, 오토봇은 1시대와 2시대에는 폴란드(바르샤바)와 체코 공화국(프라하)에 화물을 배송할 수 없습니다."
+  },
+  "buildServiceStation": {
+    "title": "휴게소 건설",
+    "intro": "오토봇은 현재 색깔과 일치하는 아우토반의 다음 사용 가능한 휴게소 공간에 휴게소를 건설합니다.",
+    "priority": {
+      "title": "우선순위:",
+      "itemServices": "오토봇은 가능하다면 <b>업그레이드된 휴게소</b>를 배치하려고 합니다(즉, 현재 색깔에 봇의 휴게소가 있는 업그레이드된 연결이 있는 경우). 이 경우 휴게소 보드에서 가장 왼쪽에 있는 사용 가능한 휴게소를 선택하지만, 표시된 보너스 대신 항상 <a href='#botGainBonusModal' data-bs-toggle='modal'>승진</a>을 얻습니다.",
+      "item1": "검정 아우토반에 가장 가까운 휴게소 공간(이동할 도로 구간이 가장 적은 곳).",
+      "item2": "1시대와 2시대에는 가장 남쪽 위치, 그 다음 가장 서쪽. 3시대에는 가장 북쪽 위치, 그 다음 가장 동쪽.",
+      "item3": "검정 휴게소 공간에 건설하는 경우, 바트 헤르스펠트에 가장 가까운 곳을 선택하며, 동점일 때는 1시대와 2시대에는 가장 남쪽 위치로, 3시대에는 가장 북쪽 위치로 결정합니다."
+    },
+    "noViableSpace": "현재 색깔과 일치하는 연결된 휴게소 공간이 없다면, 이 행동은 실행할 수 없습니다.",
+    "era3Info": "평소와 같이, 1시대와 2시대에는 동독에 휴게소를 건설할 수 없습니다.",
+    "gainBonus": "휴게소를 배치할 때, 오토봇은 <a href='#botGainBonusModal' data-bs-toggle='modal'>솔로 보드 보너스</a>에 설명된 대로 솔로 보드에서 그 아래에 표시된 보너스를 즉시 얻습니다."
+  },
+  "takeAdvancedCard": {
+    "title": "고급 카드 가져가기",
+    "addCardInfo": "이것은 봇의 작업 카드 덱에 <b>고급 카드</b>를 추가합니다.",
+    "noCardLeft": "모든 고급 카드가 이미 추가되었습니다."
+  },
+  "takeColorCard": {
+    "title": "색깔 카드 가져가기",
+    "pickColors": "진열에서 <i>가장 왼쪽</i> 카드의 색깔을 여기서 선택하고, 그 후 진열에서 버리세요.",
+    "pickAction": "색깔 카드가 노란색이고 <i>도로 건설</i> 행동이 있는지 확인하세요."
+  },
+  "scoring": {
+    "bot": "오토봇",
+    "points": "점수",
+    "player": "플레이어",
+    "lobby": "로비의 직원",
+    "networkDepartment": "네트워크 부서",
+    "tradeDepartment": "무역 부서",
+    "serviceDepartment": "서비스 부서",
+    "financeDepartment": "재정 부서",
+    "planningCustomsDepartment": "기획/관세 부서 (선택)",
+    "total": "총점"
+  },
+  "soloBoard": {
+    "easy": "쉬운 솔로 보드",
+    "hard": "어려운 솔로 보드"
+  },
+  "notfound": {
+    "title": "찾을 수 없음"
+  },
+  "action": {
+    "playGame": "게임 플레이",
+    "startGame": "게임 시작",
+    "next": "다음",
+    "nextRound": "다음 라운드",
+    "abortGame": "게임 중단",
+    "abortGameConfirm": "실행 중인 게임을 중단합니다 - 확실합니까?",
+    "endGame": "게임 종료",
+    "endGameConfirm": "이 게임을 종료하고 홈 화면으로 돌아갑니다 - 확실합니까?",
+    "cancel": "취소",
+    "backToHome": "홈으로 돌아가기",
+    "back": "뒤로",
+    "close": "닫기"
+  },
+  "footer": {
+    "credits": "크레딧"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "앱 새로고침",
+    "notice": "애플리케이션이 업데이트되었습니다. 최신 버전을 사용하기 위해 새로고침하시겠습니까?"
+  }
+}

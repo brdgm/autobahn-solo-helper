@@ -49,7 +49,7 @@ export default defineComponent({
   },
   computed: {
     difficultyLevel() : number {
-      return this.state.setup.difficultyLevel;
+      return this.state.setup.difficultyLevel
     },
     soloBoardMode() : string {
       if (this.difficultyLevel >= 7) {

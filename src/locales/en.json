@@ -14,7 +14,7 @@
       "hard": "Hard",
       "level": "Level {level}",
       "truckMoveAdditionalStep": "Autobot's Trucks move 1 additional space every turn",
-      "playerTruckPassesServiceStationDevelopmentStep": "Autobot gets 1 Development Track step each time one of your Trucks drive past one of its Service Stations",
+      "playerTruckPassesServiceStationDevelopmentStep": "Autobot gets 1 Development Track step each time one of your Trucks drives past one of its Service Stations",
       "skipTurnDevelopmentStep": "Autobot moves on the Development Track if it skips its turn",
       "endOfEraPromotions112": "Autobot gains more promotions at the end of each era (1/1/2)",
       "endOfEraPromotions122": "Autobot gains more promotions at the end of each era (1/2/2)"
@@ -62,7 +62,7 @@
     "takeAction": "Take action",
     "moveTrucks": "Move trucks (if you played a card)",
     "moveTrucksAutobotInfo": "Autobot gains nothing when your Trucks drive past its Service Stations.",
-    "moveTrucksAutobotInfoGainDevelopmentStep": "Autobot gets <b>1 Development Track step</b> each time one of your Trucks drive past one of its Service Stations.",
+    "moveTrucksAutobotInfoGainDevelopmentStep": "Autobot gets <b>1 Development Track step</b> each time one of your Trucks drives past one of its Service Stations.",
     "endEra": "<b>End Era {era}</b> - Click here if you built the last road of this era."
   },
   "endOfEra": {
@@ -132,7 +132,7 @@
         "item4": "In the first and second eras, the southernmost location, then the westernmost. In the third era, the northernmost location, then the easternmost."
       },
       "employeeCostInfo": "When building a road, Autobot places an Employee in the corresponding Office as usual. Autobot never pays building costs.",
-      "developIcon": "If Autobot builds a road section on a space with a 'Develop' icon, move Autobot's Marker 1 steps forward on the Development Track.",
+      "developIcon": "If Autobot builds a road section on a space with a 'Develop' icon, move Autobot's Marker 1 step forward on the Development Track.",
       "bonusTile": "If Autobot builds a road section on a space with a bonus tile, Autobot places it face down on the next available slot of the Solo board and gains the bonus depicted on the slot as described in <a href='#botGainBonusModal' data-bs-toggle='modal'>Gain Bonus</a>."
     },
     "upgradeLink": {
@@ -150,7 +150,7 @@
   },
   "loadTruck": {
     "title": "Load Truck",
-    "intro1": "When Autobot takes the ‘Load Truck' action it will select a destination country to deliver to and a depot to load goods at.",
+    "intro1": "When Autobot takes the 'Load Truck' action it will select a destination country to deliver to and a depot to load goods at.",
     "intro2": "When selecting a country to deliver to, Autobot selects a country to which it has not yet delivered and is not currently delivering. In the first and second era, Autobot ignores Poland and Czech Republic.",
     "intro3": "Autobot will select a country on Autobot's delivery board that pairs with the loaded good type.",
     "intro4": "If there is not an undelivered to country that pairs with the current good type, Autobot cannot take this main action.",
@@ -225,7 +225,7 @@
     "tradeDepartment": "Trade Department",
     "serviceDepartment": "Service Department",
     "financeDepartment": "Finance Department",
-    "planningCustomsDepartment": "Planing/Customs Department (opt.)",
+    "planningCustomsDepartment": "Planning/Customs Department (opt.)",
     "total": "Total Points"
   },
   "soloBoard": {
